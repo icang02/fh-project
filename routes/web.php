@@ -80,37 +80,3 @@ Route::get('/profil/rencana-strategis', function () {
 Route::get('/profil/rencana-operasional', function () {
     return view('home.profil.rencana-operasional');
 });
-
-// navbar - program studi
-Route::get('/program-studi/sejarah', function () {
-    return view('home.program-studi.sejarah');
-});
-Route::get('/program-studi/visi-misi', function () {
-    return view('home.program-studi.visi-misi');
-});
-Route::get('/program-studi/tujuan', function () {
-    return view('home.program-studi.tujuan');
-});
-Route::get('/program-studi/sasaran-strategis', function () {
-    return view('home.program-studi.sasaran-strategis');
-});
-Route::get('/program-studi/rencana-strategis', function () {
-    return view('home.program-studi.rencana-strategis');
-});
-Route::get('/program-studi/rencana-operasional', function () {
-    return view('home.program-studi.rencana-operasional');
-});
-
-//navbar - akademik
-Route::get('/akademik/peraturan-rektor-tentang-akademik', function () {
-    return view('home.akademik.peraturan-rektor-tentang-akademik');
-});
-Route::get('/akademik/kalender-akademik', function () {
-    return view('home.akademik.kalender-akademik');
-});
-Route::get('/akademik/jadwal-perkuliahan', function () {
-    return view('home.akademik.jadwal-perkuliahan');
-});
-Route::get('/akademik/jadwal-ujian', function () {
-    return view('home.akademik.jadwal-ujian');
-});
