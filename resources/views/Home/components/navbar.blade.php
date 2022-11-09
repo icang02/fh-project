@@ -20,9 +20,9 @@
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
 
-    <div class="navbar-nav mx-auto p-4 p-lg-0 text-center">
+    <div class="navbar-nav mx-auto p-4 p-lg-0">
       <a href="{{ url('/') }}"
-        class="nav-item nav-link ms-4 {{ request()->is('/') ? 'active txt-utama' : '' }}">Beranda</a>
+        class="nav-item nav-link ms-0 ms-md-4 {{ request()->is('/') ? 'active txt-utama' : '' }}">Beranda</a>
 
       <a href="{{ url('/about') }}"
         class="nav-item nav-link {{ request()->is('about') ? 'active txt-utama' : '' }}">Spada</a>
