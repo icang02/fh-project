@@ -30,7 +30,7 @@
       <div class="nav-item dropdown ">
         <a href="#"
           class="nav-link dropdown-toggle
-          {{ request()->is('sejarah') || request()->is('visi-misi') || request()->is('tujuan') || request()->is('sasaran-strategis') ? 'active txt-utama' : '' }}"
+          {{ request()->is('sejarah') || request()->is('profil*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Profil</a>
         <div class="dropdown-menu fade-down m-0">
           <a href="{{ url('profil/sejarah') }}"
@@ -55,7 +55,8 @@
             class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
           <a href="{{ url('profil/rencana-strategis') }}"
-            class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana Strategis</a>
+            class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana
+            Strategis</a>
           <a href="{{ url('profil/rencana-operasional') }}"
             class="dropdown-item {{ request()->is('profil/rencana-operasional') ? 'active bg-utama' : '' }}">Rencana
             Operasional</a>
@@ -64,11 +65,11 @@
 
       <div class="nav-item dropdown ">
         <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+          class="nav-link dropdown-toggle {{ request()->is('program-studi*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Program Studi</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Sejarah</a>
+          <a href="{{ url('program-studi/sejarah') }}"
+            class="dropdown-item {{ request()->is('program-studi/sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
           <a href="{{ url('testimonial') }}"
             class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Visi dan
             Misi</a>

@@ -31,44 +31,9 @@
 
   <!-- Template Stylesheet -->
   <link href="{{ asset('home-assets') }}/css/style.css" rel="stylesheet">
+  <link href="{{ asset('home-assets') }}/css/mystyle.css" rel="stylesheet">
 
-  <style>
-    .bg-utama {
-      background: #CE1818 !important;
-      border-color: #CE1818 !important;
-      ;
-    }
 
-    .txt-utama {
-      color: #CE1818 !important;
-    }
-
-    .nav-link:hover {
-      color: #CE1818 !important;
-    }
-
-    .nav-link {
-      font-size: 12px !important;
-    }
-
-    .dropdown-item {
-      font-size: 12px !important;
-    }
-
-    .dropdown-item:active {
-      background: #CE1818 !important;
-    }
-
-    .pt-custom {
-      padding-top: 65px !important;
-    }
-
-    @media only screen and (max-width: 576px) {
-      .search-pc {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>

@@ -80,3 +80,8 @@ Route::get('/profil/rencana-strategis', function () {
 Route::get('/profil/rencana-operasional', function () {
     return view('home.profil.rencana-operasional');
 });
+
+// Navbar - Program Studi
+Route::get('/program-studi/sejarah', function () {
+    return view('home.program-studi.sejarah');
+});
