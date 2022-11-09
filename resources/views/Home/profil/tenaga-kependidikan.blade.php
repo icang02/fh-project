@@ -6,7 +6,7 @@
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
-          <h5 class="text-center">SASARAN STRATEGIS</h5>
+          <h5 class="text-center">TENAGA KEPENDIDIKAN</h5>
           <hr class="w-25 mx-auto my-5" style="height: 3px">
           <img src="https://www.uho.ac.id/fakultas/fhukum/wp-content/uploads/sites/7/2022/06/aa.png" class="img-fluid">
 

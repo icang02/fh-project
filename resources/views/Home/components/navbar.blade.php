@@ -33,31 +33,31 @@
           {{ request()->is('sejarah') || request()->is('visi-misi') || request()->is('tujuan') || request()->is('sasaran-strategis') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Profil</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('sejarah') }}"
-            class="dropdown-item {{ request()->is('sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
-          <a href="{{ url('visi-misi') }}"
-            class="dropdown-item {{ request()->is('visi-misi') ? 'active bg-utama' : '' }}">Visi dan
+          <a href="{{ url('profil/sejarah') }}"
+            class="dropdown-item {{ request()->is('profil/sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
+          <a href="{{ url('profil/visi-misi') }}"
+            class="dropdown-item {{ request()->is('profil/visi-misi') ? 'active bg-utama' : '' }}">Visi dan
             Misi</a>
-          <a href="{{ url('tujuan') }}"
-            class="dropdown-item {{ request()->is('tujuan') ? 'active bg-utama' : '' }}">Tujuan</a>
-          <a href="{{ url('sasaran-strategis') }}"
-            class="dropdown-item {{ request()->is('sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran
+          <a href="{{ url('profil/tujuan') }}"
+            class="dropdown-item {{ request()->is('profil/tujuan') ? 'active bg-utama' : '' }}">Tujuan</a>
+          <a href="{{ url('profil/sasaran-strategis') }}"
+            class="dropdown-item {{ request()->is('profil/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran
             Strategis</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Personalia</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Struktur
+          <a href="{{ url('profil/personalia') }}"
+            class="dropdown-item {{ request()->is('profil/personalia') ? 'active bg-utama' : '' }}">Personalia</a>
+          <a href="{{ url('profil/struktur-organisasi') }}"
+            class="dropdown-item {{ request()->is('profil/struktur-organisasi') ? 'active bg-utama' : '' }}">Struktur
             Organisasi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Tenaga
+          <a href="{{ url('profil/tenaga-pendidikan') }}"
+            class="dropdown-item {{ request()->is('profil/tenaga-pendidikan') ? 'active bg-utama' : '' }}">Tenaga
             Pendidikan/Dosen</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Tenaga
+          <a href="{{ url('profil/tenaga-kependidikan') }}"
+            class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Rencana Strategis</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Rencana
+          <a href="{{ url('profil/rencana-strategis') }}"
+            class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana Strategis</a>
+          <a href="{{ url('profil/rencana-operasional') }}"
+            class="dropdown-item {{ request()->is('profil/rencana-operasional') ? 'active bg-utama' : '' }}">Rencana
             Operasional</a>
         </div>
       </div>
@@ -187,7 +187,7 @@
       <div class="nav-item">
         <a href="#"
           class="nav-link {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
-          data-bs-toggle="dropdown">UI Grennmetric</a>
+          data-bs-toggle="dropdown">UI Greenmetric</a>
       </div>
     </div>
 </nav>

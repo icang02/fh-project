@@ -50,15 +50,33 @@ Route::get('/contact', function () {
 });
 
 // Navbar - Profil
-Route::get('/sejarah', function () {
+Route::get('/profil/sejarah', function () {
     return view('home.profil.sejarah');
 });
-Route::get('/visi-misi', function () {
+Route::get('/profil/visi-misi', function () {
     return view('home.profil.visi-misi');
 });
-Route::get('/tujuan', function () {
+Route::get('/profil/tujuan', function () {
     return view('home.profil.tujuan');
 });
-Route::get('/sasaran-strategis', function () {
+Route::get('/profil/sasaran-strategis', function () {
     return view('home.profil.sasaran-strategis');
+});
+Route::get('/profil/personalia', function () {
+    return view('home.profil.personalia');
+});
+Route::get('/profil/struktur-organisasi', function () {
+    return view('home.profil.struktur-organisasi');
+});
+Route::get('/profil/tenaga-pendidikan', function () {
+    return view('home.profil.tenaga-pendidikan');
+});
+Route::get('/profil/tenaga-kependidikan', function () {
+    return view('home.profil.tenaga-kependidikan');
+});
+Route::get('/profil/rencana-strategis', function () {
+    return view('home.profil.rencana-strategis');
+});
+Route::get('/profil/rencana-operasional', function () {
+    return view('home.profil.rencana-operasional');
 });
