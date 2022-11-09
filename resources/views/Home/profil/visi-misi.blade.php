@@ -2,7 +2,7 @@
 
 @section('main-content')
   <!-- Service Start -->
-  <div class="container-xxl py-5">
+  <div class="container-xxl py-5 pt-custom">
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">

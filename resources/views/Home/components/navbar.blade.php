@@ -1,14 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-5">
-  <div class="py-2 p-lg-4 d-flex justify-content-between align-items-center w-100 flex-wrap">
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-2">
+  <div
+    class="py-2 p-lg-4 d-flex justify-md-content-between justify-content-center flex-md-row flex-column align-items-center w-100">
     <img src="{{ asset('home-assets/img/logo-hukum.png') }}" class="d-block" alt="Logo" width="300">
 
     <div class="btn btn-danger badge my-md-0 my-4 mx-auto">Language Switcher</div>
 
-    <div class="d-block mx-auto mx-md-0">
-      <form class="mt-md-0">
-        <input class="form-control px-lg-5 d-lg-block" placeholder="Cari..">
-      </form>
-    </div>
+    <form class="">
+      <input class="form-control px-lg-4" placeholder="Cari..">
+    </form>
   </div>
 </nav>
 
@@ -21,11 +20,13 @@
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
 
-    <div class="navbar-nav mx-auto p-4 p-lg-0">
+    <div class="navbar-nav mx-auto p-4 p-lg-0 text-center">
       <a href="{{ url('/') }}"
-        class="nav-item nav-link {{ request()->is('/') ? 'active txt-utama' : '' }}">Beranda</a>
+        class="nav-item nav-link ms-4 {{ request()->is('/') ? 'active txt-utama' : '' }}">Beranda</a>
+
       <a href="{{ url('/about') }}"
         class="nav-item nav-link {{ request()->is('about') ? 'active txt-utama' : '' }}">Spada</a>
+
       <div class="nav-item dropdown ">
         <a href="#"
           class="nav-link dropdown-toggle

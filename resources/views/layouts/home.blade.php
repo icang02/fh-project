@@ -59,6 +59,10 @@
       background: #CE1818 !important;
     }
 
+    .pt-custom {
+      padding-top: 65px !important;
+    }
+
     @media only screen and (max-width: 576px) {
       .search-pc {
         width: 100%;
