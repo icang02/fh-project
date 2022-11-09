@@ -49,3 +49,6 @@ Route::get('/visi-misi', function () {
 Route::get('/tujuan', function () {
     return view('home.profil.tujuan');
 });
+Route::get('/sasaran-strategis', function () {
+    return view('home.profil.sasaran-strategis');
+});
