@@ -50,6 +50,12 @@
     .dropdown-item:active {
       background: #CE1818 !important;
     }
+
+    @media only screen and (max-width: 576px) {
+      .search-pc {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
