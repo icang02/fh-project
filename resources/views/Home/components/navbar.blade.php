@@ -181,5 +181,4 @@
           data-bs-toggle="dropdown">UI Grennmetric</a>
       </div>
     </div>
-  </div>
 </nav>
