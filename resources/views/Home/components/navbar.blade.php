@@ -67,21 +67,21 @@
           class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Program Studi</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Sejarah</a>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Visi dan
+          <a href="{{ url('program-studi/sejarah') }}"
+            class="dropdown-item {{ request()->is('program-studi/sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
+          <a href="{{ url('program-studi/visi-misi') }}"
+            class="dropdown-item {{ request()->is('program-studi/visi-misi') ? 'active bg-utama' : '' }}">Visi dan
             Misi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Tujuan</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Sasaran Strategis</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Rencana Strategis
+          <a href="{{ url('program-studi/tujuan') }}"
+            class="dropdown-item {{ request()->is('program-studi/tujuan') ? 'active bg-utama' : '' }}">Tujuan</a>
+          <a href="{{ url('program-studi/sasaran-strategis') }}"
+            class="dropdown-item {{ request()->is('program-studi/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran Strategis</a>
+          <a href="{{ url('#') }}"
+            class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Strategis
             Program
             Studi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Rencana Operasional
+          <a href="{{ url('#') }}"
+            class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Operasional
             Program
             Studi</a>
         </div>
@@ -92,20 +92,20 @@
           class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Akademik</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Peraturan Rektor
+          <a href="{{ url('akademik/peraturan-rektor-tentang-akademik') }}"
+            class="dropdown-item {{ request()->is('akademik/peraturan-rektor-tentang-akademik') ? 'active bg-utama' : '' }}">Peraturan Rektor
             Tentang
             Akademik</a>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Panduan
+          <a href="{{ url('https://drive.google.com/open?id=1NlrMD4TpqW3Oj5Dxf-ee9xsj8nKfBwZF') }}"
+            class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Panduan
             Akademik</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Kalender Akademik</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Jadwal
+          <a href="{{ url('akademik/kalender-akademik') }}"
+            class="dropdown-item {{ request()->is('akademik/kalender-akademik') ? 'active bg-utama' : '' }}">Kalender Akademik</a>
+          <a href="{{ url('akademik/jadwal-perkuliahan') }}"
+            class="dropdown-item {{ request()->is('akademik/jadwal-perkuliahan') ? 'active bg-utama' : '' }}">Jadwal
             Perkuliahan</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Jadwal Ujian</a>
+          <a href="{{ url('akademik/jadwal-ujian') }}"
+            class="dropdown-item {{ request()->is('akademik/jadwal-ujian') ? 'active bg-utama' : '' }}">Jadwal Ujian</a>
         </div>
       </div>
 
