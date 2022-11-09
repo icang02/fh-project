@@ -11,7 +11,7 @@
           <img src="https://www.uho.ac.id/fakultas/fhukum/wp-content/uploads/sites/7/2022/06/aa.png" class="img-fluid">
 
           <div class="isi mt-5">
-            <p>UNDUH DI SINI
+            <p>UNDUH DI SINI <br>
                 1. <a href="https://drive.google.com/file/d/1Xdkyzu0GZs4ZkmSlMnx0Vq55GRSNosQH/view">Permendikbud Nomor 43 Tahun 2012 tentang Statuta UHO</a> <br>
                 2. <a href="https://drive.google.com/open?id=1moKCR4j3CydvrAKolu8AxeU5sANnGdw6">Permendikbud RI Nomor: 149 Tahun 2014 tentang Organisasi dan Tata Kerja UHO</a> <br>
                 3. <a href="https://drive.google.com/open?id=18D9H8bJtMlPRoZud3KPqkzRwC-qd11Eq">Peraturan Rektor Nomor: 798/UN29/SK/PP/2015 tentang Peraturan Akademik UHO</a>
