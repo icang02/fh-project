@@ -47,6 +47,14 @@
       color: #CE1818 !important;
     }
 
+    .nav-link {
+      font-size: 12px !important;
+    }
+
+    .dropdown-item {
+      font-size: 12px !important;
+    }
+
     .dropdown-item:active {
       background: #CE1818 !important;
     }
