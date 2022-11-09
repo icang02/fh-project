@@ -38,3 +38,8 @@ Route::get('/404', function () {
 Route::get('/contact', function () {
     return view('home.contact');
 });
+
+// Navbar - Profil
+// Route::get('/sejarah', function () {
+//     return view('home.profil.sejarah');
+// });

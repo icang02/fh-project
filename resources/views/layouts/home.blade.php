@@ -46,6 +46,10 @@
     .nav-link:hover {
       color: #CE1818 !important;
     }
+
+    .dropdown-item:active {
+      background: #CE1818 !important;
+    }
   </style>
 </head>
 
