@@ -11,7 +11,7 @@
         class="nav-item nav-link {{ request()->is('/') ? 'active txt-utama' : '' }}">Home</a>
       <a href="{{ url('/about') }}"
         class="nav-item nav-link {{ request()->is('about') ? 'active txt-utama' : '' }}">About</a>
-      <a href="courses.html"
+      <a href="{{ url('/courses') }}"
         class="nav-item nav-link {{ request()->is('courses') ? 'active txt-utama' : '' }}">Courses</a>
       <div class="nav-item dropdown ">
         <a href="#"
@@ -27,7 +27,7 @@
         </div>
       </div>
       <a href="{{ url('contact') }}"
-        class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
+        class="nav-item nav-link {{ request()->is('contact') ? 'active txt-utama' : '' }}">Contact</a>
     </div>
     <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block bg-utama">Join Now<i
         class="fa fa-arrow-right ms-3"></i></a>

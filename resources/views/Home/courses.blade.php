@@ -33,7 +33,7 @@
           <div class="row g-3">
             <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
               <a class="position-relative d-block overflow-hidden" href="">
-                <img class="img-fluid" src="img/cat-1.jpg" alt="">
+                <img class="img-fluid" src="{{ asset('home-assets') }}/img/cat-1.jpg" alt="">
                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                   <h5 class="m-0">Web Design</h5>
                   <small class="text-primary">49 Courses</small>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
               <a class="position-relative d-block overflow-hidden" href="">
-                <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                <img class="img-fluid" src="{{ asset('home-assets') }}/img/cat-2.jpg" alt="">
                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                   <h5 class="m-0">Graphic Design</h5>
                   <small class="text-primary">49 Courses</small>
@@ -51,7 +51,7 @@
             </div>
             <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
               <a class="position-relative d-block overflow-hidden" href="">
-                <img class="img-fluid" src="img/cat-3.jpg" alt="">
+                <img class="img-fluid" src="{{ asset('home-assets') }}/img/cat-3.jpg" alt="">
                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                   <h5 class="m-0">Video Editing</h5>
                   <small class="text-primary">49 Courses</small>
@@ -62,8 +62,8 @@
         </div>
         <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
           <a class="position-relative d-block h-100 overflow-hidden" href="">
-            <img class="img-fluid position-absolute w-100 h-100" src="img/cat-4.jpg" alt=""
-              style="object-fit: cover;">
+            <img class="img-fluid position-absolute w-100 h-100" src="{{ asset('home-assets') }}/img/cat-4.jpg"
+              alt="" style="object-fit: cover;">
             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
               <h5 class="m-0">Online Marketing</h5>
               <small class="text-primary">49 Courses</small>
@@ -87,7 +87,7 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">
-              <img class="img-fluid" src="img/course-1.jpg" alt="">
+              <img class="img-fluid" src="{{ asset('home-assets') }}/img/course-1.jpg" alt="">
               <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                   style="border-radius: 30px 0 0 30px;">Read More</a>
@@ -119,7 +119,7 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
           <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">
-              <img class="img-fluid" src="img/course-2.jpg" alt="">
+              <img class="img-fluid" src="{{ asset('home-assets') }}/img/course-2.jpg" alt="">
               <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                   style="border-radius: 30px 0 0 30px;">Read More</a>
@@ -151,7 +151,7 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
           <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">
-              <img class="img-fluid" src="img/course-3.jpg" alt="">
+              <img class="img-fluid" src="{{ asset('home-assets') }}/img/course-3.jpg" alt="">
               <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                   style="border-radius: 30px 0 0 30px;">Read More</a>
@@ -195,7 +195,7 @@
       </div>
       <div class="owl-carousel testimonial-carousel position-relative">
         <div class="testimonial-item text-center">
-          <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg"
+          <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ asset('home-assets') }}/img/testimonial-1.jpg"
             style="width: 80px; height: 80px;">
           <h5 class="mb-0">Client Name</h5>
           <p>Profession</p>
@@ -205,7 +205,7 @@
           </div>
         </div>
         <div class="testimonial-item text-center">
-          <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg"
+          <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ asset('home-assets') }}/img/testimonial-2.jpg"
             style="width: 80px; height: 80px;">
           <h5 class="mb-0">Client Name</h5>
           <p>Profession</p>
@@ -215,7 +215,7 @@
           </div>
         </div>
         <div class="testimonial-item text-center">
-          <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg"
+          <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ asset('home-assets') }}/img/testimonial-3.jpg"
             style="width: 80px; height: 80px;">
           <h5 class="mb-0">Client Name</h5>
           <p>Profession</p>
@@ -225,7 +225,7 @@
           </div>
         </div>
         <div class="testimonial-item text-center">
-          <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg"
+          <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ asset('home-assets') }}/img/testimonial-4.jpg"
             style="width: 80px; height: 80px;">
           <h5 class="mb-0">Client Name</h5>
           <p>Profession</p>

@@ -22,7 +22,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/courses', function () {
-    return view('home.about');
+    return view('home.courses');
 });
 
 Route::get('/team', function () {
