@@ -23,16 +23,17 @@
         class="nav-item nav-link {{ request()->is('about') ? 'active txt-utama' : '' }}">Spada</a>
       <div class="nav-item dropdown ">
         <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+          class="nav-link dropdown-toggle
+          {{ request()->is('sejarah') || request()->is('visi-misi') || request()->is('tujuan') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Profil</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Sejarah</a>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Visi dan
+          <a href="{{ url('sejarah') }}"
+            class="dropdown-item {{ request()->is('sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
+          <a href="{{ url('visi-misi') }}"
+            class="dropdown-item {{ request()->is('visi-misi') ? 'active bg-utama' : '' }}">Visi dan
             Misi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Tujuan</a>
+          <a href="{{ url('tujuan') }}"
+            class="dropdown-item {{ request()->is('tujuan') ? 'active bg-utama' : '' }}">Tujuan</a>
           <a href="{{ url('404') }}"
             class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Sasaran Strategis</a>
           <a href="{{ url('404') }}"

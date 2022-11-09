@@ -40,6 +40,12 @@ Route::get('/contact', function () {
 });
 
 // Navbar - Profil
-// Route::get('/sejarah', function () {
-//     return view('home.profil.sejarah');
-// });
+Route::get('/sejarah', function () {
+    return view('home.profil.sejarah');
+});
+Route::get('/visi-misi', function () {
+    return view('home.profil.visi-misi');
+});
+Route::get('/tujuan', function () {
+    return view('home.profil.tujuan');
+});

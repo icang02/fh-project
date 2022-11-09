@@ -6,15 +6,14 @@
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
-          <h5 class="text-center">SEJARAH SINGKAT FAKULTAS HUKUM UHO</h5>
+          <h5 class="text-center">VISI DAN MISI FAKULTAS HUKUM UHO</h5>
           <hr class="w-25 mx-auto my-5" style="height: 3px">
           <img src="https://www.uho.ac.id/fakultas/fhukum/wp-content/uploads/sites/7/2022/06/aa.png" class="img-fluid">
 
           <div class="isi mt-5">
-            <p>Terbentuknya Fakultas Hukum UHO tidak terlepas dari sejarah pengembangan Universitas Halu Oleo sebagai
-              Universitas Negeri terkemuka di Sulawesi Tenggara. Universitas Halu Oleo pada awalnya merupakan universitas
-              swasta yang didirikan pada tahun 1964 yang diselenggarakan oleh Yayasan Pembimbingan dan Perguruan Sulawesi
-              Tenggara (YP3ST).</p>
+            <p>Pada Tahun 2022 “Menjadi Fakultas yang Unggul di Indonesia, Berbudaya Akademik dan Bermartabat untuk
+              Membentuk Sumber Daya Manusia cerdas dalam pengembangan ilmu hukum, penegakan dan advokasi hukum bagi
+              Pembangunan Kemaritiman dan Perdesaan”.</p>
           </div>
 
           <hr class="mx-auto my-5" style="height: 3px">
