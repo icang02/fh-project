@@ -20,3 +20,21 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('home.about');
 });
+
+Route::get('/courses', function () {
+    return view('home.about');
+});
+
+Route::get('/team', function () {
+    return view('home.pages.team');
+});
+Route::get('/testimonial', function () {
+    return view('home.pages.testimonial');
+});
+Route::get('/404', function () {
+    return view('home.pages.404');
+});
+
+Route::get('/contact', function () {
+    return view('home.contact');
+});

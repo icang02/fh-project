@@ -9,18 +9,24 @@
     <div class="navbar-nav ms-auto p-4 p-lg-0">
       <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
       <a href="{{ url('/about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
-      <a href="courses.html" class="nav-item nav-link">Courses</a>
-      <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+      <a href="courses.html" class="nav-item nav-link {{ request()->is('courses') ? 'active' : '' }}">Courses</a>
+      <div class="nav-item dropdown ">
+        <a href="#"
+          class="nav-link dropdown-toggle txt-utama {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active' : '' }}"
+          data-bs-toggle="dropdown">Pages</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="team.html" class="dropdown-item">Our Team</a>
-          <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-          <a href="404.html" class="dropdown-item">404 Page</a>
+          <a href="{{ url('team') }}" class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Our
+            Team</a>
+          <a href="{{ url('testimonial') }}"
+            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Testimonial</a>
+          <a href="{{ url('404') }}" class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">404
+            Page</a>
         </div>
       </div>
-      <a href="contact.html" class="nav-item nav-link">Contact</a>
+      <a href="{{ url('contact') }}"
+        class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
     </div>
-    <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
+    <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block bg-utama">Join Now<i
         class="fa fa-arrow-right ms-3"></i></a>
   </div>
 </nav>

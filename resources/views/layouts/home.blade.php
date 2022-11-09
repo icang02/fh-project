@@ -31,6 +31,18 @@
 
   <!-- Template Stylesheet -->
   <link href="{{ asset('home-assets') }}/css/style.css" rel="stylesheet">
+
+  <style>
+    .bg-utama {
+      background: #CE1818 !important;
+      border-color: #CE1818 !important;
+      ;
+    }
+
+    .txt-utama {
+      color: #CE1818 !important;
+    }
+  </style>
 </head>
 
 <body>
