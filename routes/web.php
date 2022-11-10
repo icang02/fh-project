@@ -122,3 +122,128 @@ Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
 Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
     return view('home.mahasiswa-alumni.registrasi-alumni');
 });
+
+//route colors
+Route::get('/dashboard/colors', function () {
+    return view('admin.colors');
+});
+//route typography
+Route::get('/dashboard/typography', function () {
+    return view('admin.typography');
+});
+
+//route Admin-Base
+Route::get('/dashboard/base/accordion', function () {
+    return view('admin.base.accordion');
+});
+Route::get('/dashboard/base/breadcrumb', function () {
+    return view('admin.base.breadcrumb');
+});
+Route::get('/dashboard/base/cards', function () {
+    return view('admin.base.cards');
+});
+Route::get('/dashboard/base/carousel', function () {
+    return view('admin.base.carousel');
+});
+Route::get('/dashboard/base/collapse', function () {
+    return view('admin.base.collapse');
+});
+Route::get('/dashboard/base/list-group', function () {
+    return view('admin.base.list-group');
+});
+Route::get('/dashboard/base/navs-tabs', function () {
+    return view('admin.base.navs-tabs');
+});
+Route::get('/dashboard/base/pagination', function () {
+    return view('admin.base.pagination');
+});
+Route::get('/dashboard/base/placeholders', function () {
+    return view('admin.base.placeholders');
+});
+Route::get('/dashboard/base/popovers', function () {
+    return view('admin.base.popovers');
+});
+Route::get('/dashboard/base/progress', function () {
+    return view('admin.base.progress');
+});
+Route::get('/dashboard/base/spinners', function () {
+    return view('admin.base.spinners');
+});
+Route::get('/dashboard/base/tables', function () {
+    return view('admin.base.tables');
+});
+Route::get('/dashboard/base/tooltips', function () {
+    return view('admin.base.tooltips');
+});
+
+//route - buttons
+Route::get('/dashboard/buttons/buttons', function () {
+    return view('admin.buttons.buttons');
+});
+Route::get('/dashboard/buttons/button-group', function () {
+    return view('admin.buttons.button-group');
+});
+Route::get('/dashboard/buttons/dropdowns', function () {
+    return view('admin.buttons.dropdowns');
+});
+
+//route charts
+Route::get('/dashboard/charts', function () {
+    return view('admin.charts');
+});
+
+//route forms
+Route::get('/dashboard/forms/checks-radios', function () {
+    return view('admin.forms.checks-radios');
+});
+Route::get('/dashboard/forms/floating-labels', function () {
+    return view('admin.forms.floating-labels');
+});
+Route::get('/dashboard/forms/form-control', function () {
+    return view('admin.forms.form-control');
+});
+Route::get('/dashboard/forms/input-group', function () {
+    return view('admin.forms.input-group');
+});
+Route::get('/dashboard/forms/layout', function () {
+    return view('admin.forms.layout');
+});
+Route::get('/dashboard/forms/range', function () {
+    return view('admin.forms.range');
+});
+Route::get('/dashboard/forms/select', function () {
+    return view('admin.forms.select');
+});
+Route::get('/dashboard/forms/validation', function () {
+    return view('admin.forms.validation');
+});
+
+//route - Icons
+Route::get('/dashboard/icons/coreui-icons-brand', function () {
+    return view('admin.icons.coreui-icons-brand');
+});
+Route::get('/dashboard/icons/coreui-icons-flag', function () {
+    return view('admin.icons.coreui-icons-flag');
+});
+Route::get('/dashboard/icons/coreui-icons-free', function () {
+    return view('admin.icons.coreui-icons-free');
+});
+
+//route - Notifications
+Route::get('/dashboard/notifications/alerts', function () {
+    return view('admin.notifications.alerts');
+});
+Route::get('/dashboard/notifications/badge', function () {
+    return view('admin.notifications.badge');
+});
+Route::get('/dashboard/notifications/modals', function () {
+    return view('admin.notifications.modals');
+});
+Route::get('/dashboard/notifications/toasts', function () {
+    return view('admin.notifications.toasts');
+});
+
+//route - Widgets
+Route::get('/dashboard/widgets', function () {
+    return view('admin.widgets');
+});
