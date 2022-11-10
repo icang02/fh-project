@@ -114,3 +114,11 @@ Route::get('/akademik/jadwal-perkuliahan', function () {
 Route::get('/akademik/jadwal-ujian', function () {
     return view('home.akademik.jadwal-ujian');
 });
+
+//navbar - mahasiswa-alumni
+Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
+    return view('home.mahasiswa-alumni.lembaga-kemahasiswaan');
+});
+Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
+    return view('home.mahasiswa-alumni.registrasi-alumni');
+});

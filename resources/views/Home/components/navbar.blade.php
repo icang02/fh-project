@@ -114,14 +114,14 @@
           class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Mahasiswa & Alumni</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Pendaftaran
-            Mahasiswa Bary</a>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Lembaga
+          <a href="{{ url('https://uho.ac.id/search?q=SNMPTN+SBMPTN+SMMPTN') }}"
+            class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Pendaftaran
+            Mahasiswa Baru</a>
+          <a href="{{ url('mahasiswa-alumni/lembaga-kemahasiswaan') }}"
+            class="dropdown-item {{ request()->is('mahasiswa-alumni/lembaga-kemahasiswaan') ? 'active bg-utama' : '' }}">Lembaga
             Kemahasiswaan</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Registrasi Alumni</a>
+          <a href="{{ url('mahasiswa-alumni/registrasi-alumni') }}"
+            class="dropdown-item {{ request()->is('mahasiswa-alumni/registrasi-alumni') ? 'active bg-utama' : '' }}">Registrasi Alumni</a>
         </div>
       </div>
 
