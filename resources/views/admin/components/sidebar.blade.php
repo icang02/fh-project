@@ -27,20 +27,34 @@
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
         </svg> Base</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion')}}"><span class="nav-icon"></span> Accordion</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb')}}"><span class="nav-icon"></span> Breadcrumb</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards')}}"><span class="nav-icon"></span> Cards</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/carousel')}}"><span class="nav-icon"></span> Carousel</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/collapse')}}"><span class="nav-icon"></span> Collapse</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/list-group')}}"><span class="nav-icon"></span> List group</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/navs-tabs')}}"><span class="nav-icon"></span> Navs &amp; Tabs</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/pagination')}}"><span class="nav-icon"></span> Pagination</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/placeholders')}}"><span class="nav-icon"></span> Placeholders</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/popovers')}}"><span class="nav-icon"></span> Popovers</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/progress')}}"><span class="nav-icon"></span> Progress</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/spinners')}}"><span class="nav-icon"></span> Spinners</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/tables')}}"><span class="nav-icon"></span> Tables</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/tooltips')}}"><span class="nav-icon"></span> Tooltips</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion') }}"><span
+              class="nav-icon"></span> Accordion</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb') }}"><span
+              class="nav-icon"></span> Breadcrumb</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
+              class="nav-icon"></span> Cards</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/carousel') }}"><span
+              class="nav-icon"></span> Carousel</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/collapse') }}"><span
+              class="nav-icon"></span> Collapse</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/list-group') }}"><span
+              class="nav-icon"></span> List group</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/navs-tabs') }}"><span
+              class="nav-icon"></span> Navs &amp; Tabs</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/pagination') }}"><span
+              class="nav-icon"></span> Pagination</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/placeholders') }}"><span
+              class="nav-icon"></span> Placeholders</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/popovers') }}"><span
+              class="nav-icon"></span> Popovers</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/progress') }}"><span
+              class="nav-icon"></span> Progress</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/spinners') }}"><span
+              class="nav-icon"></span> Spinners</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/tables') }}"><span
+              class="nav-icon"></span> Tables</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/tooltips') }}"><span
+              class="nav-icon"></span> Tooltips</a></li>
       </ul>
     </li>
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -48,9 +62,12 @@
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
         </svg> Buttons</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/buttons/buttons')}}"><span class="nav-icon"></span> Buttons</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/buttons/button-group')}}"><span class="nav-icon"></span> Buttons Group</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/buttons/dropdowns')}}"><span class="nav-icon"></span> Dropdowns</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/buttons/buttons') }}"><span
+              class="nav-icon"></span> Buttons</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/buttons/button-group') }}"><span
+              class="nav-icon"></span> Buttons Group</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/buttons/dropdowns') }}"><span
+              class="nav-icon"></span> Dropdowns</a></li>
       </ul>
     </li>
     <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/charts') }}">
@@ -62,14 +79,19 @@
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
         </svg> Forms</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/form-control') }}"> Form Control</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/form-control') }}"> Form Control</a>
+        </li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/select') }}"> Select</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/checks-radios') }}"> Checks and radios</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/checks-radios') }}"> Checks and
+            radios</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/range') }}"> Range</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/input-group') }}"> Input group</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/floating-labels') }}"> Floating labels</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/input-group') }}"> Input group</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/floating-labels') }}"> Floating
+            labels</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/layout') }}"> Layout</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/validation') }}"> Validation</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/forms/validation') }}"> Validation</a>
+        </li>
       </ul>
     </li>
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -77,9 +99,12 @@
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
         </svg> Icons</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/icons/coreui-icons-free') }}"> CoreUI Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/icons/coreui-icons-brand') }}"> CoreUI Icons - Brand</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/icons/coreui-icons-flag') }}"> CoreUI Icons - Flag</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/icons/coreui-icons-free') }}"> CoreUI
+            Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/icons/coreui-icons-brand') }}"> CoreUI
+            Icons - Brand</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/icons/coreui-icons-flag') }}"> CoreUI
+            Icons - Flag</a></li>
       </ul>
     </li>
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -87,10 +112,14 @@
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
         </svg> Notifications</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/alerts') }}"><span class="nav-icon"></span> Alerts</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/badge') }}"><span class="nav-icon"></span> Badge</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/modals') }}"><span class="nav-icon"></span> Modals</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/toasts') }}"><span class="nav-icon"></span> Toasts</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/alerts') }}"><span
+              class="nav-icon"></span> Alerts</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/badge') }}"><span
+              class="nav-icon"></span> Badge</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/modals') }}"><span
+              class="nav-icon"></span> Modals</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/notifications/toasts') }}"><span
+              class="nav-icon"></span> Toasts</a></li>
       </ul>
     </li>
     <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/widgets') }}">
@@ -106,11 +135,13 @@
       <ul class="nav-group-items">
         <li class="nav-item"><a class="nav-link" href="login.html" target="_top">
             <svg class="nav-icon">
-              <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+              <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-account-logout">
+              </use>
             </svg> Login</a></li>
         <li class="nav-item"><a class="nav-link" href="register.html" target="_top">
             <svg class="nav-icon">
-              <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+              <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-account-logout">
+              </use>
             </svg> Register</a></li>
         <li class="nav-item"><a class="nav-link" href="404.html" target="_top">
             <svg class="nav-icon">
@@ -122,7 +153,8 @@
             </svg> Error 500</a></li>
       </ul>
     </li>
-    <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
+    <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/"
+        target="_blank">
         <svg class="nav-icon">
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-description"></use>
         </svg> Docs</a></li>
