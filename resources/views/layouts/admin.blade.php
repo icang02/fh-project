@@ -9,8 +9,10 @@
   <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
   <meta name="author" content="Łukasz Holeczek">
   <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-  <title>Dashboard - Fakultas Hukum UHO</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('admin-assets') }}/favicon/apple-icon-57x57.png">
+  <title>{{ $title }}</title>
+  <!-- Favicon -->
+  <link href="{{ asset('home-assets') }}/img/logo-uho.ico" rel="icon">
+  {{-- <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('admin-assets') }}/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('admin-assets') }}/favicon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('admin-assets') }}/favicon/apple-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('admin-assets') }}/favicon/apple-icon-76x76.png">
@@ -26,7 +28,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin-assets') }}/favicon/favicon-16x16.png">
   <link rel="manifest" href="{{ asset('admin-assets') }}/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="{{ asset('admin-assets') }}/favicon/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="{{ asset('admin-assets') }}/favicon/ms-icon-144x144.png"> --}}
   <meta name="theme-color" content="#ffffff">
   <!-- Vendors styles-->
   <link rel="stylesheet" href="{{ asset('admin-assets') }}/vendors/simplebar/css/simplebar.css">
@@ -51,6 +53,12 @@
     gtag('config', 'UA-118965717-5');
   </script>
   <link href="{{ asset('admin-assets') }}/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+  <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/brand.min.css" rel="stylesheet">
+  <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/flag.min.css" rel="stylesheet">
+  <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/free.min.css" rel="stylesheet">
+
+  {{-- Setup Ck Editor --}}
+  <link type="text/css" href="{{ asset('admin-assets') }}/ckeditor/sample.css" rel="stylesheet" media="screen" />
 </head>
 
 <body>
@@ -74,7 +82,22 @@
   <script src="{{ asset('admin-assets') }}/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
   <script src="{{ asset('admin-assets') }}/vendors/@coreui/utils/js/coreui-utils.js"></script>
   <script src="{{ asset('admin-assets') }}/js/main.js"></script>
-  <script></script>
+
+  {{-- setup Ck Editor --}}
+  <script src="{{ asset('admin-assets') }}/ckeditor/ckeditor.js"></script>
+
+  <script>
+    ClassicEditor
+      .create(document.querySelector('#editor'), {
+        // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+      })
+      .then(editor => {
+        window.editor = editor;
+      })
+      .catch(err => {
+        console.error(err.stack);
+      });
+  </script>
 
 </body>
 

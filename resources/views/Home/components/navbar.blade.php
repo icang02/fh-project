@@ -30,7 +30,7 @@
       <div class="nav-item dropdown ">
         <a href="#"
           class="nav-link dropdown-toggle
-          {{ request()->is('sejarah') || request()->is('visi-misi') || request()->is('tujuan') || request()->is('sasaran-strategis') ? 'active txt-utama' : '' }}"
+          {{ request()->is('profil*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Profil</a>
         <div class="dropdown-menu fade-down m-0">
           <a href="{{ url('profil/sejarah') }}"
@@ -55,7 +55,8 @@
             class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
           <a href="{{ url('profil/rencana-strategis') }}"
-            class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana Strategis</a>
+            class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana
+            Strategis</a>
           <a href="{{ url('profil/rencana-operasional') }}"
             class="dropdown-item {{ request()->is('profil/rencana-operasional') ? 'active bg-utama' : '' }}">Rencana
             Operasional</a>
@@ -64,18 +65,20 @@
 
       <div class="nav-item dropdown ">
         <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+          class="nav-link dropdown-toggle {{ request()->is('program-studi*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Program Studi</a>
         <div class="dropdown-menu fade-down m-0">
           <a href="{{ url('program-studi/sejarah') }}"
             class="dropdown-item {{ request()->is('program-studi/sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
           <a href="{{ url('program-studi/visi-misi') }}"
-            class="dropdown-item {{ request()->is('program-studi/visi-misi') ? 'active bg-utama' : '' }}">Visi dan
+            class="dropdown-item {{ request()->is('program-studi/visi-misi') ? 'active bg-utama' : '' }}">Visi
+            dan
             Misi</a>
           <a href="{{ url('program-studi/tujuan') }}"
             class="dropdown-item {{ request()->is('program-studi/tujuan') ? 'active bg-utama' : '' }}">Tujuan</a>
           <a href="{{ url('program-studi/sasaran-strategis') }}"
-            class="dropdown-item {{ request()->is('program-studi/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran Strategis</a>
+            class="dropdown-item {{ request()->is('program-studi/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran
+            Strategis</a>
           <a href="{{ url('#') }}"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Strategis
             Program
@@ -88,24 +91,26 @@
       </div>
 
       <div class="nav-item dropdown ">
-        <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+        <a href="#" class="nav-link dropdown-toggle {{ request()->is('akademik*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Akademik</a>
         <div class="dropdown-menu fade-down m-0">
           <a href="{{ url('akademik/peraturan-rektor-tentang-akademik') }}"
-            class="dropdown-item {{ request()->is('akademik/peraturan-rektor-tentang-akademik') ? 'active bg-utama' : '' }}">Peraturan Rektor
+            class="dropdown-item {{ request()->is('akademik/peraturan-rektor-tentang-akademik') ? 'active bg-utama' : '' }}">Peraturan
+            Rektor
             Tentang
             Akademik</a>
           <a href="{{ url('https://drive.google.com/open?id=1NlrMD4TpqW3Oj5Dxf-ee9xsj8nKfBwZF') }}"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Panduan
             Akademik</a>
           <a href="{{ url('akademik/kalender-akademik') }}"
-            class="dropdown-item {{ request()->is('akademik/kalender-akademik') ? 'active bg-utama' : '' }}">Kalender Akademik</a>
+            class="dropdown-item {{ request()->is('akademik/kalender-akademik') ? 'active bg-utama' : '' }}">Kalender
+            Akademik</a>
           <a href="{{ url('akademik/jadwal-perkuliahan') }}"
             class="dropdown-item {{ request()->is('akademik/jadwal-perkuliahan') ? 'active bg-utama' : '' }}">Jadwal
             Perkuliahan</a>
           <a href="{{ url('akademik/jadwal-ujian') }}"
-            class="dropdown-item {{ request()->is('akademik/jadwal-ujian') ? 'active bg-utama' : '' }}">Jadwal Ujian</a>
+            class="dropdown-item {{ request()->is('akademik/jadwal-ujian') ? 'active bg-utama' : '' }}">Jadwal
+            Ujian</a>
         </div>
       </div>
 
@@ -121,53 +126,112 @@
             class="dropdown-item {{ request()->is('mahasiswa-alumni/lembaga-kemahasiswaan') ? 'active bg-utama' : '' }}">Lembaga
             Kemahasiswaan</a>
           <a href="{{ url('mahasiswa-alumni/registrasi-alumni') }}"
-            class="dropdown-item {{ request()->is('mahasiswa-alumni/registrasi-alumni') ? 'active bg-utama' : '' }}">Registrasi Alumni</a>
+            class="dropdown-item {{ request()->is('mahasiswa-alumni/registrasi-alumni') ? 'active bg-utama' : '' }}">Registrasi
+            Alumni</a>
         </div>
       </div>
 
       <div class="nav-item dropdown ">
-        <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+        <a href="#" class="nav-link dropdown-toggle {{ request()->is('tridharma*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Tridharma</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Penelitian</a>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Pengabdian</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Publikasi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Hak
-            Kekayaan
-            Intelektual</a>
+          <a href="{{ url('tridharma/penelitian') }}"
+            class="dropdown-item {{ request()->is('tridharma/penelitian') ? 'active bg-utama' : '' }}">Penelitian</a>
+          <a href="{{ url('tridharma/pengabdian') }}"
+            class="dropdown-item {{ request()->is('tridharma/pengabdian') ? 'active bg-utama' : '' }}">Pengabdian</a>
+          <a href="{{ url('tridharma/publikasi') }}"
+            class="dropdown-item {{ request()->is('tridharma/publikasi') ? 'active bg-utama' : '' }}">Publikasi</a>
+          <a href="{{ url('tridharma/hak-kekayaan-intelektual') }}"
+            class="dropdown-item {{ request()->is('tridharma/hak-kekayaan-intelektual') ? 'active bg-utama' : '' }}">Hak
+            Kekayaan Intelektual</a>
         </div>
       </div>
 
 
 
-      <div class="nav-item dropdown ">
-        <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
-          data-bs-toggle="dropdown">Layanan</a>
-        <div class="dropdown-menu fade-down m-0">
-          <div class="nav-item dropdown">
-            <a href="{{ url('team') }}"
-              class="nav-link dropdown-toggle {{ request()->is('team') ? 'active bg-utama' : '' }}">Fasilitas</a>
-          </div>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Sistem
-            Informasi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Klinik Hukum Uho</a>
-        </div>
+      <style>
+        .drop-down02 {
+          position: relative;
+        }
+
+        .drop2 {
+          text-transform: capitalize !important;
+          font-weight: normal !important;
+          margin-left: -1.5px !important;
+        }
+
+        .drop-down02 .sub-menu02 {
+          position: absolute !important;
+          left: 100%;
+          top: -9px !important;
+        }
+
+        .drop-down02 .dropdown-toggle {
+          padding: .25rem 1.1rem !important;
+        }
+
+        @media screen and (max-width :767px) {
+          .drop-down02 .sub-menu02 {
+            position: static !important;
+          }
+        }
+      </style>
+
+      <div class="dropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="dropdown">
+            <a class="nav-link dropdown-toggle {{ request()->is('fasilitas/kriminologi') || request()->is('fasilitas/konstitusi') || request()->is('fasilitas/ruang_baca') ? 'active txt-utama' : '' }}"
+              href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Layanan</a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="nav-item dropdown drop-down02">
+                <a class="nav-link dropdown-toggle drop2 {{ request()->is('fasilitas/kriminologi') || request()->is('fasilitas/konstitusi') || request()->is('fasilitas/ruang_baca') ? 'active txt-utama' : '' }}"
+                  href="#" data-bs-toggle="dropdown" aria-expanded="false">Fasilitas
+                </a>
+                <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item {{ request()->is('fasilitas/kriminologi') ? 'active bg-utama' : '' }}"
+                      href="{{ url('fasilitas/kriminologi') }}">Lab.
+                      Pidana & Kriminologi</a></li>
+                  <li><a class="dropdown-item {{ request()->is('fasilitas/konstitusi') ? 'active bg-utama' : '' }}"
+                      href="{{ url('fasilitas/konstitusi') }}">Lab.
+                      Konstitusi
+                      (vicon)</a></li>
+                  <li><a class="dropdown-item {{ request()->is('fasilitas/ruang_baca') ? 'active bg-utama' : '' }}"
+                      href="{{ url('fasilitas/ruang_baca') }}">Ruang
+                      Baca</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown drop-down02">
+                <a class="nav-link dropdown-toggle drop2" href="#" id="navbarDropdown"
+                  data-bs-toggle="dropdown" aria-expanded="false">Sistem Informasi</a>
+                <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="https://siakadbeta.uho.ac.id/">SIAKAD</a></li>
+                  <li><a class="dropdown-item" href="http://wisuda.uho.ac.id/">WISUDA</a></li>
+                  <li><a class="dropdown-item"
+                      href="http://sitedi.uho.ac.id/login.php?accesscheck=%2Findex.php">SITEDI</a>
+                  </li>
+                  <li><a class="dropdown-item" href="http://ojs.uho.ac.id/index.php/holrev">HOLREV</a></li>
+                  <li><a class="dropdown-item" href="http://simlitabmas.dikti.go.id/">SIMLITABMAS</a></li>
+                  <li><a class="dropdown-item" href="http://sister.uho.ac.id/">SISTER</a></li>
+                  <li><a class="dropdown-item" href="http://sinta2.ristekdikti.go.id/author/?mod=login">SINTA</a></li>
+                  <li><a class="dropdown-item" href="http://lib.uho.ac.id/library">E-LIBRARY</a>
+                  </li>
+                  <li><a class="dropdown-item" href="http://118.97.35.235/sipatuk">SIPATUK</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown-item" href="http://www.klinikhukumuho.com/">Klinik Hukum UHO</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
 
 
-      <div class="nav-item">
-        <a href="#"
-          class="nav-link {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
-          data-bs-toggle="dropdown">Jaminan Mutu</a>
-      </div>
+      <a href="{{ url('fasilitas/jaminan_mutu') }}"
+        class="nav-item nav-link {{ request()->is('fasilitas/jaminan_mutu') ? 'active txt-utama' : '' }}">Jaminan
+        Mutu</a>
+
 
       <div class="nav-item dropdown ">
         <a href="#"
@@ -175,19 +239,18 @@
           data-bs-toggle="dropdown">Berita</a>
 
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('team') }}"
-            class="dropdown-item {{ request()->is('team') ? 'active bg-utama' : '' }}">Event</a>
-          <a href="{{ url('testimonial') }}"
-            class="dropdown-item {{ request()->is('testimonial') ? 'active bg-utama' : '' }}">Informasi</a>
-          <a href="{{ url('404') }}"
-            class="dropdown-item {{ request()->is('404') ? 'active bg-utama' : '' }}">Pengumuman</a>
+          <a href="{{ url('berita/event') }}"
+            class="dropdown-item {{ request()->is('berita/event') ? 'active bg-utama' : '' }}">Event</a>
+          <a href="{{ url('berita/informasi') }}"
+            class="dropdown-item {{ request()->is('berita/informasi') ? 'active bg-utama' : '' }}">Informasi</a>
+          <a href="{{ url('berita/pengumuman') }}"
+            class="dropdown-item {{ request()->is('berita/pengumuman') ? 'active bg-utama' : '' }}">Pengumuman</a>
         </div>
       </div>
 
-      <div class="nav-item">
-        <a href="#"
-          class="nav-link {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
-          data-bs-toggle="dropdown">UI Greenmetric</a>
-      </div>
+
+      <a href="{{ url('berita/ui_greenmetric') }}"
+        class="nav-item nav-link {{ request()->is('berita/ui_greenmetric') ? 'active txt-utama' : '' }}">UI
+        GREENMETRIC</a>
     </div>
 </nav>
