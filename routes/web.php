@@ -123,6 +123,11 @@ Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
     return view('home.mahasiswa-alumni.registrasi-alumni');
 });
 
+//route - Admin | Profil | Sejarar
+Route::get('/dashboard/profil/sejarah', function () {
+    return view('admin.profil.sejarah');
+});
+
 //route colors
 Route::get('/dashboard/colors', function () {
     return view('admin.colors');
