@@ -122,3 +122,51 @@ Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
 Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
     return view('home.mahasiswa-alumni.registrasi-alumni');
 });
+
+// navbar - tridharma
+Route::get('/tridharma/penelitian', function () {
+    return view('home.tridharma.penelitian');
+});
+Route::get('/tridharma/pengabdian', function () {
+    return view('home.tridharma.pengabdian');
+});
+Route::get('/tridharma/publikasi', function () {
+    return view('home.tridharma.publikasi');
+});
+Route::get('/tridharma/hak-kekayaan-intelektual', function () {
+    return view('home.tridharma.hak-kekayaan-intelektual');
+});
+
+//navbar - layanan - fasilitas
+Route::get('/fasilitas/kriminologi', function () {
+    return view('home.layanan.fasilitas.kriminologi');
+});
+Route::get('/fasilitas/konstitusi', function () {
+    return view('home.layanan.fasilitas.konstitusi');
+});
+Route::get('/fasilitas/ruang_baca', function () {
+    return view('home.layanan.fasilitas.ruang_baca');
+});
+
+//navbar-jaminan_mutu
+Route::get('/fasilitas/jaminan_mutu', function () {
+    return view('home.layanan.jaminan_mutu');
+});
+
+//navbar - berita
+Route::get('/berita/event', function () {
+    return view('home.berita.event');
+});
+Route::get('/berita/informasi', function () {
+    return view('home.berita.informasi');
+});
+Route::get('/berita/pengumuman', function () {
+    return view('home.berita.pengumuman');
+});
+
+//navbar ui greenmetric
+Route::get('/berita/ui_greenmetric', function () {
+    return view('home.berita.ui_greenmetric');
+});
+
+
