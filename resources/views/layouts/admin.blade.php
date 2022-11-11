@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,8 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('admin-assets') }}/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('admin-assets') }}/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('admin-assets') }}/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('admin-assets') }}/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{ asset('admin-assets') }}/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('admin-assets') }}/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('admin-assets') }}/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin-assets') }}/favicon/favicon-16x16.png">
@@ -37,32 +39,35 @@
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      // Shared ID
-      gtag('config', 'UA-118965717-3');
-      // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        // Shared ID
+        gtag('config', 'UA-118965717-3');
+        // Bootstrap ID
+        gtag('config', 'UA-118965717-5');
     </script>
     <link href="{{ asset('admin-assets') }}/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
-  </head>
+    <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/brand.min.css" rel="stylesheet">
+    <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/flag.min.css" rel="stylesheet">
+    <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/free.min.css" rel="stylesheet">
+</head>
 
-  <body>
+<body>
     {{-- sidebar --}}
     @include('admin.components.sidebar')
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-      {{-- header --}}
-      @include('admin.components.header')
+        {{-- header --}}
+        @include('admin.components.header')
 
-      {{-- Start Main Content --}}
-      @yield('main-content')
-      {{-- End Main Content --}}
-      
-      @include('admin.components.footer')
+        {{-- Start Main Content --}}
+        @yield('main-content')
+        {{-- End Main Content --}}
+
+        @include('admin.components.footer')
     </div>
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('admin-assets') }}/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
@@ -72,8 +77,8 @@
     <script src="{{ asset('admin-assets') }}/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
     <script src="{{ asset('admin-assets') }}/vendors/@coreui/utils/js/coreui-utils.js"></script>
     <script src="{{ asset('admin-assets') }}/js/main.js"></script>
-    <script>
-    </script>
+    <script></script>
 
-  </body>
+</body>
+
 </html>

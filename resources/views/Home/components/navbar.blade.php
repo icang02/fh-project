@@ -1,30 +1,3 @@
-{{-- <style>
-    .dropdown-menu li {
-        position: relative;
-    }
-
-    .dropdown-menu .dropdown-submenu {
-        display: none;
-        position: absolute;
-        left: 100%;
-        top: -7px;
-    }
-
-    .dropdown-menu .dropdown-submenu-left {
-        right: 100%;
-        left: auto;
-    }
-
-    .dropdown-menu>li:hover>.dropdown-submenu {
-        display: block;
-    }
-</style> --}}
-
-<script></script>
-
-
-
-
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-2">
     <div
         class="py-2 p-lg-4 d-flex justify-md-content-between justify-content-center flex-md-row flex-column align-items-center w-100">
@@ -57,7 +30,7 @@
             <div class="nav-item dropdown ">
                 <a href="#"
                     class="nav-link dropdown-toggle
-          {{ request()->is('sejarah') || request()->is('visi-misi') || request()->is('tujuan') || request()->is('sasaran-strategis') ? 'active txt-utama' : '' }}"
+          {{ request()->is('profil*') ? 'active txt-utama' : '' }}"
                     data-bs-toggle="dropdown">Profil</a>
                 <div class="dropdown-menu fade-down m-0">
                     <a href="{{ url('profil/sejarah') }}"
@@ -92,7 +65,7 @@
 
             <div class="nav-item dropdown ">
                 <a href="#"
-                    class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+                    class="nav-link dropdown-toggle {{ request()->is('program-studi*') ? 'active txt-utama' : '' }}"
                     data-bs-toggle="dropdown">Program Studi</a>
                 <div class="dropdown-menu fade-down m-0">
                     <a href="{{ url('program-studi/sejarah') }}"
@@ -161,7 +134,7 @@
 
             <div class="nav-item dropdown ">
                 <a href="#"
-                    class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+                    class="nav-link dropdown-toggle {{ request()->is('tridharma*') ? 'active txt-utama' : '' }}"
                     data-bs-toggle="dropdown">Tridharma</a>
                 <div class="dropdown-menu fade-down m-0">
                     <a href="{{ url('tridharma/penelitian') }}"
@@ -205,58 +178,6 @@
                     }
                 }
             </style>
-
-            {{-- <script>
-                (function($bs) {
-                    const CLASS_NAME = 'has-child-dropdown-show';
-                    $bs.Dropdown.prototype.toggle = function(_orginal) {
-                        return function() {
-                            document.querySelectorAll('.' + CLASS_NAME).forEach(function(e) {
-                                e.classList.remove(CLASS_NAME);
-                            });
-                            let dd = this._element.closest('.dropdown').parentNode.closest('.dropdown');
-                            for (; dd && dd !== document; dd = dd.parentNode.closest('.dropdown')) {
-                                dd.classList.add(CLASS_NAME);
-                            }
-                            return _orginal.call(this);
-                        }
-                    }($bs.Dropdown.prototype.toggle);
-
-                    document.querySelectorAll('.dropdown').forEach(function(dd) {
-                        dd.addEventListener('hide.bs.dropdown', function(e) {
-                            if (this.classList.contains(CLASS_NAME)) {
-                                this.classList.remove(CLASS_NAME);
-                                e.preventDefault();
-                            }
-                            if (e.clickEvent && e.clickEvent.composedPath().some(el => el.classList && el
-                                    .classList.contains('dropdown-toggle'))) {
-                                e.preventDefault();
-                            }
-                            e.stopPropagation(); // do not need pop in multi level mode
-                        });
-                    });
-
-                    // for hover
-                    function getDropdown(element) {
-                        return $bs.Dropdown.getInstance(element) || new $bs.Dropdown(element);
-                    }
-
-                    document.querySelectorAll('.dropdown-hover, .dropdown-hover-all .dropdown').forEach(function(dd) {
-                        dd.addEventListener('mouseenter', function(e) {
-                            let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
-                            if (!toggle.classList.contains('show')) {
-                                getDropdown(toggle).toggle();
-                            }
-                        });
-                        dd.addEventListener('mouseleave', function(e) {
-                            let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
-                            if (toggle.classList.contains('show')) {
-                                getDropdown(toggle).toggle();
-                            }
-                        });
-                    });
-                })(bootstrap);
-            </script> --}}
 
             <div class="dropdown">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
