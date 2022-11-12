@@ -286,24 +286,10 @@ Route::get('/berita/ui_greenmetric', function () {
     ]);
 });
 
-<<<<<<< HEAD
-
 //route - Admin | Profil | Sejarah dan lain lain
 Route::get('/dashboard/profil/{menu}', [SejarahController::class, 'index']);
 Route::post('/dashboard/profil/{id}', [SejarahController::class, 'store']);
 Route::put('/dashboard/profil/{id}', [SejarahController::class, 'update']);
-=======
-//route - Admin | Profil | Sejarah
-Route::get('/dashboard/profil/sejarah', [SejarahController::class, 'index']);
-Route::post('/dashboard/profil/sejarah', [SejarahController::class, 'store']);
-Route::put('/dashboard/profil/sejarah', [SejarahController::class, 'update']);
->>>>>>> 7403da77a69cebdb5caa70c67afbfefdb76eceef
-
-
-//route - Admin | Profil | Tujuan
-Route::get('/dashboard/profil/tujuan', [SejarahController::class, 'index']);
-Route::post('/dashboard/profil/tujuan', [SejarahController::class, 'store']);
-Route::put('/dashboard/profil/tujuan', [SejarahController::class, 'update']);
 
 //route colors
 Route::get('/dashboard/colors', function () {

@@ -10,21 +10,20 @@ class SejarahController extends Controller
 {
     public function index($menu)
     {
-        if ($menu == 'sejarah') {
-            $id = 1;
-            $data = DataHome::find($id);
-            $header = 'Sejarah';
-        }
-        if ($menu == 'visi-misi') {
-            $id = 2;
-            $data = DataHome::find($id);
-            $header = 'Visi & Misi';
-        }
+        // Menu Profil
+        if ($menu == 'sejarah') $id = 1;
+        if ($menu == 'visi-misi') $id = 2;
+        if ($menu == 'tujuan') $id = 3;
+        if ($menu == 'sasaran-strategis') $id = 4;
+        if ($menu == 'personalia') $id = 5;
+        if ($menu == 'struktur-organisasi') $id = 6;
+        if ($menu == 'tenaga-pendidikan') $id = 7;
+        if ($menu == 'tenaga-kependidikan') $id = 8;
 
         return view('admin.profil.sejarah', [
-            'title' => 'Dashboard | ' . $header,
-            'data' => $data,
-            'header' => $header,
+            'title' => 'Dashboard | ' . $menu,
+            'data' => DataHome::find($id),
+            'header' => $menu,
         ]);
     }
 

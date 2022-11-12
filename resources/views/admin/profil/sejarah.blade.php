@@ -1,6 +1,21 @@
 @extends('layouts.admin')
 
 @section('main-content')
+  {{-- Start set ID --}}
+  @php
+    request()->is('dashboard/profil/sejarah') ? ($id = 1) : '';
+    request()->is('dashboard/profil/visi-misi') ? ($id = 2) : '';
+    request()->is('dashboard/profil/tujuan') ? ($id = 3) : '';
+    request()->is('dashboard/profil/sasaran-strategis') ? ($id = 4) : '';
+    request()->is('dashboard/profil/personalia') ? ($id = 5) : '';
+    request()->is('dashboard/profil/struktur-organisasi') ? ($id = 6) : '';
+    request()->is('dashboard/profil/tenaga-pendidikan') ? ($id = 7) : '';
+    request()->is('dashboard/profil/tenaga-kependidikan') ? ($id = 8) : '';
+    request()->is('dashboard/profil/rencana-strategis') ? ($id = 9) : '';
+    request()->is('dashboard/profil/rencana-operasional') ? ($id = 10) : '';
+  @endphp
+  {{-- End set ID --}}
+
   <div class="body flex-grow-1 px-3">
     <div class="container-lg">
       {{-- Start Flash Message --}}
@@ -21,16 +36,6 @@
               <div class="example">
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
-
-                    {{-- Set ID --}}
-                    @php
-                      if (request()->is('dashboard/profil/sejarah')) {
-                          $id = 1;
-                      }
-                      if (request()->is('dashboard/profil/visi-misi')) {
-                          $id = 2;
-                      }
-                    @endphp
 
                     <form action="/dashboard/profil/{{ $id }}" method="POST" enctype="multipart/form-data">
                       @csrf
@@ -53,9 +58,9 @@
 
                         @if ($data != null && $data->cover)
                           <img src="{{ asset('admin-assets/img/data-home/' . $data->cover) }}"
-                            class="img-preview img-thumbnail mb-3 d-block" width="200">
+                            class="img-preview img-thumbnail mb-3 d-block" width="300">
                         @else
-                          <img class="img-preview img-thumbnail mb-3 d-block" width="200">
+                          <img class="img-preview img-thumbnail mb-3 d-block" width="300">
                         @endif
 
                         <input class="form-control @error('cover') is-invalid @enderror" type="file" name="cover"

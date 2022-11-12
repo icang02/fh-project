@@ -54,10 +54,10 @@
           <a href="{{ url('profil/tenaga-kependidikan') }}"
             class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
-          <a href="{{ url('profil/rencana-strategis') }}"
+          <a href="{{ url('https://drive.google.com/file/d/1vI4LKCO3PwWmKvw75Kh1WmWEVpXVfrFr/view') }}"
             class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana
             Strategis</a>
-          <a href="{{ url('profil/rencana-operasional') }}"
+          <a href="{{ url('https://drive.google.com/file/d/1DhD2eVILCI-_yy3jaQuGVRScgpM-Iudk/view') }}"
             class="dropdown-item {{ request()->is('profil/rencana-operasional') ? 'active bg-utama' : '' }}">Rencana
             Operasional</a>
         </div>
