@@ -2,8 +2,16 @@
 
 @section('main-content')
   <!-- Header Start -->
+  @php
+    if ($data == null) {
+        $img = 'carousel-1.jpg';
+    } else {
+        $img = $data->cover;
+    }
+  @endphp
+
   <div class="container-fluid bg-primary py-5 mb-5 page-header"
-    style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url({{ asset('home-assets/img/carousel-1.jpg') }});">
+    style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url({{ asset('admin-assets/img/data-home/' . $img) }});">
     <div class="container py-5">
       <div class="row justify-content-center">
         <div class="col-lg-10 text-center" style="opacity: 0">

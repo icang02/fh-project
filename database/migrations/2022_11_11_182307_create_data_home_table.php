@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('data_home', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('id')->primary();
             $table->string('judul');
             $table->string('cover');
             $table->text('body');

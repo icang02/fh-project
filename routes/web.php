@@ -179,6 +179,7 @@ Route::get('/berita/ui_greenmetric', function () {
 //route - Admin | Profil | Sejarar
 Route::get('/dashboard/profil/sejarah', [SejarahController::class, 'index']);
 Route::post('/dashboard/profil/sejarah', [SejarahController::class, 'store']);
+Route::put('/dashboard/profil/sejarah', [SejarahController::class, 'update']);
 
 //route colors
 Route::get('/dashboard/colors', function () {
