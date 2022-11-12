@@ -8,33 +8,27 @@ use Illuminate\Http\Request;
 
 class SejarahController extends Controller
 {
-    public function index()
+    public function index($menu)
     {
-        if (request()->is('dashboard/profil/sejarah')) {
-            $data = DataHome::find(1);
-            $header = 'Sejarah';
-        } else if (request()->is('dashboard/profil/visi-misi')) {
-            $data = DataHome::find(2);
-            $header = 'Visi & Misi';
-        }
+        // Menu Profil
+        if ($menu == 'sejarah') $id = 1;
+        if ($menu == 'visi-misi') $id = 2;
+        if ($menu == 'tujuan') $id = 3;
+        if ($menu == 'sasaran-strategis') $id = 4;
+        if ($menu == 'personalia') $id = 5;
+        if ($menu == 'struktur-organisasi') $id = 6;
+        if ($menu == 'tenaga-pendidikan') $id = 7;
+        if ($menu == 'tenaga-kependidikan') $id = 8;
 
         return view('admin.profil.sejarah', [
-            'title' => 'Dashboard | ' . $header,
-            'data' => $data,
-            'header' => $header,
+            'title' => 'Dashboard | ' . $menu,
+            'data' => DataHome::find($id),
+            'header' => $menu,
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        if (request()->is('dashboard/profil/sejarah')) {
-            $id = 1;
-            $header = 'Sejarah';
-        } else if (request()->is('dashboard/profil/visi-misi')) {
-            $id = 2;
-            $header = 'Visi & Misi';
-        }
-
         $validatedData = $request->validate([
             'judul' => 'required',
             'cover' => 'image|mimes:png,jpg,jpeg|max:4096',
@@ -54,18 +48,12 @@ class SejarahController extends Controller
             'body' => $request->body,
         ]);
 
-        return back()->with('success', "Data $header berhasil ditambahkan!");
+        return back()->with('success', "Data berhasil ditambahkan!");
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        if (request()->is('dashboard/profil/sejarah')) {
-            $data = DataHome::find(1);
-            $header = 'Sejarah';
-        } else if (request()->is('dashboard/profil/visi-misi')) {
-            $data = DataHome::find(2);
-            $header = 'Visi & Misi';
-        }
+        $data = DataHome::find($id);
 
         $rules = [
             'judul' => 'required',
@@ -96,6 +84,6 @@ class SejarahController extends Controller
             'body' => $request->body,
         ]);
 
-        return back()->with('success', "Data $header berhasil diupdate!");
+        return back()->with('success', "Data berhasil diupdate!");
     }
 }
