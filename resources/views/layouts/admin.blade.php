@@ -58,7 +58,7 @@
   <link href="{{ asset('admin-assets') }}/vendors/@coreui/icons/css/free.min.css" rel="stylesheet">
 
   {{-- Setup Ck Editor --}}
-  <link type="text/css" href="{{ asset('admin-assets') }}/ckeditor/sample.css" rel="stylesheet" media="screen" />
+  <link rel="stylesheet" href="{{ asset('admin-assets') }}/ckeditor/sample.css">
 </head>
 
 <body>

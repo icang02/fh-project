@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="editor" class="form-label">Isi Konten</label>
+                          <label for="editor" class="form-label">Body</label>
                           <textarea id="editor" name="body"></textarea>
                         </div>
 
@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="editor" class="form-label">Isi Konten</label>
+                          <label for="editor" class="form-label">Body</label>
                           <textarea id="editor" name="body">{{ old('body', $data->body) }}</textarea>
                         </div>
 
