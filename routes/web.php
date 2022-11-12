@@ -127,6 +127,144 @@ Route::get('/profil/rencana-operasional', function () {
     ]);
 });
 
+// Navbar - Program Studi
+Route::get('/program-studi/sejarah', function () {
+    $data = DataHome::find(11);
+    return view('home.profil.sejarah', [
+        'title' => 'Program Studi | Sejarah',
+        'data' => $data,
+    ]);
+});
+Route::get('/program-studi/visi-misi', function () {
+    $data = DataHome::find(12);
+    return view('home.profil.sejarah', [
+        'title' => 'Program Studi | Visi Misi',
+        'data' => $data,
+    ]);
+});
+Route::get('/program-studi/tujuan', function () {
+    $data = DataHome::find(13);
+    return view('home.profil.sejarah', [
+        'title' => 'Program Studi | Tujuan',
+        'data' => $data,
+    ]);
+});
+Route::get('/program-studi/sasaran-strategis', function () {
+    $data = DataHome::find(14);
+    return view('home.profil.sejarah', [
+        'title' => 'Program Studi | Sasaran Strategis',
+        'data' => $data,
+    ]);
+});
+
+//Navbar - Akademik
+Route::get('/akademik/peraturan-rektor-tentang-akademik', function () {
+    $data = DataHome::find(15);
+    return view('home.profil.sejarah', [
+        'title' => 'Akademik | Peraturan Rektor Tentang Akademik',
+        'data' => $data,
+    ]);
+});
+Route::get('/akademik/kalender-akademik', function () {
+    $data = DataHome::find(16);
+    return view('home.profil.sejarah', [
+        'title' => 'Akademik | Kalender Akademik',
+        'data' => $data,
+    ]);
+});
+Route::get('/akademik/jadwal-perkuliahan', function () {
+    $data = DataHome::find(17);
+    return view('home.profil.sejarah', [
+        'title' => 'Akademik | Jadwal Perkuliahan',
+        'data' => $data,
+    ]);
+});
+Route::get('/akademik/jadwal-ujian', function () {
+    $data = DataHome::find(18);
+    return view('home.profil.sejarah', [
+        'title' => 'Akademik | Jadwal Ujian',
+        'data' => $data,
+    ]);
+});
+
+//Navbar Mahasiswa - Alumni
+Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
+    $data = DataHome::find(19);
+    return view('home.profil.sejarah', [
+        'title' => 'Mahasiswa & Alumni | Lembaga Kemahasiswaan',
+        'data' => $data,
+    ]);
+});
+Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
+    $data = DataHome::find(20);
+    return view('home.profil.sejarah', [
+        'title' => 'Mahasiswa & Alumni | Registrasi Alumni',
+        'data' => $data,
+    ]);
+});
+
+//Navbar - Tridharma
+Route::get('/tridharma/penelitian', function () {
+    $data = DataHome::find(21);
+    return view('home.profil.sejarah', [
+        'title' => 'Tridharma | Penelitian',
+        'data' => $data,
+    ]);
+});
+Route::get('/tridharma/pengabdian', function () {
+    $data = DataHome::find(22);
+    return view('home.profil.sejarah', [
+        'title' => 'Tridharma | Pengabdian',
+        'data' => $data,
+    ]);
+});
+Route::get('/tridharma/publikasi', function () {
+    $data = DataHome::find(23);
+    return view('home.profil.sejarah', [
+        'title' => 'Tridharma | Publikasi',
+        'data' => $data,
+    ]);
+});
+Route::get('/tridharma/hak-kekayaan-intelektual', function () {
+    $data = DataHome::find(24);
+    return view('home.profil.sejarah', [
+        'title' => 'Tridharma | Hak Kekayaan Intelektual',
+        'data' => $data,
+    ]);
+});
+
+//Nabar Layanan-Fasilitas
+Route::get('/layanan/fasilitas/kriminologi', function () {
+    $data = DataHome::find(25);
+    return view('home.profil.sejarah', [
+        'title' => 'Layanan | Faslitas | Lab. Pidana & Kriminologi',
+        'data' => $data,
+    ]);
+});
+Route::get('/layanan/fasilitas/konstitusi', function () {
+    $data = DataHome::find(26);
+    return view('home.profil.sejarah', [
+        'title' => 'Layanan | Faslitas | Lab. Konstitusi (Vicon)',
+        'data' => $data,
+    ]);
+});
+Route::get('/layanan/fasilitas/ruang-baca', function () {
+    $data = DataHome::find(27);
+    return view('home.profil.sejarah', [
+        'title' => 'Layanan | Faslitas | Ruang Baca',
+        'data' => $data,
+    ]);
+});
+
+//Navbar Jaminan Mutu
+Route::get('/jaminan-mutu', function () {
+    $data = DataHome::find(28);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Jaminan Mutu',
+        'data' => $data,
+    ]);
+});
+
 // Route::get('/profil/tujuan', function () {
 //     return view('home.profil.tujuan', ['title' => 'Fakultas Hukum | Tujuan']);
 // });
@@ -153,116 +291,116 @@ Route::get('/profil/rencana-operasional', function () {
 // });
 
 // navbar - program studi
-Route::get('/program-studi/sejarah', function () {
-    return view('home.program-studi.sejarah', [
-        'title' => 'Fakultas Hukum | Sejarah',
-    ]);
-});
-Route::get('/program-studi/visi-misi', function () {
-    return view('home.program-studi.visi-misi', [
-        'title' => 'Fakultas Hukum | Visi & Misi',
-    ]);
-});
-Route::get('/program-studi/tujuan', function () {
-    return view('home.program-studi.tujuan', [
-        'title' => 'Fakultas Hukum | Tujuan',
-    ]);
-});
-Route::get('/program-studi/sasaran-strategis', function () {
-    return view('home.program-studi.sasaran-strategis', [
-        'title' => 'Fakultas Hukum | Sasaran Strategis',
-    ]);
-});
-Route::get('/program-studi/rencana-strategis', function () {
-    return view('home.program-studi.rencana-strategis', [
-        'title' => 'Fakultas Hukum | Rencana Strategis',
-    ]);
-});
-Route::get('/program-studi/rencana-operasional', function () {
-    return view('home.program-studi.rencana-operasional', [
-        'title' => 'Fakultas Hukum | Rencana Operasional',
-    ]);
-});
+// Route::get('/program-studi/sejarah', function () {
+//     return view('home.program-studi.sejarah', [
+//         'title' => 'Fakultas Hukum | Sejarah',
+//     ]);
+// });
+// Route::get('/program-studi/visi-misi', function () {
+//     return view('home.program-studi.visi-misi', [
+//         'title' => 'Fakultas Hukum | Visi & Misi',
+//     ]);
+// });
+// Route::get('/program-studi/tujuan', function () {
+//     return view('home.program-studi.tujuan', [
+//         'title' => 'Fakultas Hukum | Tujuan',
+//     ]);
+// });
+// Route::get('/program-studi/sasaran-strategis', function () {
+//     return view('home.program-studi.sasaran-strategis', [
+//         'title' => 'Fakultas Hukum | Sasaran Strategis',
+//     ]);
+// });
+// Route::get('/program-studi/rencana-strategis', function () {
+//     return view('home.program-studi.rencana-strategis', [
+//         'title' => 'Fakultas Hukum | Rencana Strategis',
+//     ]);
+// });
+// Route::get('/program-studi/rencana-operasional', function () {
+//     return view('home.program-studi.rencana-operasional', [
+//         'title' => 'Fakultas Hukum | Rencana Operasional',
+//     ]);
+// });
 
-//navbar - akademik
-Route::get('/akademik/peraturan-rektor-tentang-akademik', function () {
-    return view('home.akademik.peraturan-rektor-tentang-akademik', [
-        'title' => 'Fakultas Hukum | Peraturan Rektor Tentang Akademik',
-    ]);
-});
-Route::get('/akademik/kalender-akademik', function () {
-    return view('home.akademik.kalender-akademik', [
-        'title' => 'Fakultas Hukum | Kalender Akademik',
-    ]);
-});
-Route::get('/akademik/jadwal-perkuliahan', function () {
-    return view('home.akademik.jadwal-perkuliahan', [
-        'title' => 'Fakultas Hukum | Jadwal Perkuliahan',
-    ]);
-});
-Route::get('/akademik/jadwal-ujian', function () {
-    return view('home.akademik.jadwal-ujian', [
-        'title' => 'Fakultas Hukum | Jadwal Ujian',
-    ]);
-});
+// //navbar - akademik
+// Route::get('/akademik/peraturan-rektor-tentang-akademik', function () {
+//     return view('home.akademik.peraturan-rektor-tentang-akademik', [
+//         'title' => 'Fakultas Hukum | Peraturan Rektor Tentang Akademik',
+//     ]);
+// });
+// Route::get('/akademik/kalender-akademik', function () {
+//     return view('home.akademik.kalender-akademik', [
+//         'title' => 'Fakultas Hukum | Kalender Akademik',
+//     ]);
+// });
+// Route::get('/akademik/jadwal-perkuliahan', function () {
+//     return view('home.akademik.jadwal-perkuliahan', [
+//         'title' => 'Fakultas Hukum | Jadwal Perkuliahan',
+//     ]);
+// });
+// Route::get('/akademik/jadwal-ujian', function () {
+//     return view('home.akademik.jadwal-ujian', [
+//         'title' => 'Fakultas Hukum | Jadwal Ujian',
+//     ]);
+// });
 
-//navbar - mahasiswa-alumni
-Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
-    return view('home.mahasiswa-alumni.lembaga-kemahasiswaan', [
-        'title' => 'Fakultas Hukum | Lembaga Kemahasiswaa',
-    ]);
-});
-Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
-    return view('home.mahasiswa-alumni.registrasi-alumni', [
-        'title' => 'Fakultas Hukum | Registrasi Alumni',
-    ]);
-});
+// //navbar - mahasiswa-alumni
+// Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
+//     return view('home.mahasiswa-alumni.lembaga-kemahasiswaan', [
+//         'title' => 'Fakultas Hukum | Lembaga Kemahasiswaa',
+//     ]);
+// });
+// Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
+//     return view('home.mahasiswa-alumni.registrasi-alumni', [
+//         'title' => 'Fakultas Hukum | Registrasi Alumni',
+//     ]);
+// });
 
-// navbar - tridharma
-Route::get('/tridharma/penelitian', function () {
-    return view('home.tridharma.penelitian', [
-        'title' => 'Fakultas Hukum | Penelitian',
-    ]);
-});
-Route::get('/tridharma/pengabdian', function () {
-    return view('home.tridharma.pengabdian', [
-        'title' => 'Fakultas Hukum | Pengabdian',
-    ]);
-});
-Route::get('/tridharma/publikasi', function () {
-    return view('home.tridharma.publikasi', [
-        'title' => 'Fakultas Hukum | Publikasi',
-    ]);
-});
-Route::get('/tridharma/hak-kekayaan-intelektual', function () {
-    return view('home.tridharma.hak-kekayaan-intelektual', [
-        'title' => 'Fakultas Hukum | Hak Kekayaan Intelektual',
-    ]);
-});
+// // navbar - tridharma
+// Route::get('/tridharma/penelitian', function () {
+//     return view('home.tridharma.penelitian', [
+//         'title' => 'Fakultas Hukum | Penelitian',
+//     ]);
+// });
+// Route::get('/tridharma/pengabdian', function () {
+//     return view('home.tridharma.pengabdian', [
+//         'title' => 'Fakultas Hukum | Pengabdian',
+//     ]);
+// });
+// Route::get('/tridharma/publikasi', function () {
+//     return view('home.tridharma.publikasi', [
+//         'title' => 'Fakultas Hukum | Publikasi',
+//     ]);
+// });
+// Route::get('/tridharma/hak-kekayaan-intelektual', function () {
+//     return view('home.tridharma.hak-kekayaan-intelektual', [
+//         'title' => 'Fakultas Hukum | Hak Kekayaan Intelektual',
+//     ]);
+// });
 
-//navbar - layanan - fasilitas
-Route::get('/fasilitas/kriminologi', function () {
-    return view('home.layanan.fasilitas.kriminologi', [
-        'title' => 'Fakultas Hukum | Kriminologi',
-    ]);
-});
-Route::get('/fasilitas/konstitusi', function () {
-    return view('home.layanan.fasilitas.konstitusi', [
-        'title' => 'Fakultas Hukum | Konstitusi',
-    ]);
-});
-Route::get('/fasilitas/ruang_baca', function () {
-    return view('home.layanan.fasilitas.ruang_baca', [
-        'title' => 'Fakultas Hukum | Ruang Baca',
-    ]);
-});
+// //navbar - layanan - fasilitas
+// Route::get('/fasilitas/kriminologi', function () {
+//     return view('home.layanan.fasilitas.kriminologi', [
+//         'title' => 'Fakultas Hukum | Kriminologi',
+//     ]);
+// });
+// Route::get('/fasilitas/konstitusi', function () {
+//     return view('home.layanan.fasilitas.konstitusi', [
+//         'title' => 'Fakultas Hukum | Konstitusi',
+//     ]);
+// });
+// Route::get('/fasilitas/ruang_baca', function () {
+//     return view('home.layanan.fasilitas.ruang_baca', [
+//         'title' => 'Fakultas Hukum | Ruang Baca',
+//     ]);
+// });
 
-//navbar-jaminan_mutu
-Route::get('/fasilitas/jaminan_mutu', function () {
-    return view('home.layanan.jaminan_mutu', [
-        'title' => 'Fakultas Hukum | Jaminan Mutu',
-    ]);
-});
+// //navbar-jaminan_mutu
+// Route::get('/fasilitas/jaminan_mutu', function () {
+//     return view('home.layanan.jaminan_mutu', [
+//         'title' => 'Fakultas Hukum | Jaminan Mutu',
+//     ]);
+// });
 
 //navbar - berita
 Route::get('/berita/event', function () {
