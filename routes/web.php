@@ -26,7 +26,9 @@ Route::get('/dashboard', function () {
 
 //route Home
 Route::get('/', function () {
-    return view('home.index', ['title' => 'Fakultas Hukum Universitas Halu Oleo']);
+    return view('home.index', [
+        'title' => 'Fakultas Hukum Universitas Halu Oleo',
+    ]);
 });
 
 Route::get('/about', function () {
@@ -41,7 +43,9 @@ Route::get('/team', function () {
     return view('home.pages.team', ['title' => 'Fakultas Hukum | Team']);
 });
 Route::get('/testimonial', function () {
-    return view('home.pages.testimonial', ['title' => 'Fakultas Hukum | Testimonial']);
+    return view('home.pages.testimonial', [
+        'title' => 'Fakultas Hukum | Testimonial',
+    ]);
 });
 Route::get('/404', function () {
     return view('home.pages.404', ['title' => 'Fakultas Hukum | 404']);
@@ -67,100 +71,197 @@ Route::get('/profil/visi-misi', function () {
     ]);
 });
 Route::get('/profil/tujuan', function () {
-    return view('home.profil.tujuan', ['title' => 'Fakultas Hukum | Tujuan']);
+    $data = DataHome::find(3);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Tujuan',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/sasaran-strategis', function () {
-    return view('home.profil.sasaran-strategis', ['title' => 'Fakultas Hukum | Sasaran Strategis']);
+    $data = DataHome::find(4);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Sasaran Strategis',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/personalia', function () {
-    return view('home.profil.personalia', ['title' => 'Fakultas Hukum | Personalia']);
+    $data = DataHome::find(5);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Personalia',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/struktur-organisasi', function () {
-    return view('home.profil.struktur-organisasi', ['title' => 'Fakultas Hukum | Struktur Organisasi']);
+    $data = DataHome::find(6);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Struktur Organisasi',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/tenaga-pendidikan', function () {
-    return view('home.profil.tenaga-pendidikan', ['title' => 'Fakultas Hukum | Pendidikan']);
+    $data = DataHome::find(7);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Tenaga Pendidikan / Dosen',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/tenaga-kependidikan', function () {
-    return view('home.profil.tenaga-kependidikan', ['title' => 'Fakultas Hukum | Tenaga Kependidikan']);
+    $data = DataHome::find(8);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Tenaga Kependidikan',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/rencana-strategis', function () {
-    return view('home.profil.rencana-strategis', ['title' => 'Fakultas Hukum | Rencana Strategis']);
+    $data = DataHome::find(9);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Rencana Strategis',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/rencana-operasional', function () {
-    return view('home.profil.rencana-operasional', ['title' => 'Fakultas Hukum | Rencana Operasinal']);
+    $data = DataHome::find(10);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Rencana Operasional',
+        'data' => $data,
+    ]);
 });
+
+// Route::get('/profil/tujuan', function () {
+//     return view('home.profil.tujuan', ['title' => 'Fakultas Hukum | Tujuan']);
+// });
+// Route::get('/profil/sasaran-strategis', function () {
+//     return view('home.profil.sasaran-strategis', ['title' => 'Fakultas Hukum | Sasaran Strategis']);
+// });
+// Route::get('/profil/personalia', function () {
+//     return view('home.profil.personalia', ['title' => 'Fakultas Hukum | Personalia']);
+// });
+// Route::get('/profil/struktur-organisasi', function () {
+//     return view('home.profil.struktur-organisasi', ['title' => 'Fakultas Hukum | Struktur Organisasi']);
+// });
+// Route::get('/profil/tenaga-pendidikan', function () {
+//     return view('home.profil.tenaga-pendidikan', ['title' => 'Fakultas Hukum | Pendidikan']);
+// });
+// Route::get('/profil/tenaga-kependidikan', function () {
+//     return view('home.profil.tenaga-kependidikan', ['title' => 'Fakultas Hukum | Tenaga Kependidikan']);
+// });
+// Route::get('/profil/rencana-strategis', function () {
+//     return view('home.profil.rencana-strategis', ['title' => 'Fakultas Hukum | Rencana Strategis']);
+// });
+// Route::get('/profil/rencana-operasional', function () {
+//     return view('home.profil.rencana-operasional', ['title' => 'Fakultas Hukum | Rencana Operasinal']);
+// });
 
 // navbar - program studi
 Route::get('/program-studi/sejarah', function () {
-    return view('home.program-studi.sejarah', ['title' => 'Fakultas Hukum | Sejarah']);
+    return view('home.program-studi.sejarah', [
+        'title' => 'Fakultas Hukum | Sejarah',
+    ]);
 });
 Route::get('/program-studi/visi-misi', function () {
-    return view('home.program-studi.visi-misi', ['title' => 'Fakultas Hukum | Visi & Misi']);
+    return view('home.program-studi.visi-misi', [
+        'title' => 'Fakultas Hukum | Visi & Misi',
+    ]);
 });
 Route::get('/program-studi/tujuan', function () {
-    return view('home.program-studi.tujuan', ['title' => 'Fakultas Hukum | Tujuan']);
+    return view('home.program-studi.tujuan', [
+        'title' => 'Fakultas Hukum | Tujuan',
+    ]);
 });
 Route::get('/program-studi/sasaran-strategis', function () {
-    return view('home.program-studi.sasaran-strategis', ['title' => 'Fakultas Hukum | Sasaran Strategis']);
+    return view('home.program-studi.sasaran-strategis', [
+        'title' => 'Fakultas Hukum | Sasaran Strategis',
+    ]);
 });
 Route::get('/program-studi/rencana-strategis', function () {
-    return view('home.program-studi.rencana-strategis', ['title' => 'Fakultas Hukum | Rencana Strategis']);
+    return view('home.program-studi.rencana-strategis', [
+        'title' => 'Fakultas Hukum | Rencana Strategis',
+    ]);
 });
 Route::get('/program-studi/rencana-operasional', function () {
-    return view('home.program-studi.rencana-operasional', ['title' => 'Fakultas Hukum | Rencana Operasional']);
+    return view('home.program-studi.rencana-operasional', [
+        'title' => 'Fakultas Hukum | Rencana Operasional',
+    ]);
 });
 
 //navbar - akademik
 Route::get('/akademik/peraturan-rektor-tentang-akademik', function () {
-    return view('home.akademik.peraturan-rektor-tentang-akademik', ['title' => 'Fakultas Hukum | Peraturan Rektor Tentang Akademik']);
+    return view('home.akademik.peraturan-rektor-tentang-akademik', [
+        'title' => 'Fakultas Hukum | Peraturan Rektor Tentang Akademik',
+    ]);
 });
 Route::get('/akademik/kalender-akademik', function () {
-    return view('home.akademik.kalender-akademik', ['title' => 'Fakultas Hukum | Kalender Akademik']);
+    return view('home.akademik.kalender-akademik', [
+        'title' => 'Fakultas Hukum | Kalender Akademik',
+    ]);
 });
 Route::get('/akademik/jadwal-perkuliahan', function () {
-    return view('home.akademik.jadwal-perkuliahan', ['title' => 'Fakultas Hukum | Jadwal Perkuliahan']);
+    return view('home.akademik.jadwal-perkuliahan', [
+        'title' => 'Fakultas Hukum | Jadwal Perkuliahan',
+    ]);
 });
 Route::get('/akademik/jadwal-ujian', function () {
-    return view('home.akademik.jadwal-ujian', ['title' => 'Fakultas Hukum | Jadwal Ujian']);
+    return view('home.akademik.jadwal-ujian', [
+        'title' => 'Fakultas Hukum | Jadwal Ujian',
+    ]);
 });
 
 //navbar - mahasiswa-alumni
 Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
-    return view('home.mahasiswa-alumni.lembaga-kemahasiswaan', ['title' => 'Fakultas Hukum | Lembaga Kemahasiswaa']);
+    return view('home.mahasiswa-alumni.lembaga-kemahasiswaan', [
+        'title' => 'Fakultas Hukum | Lembaga Kemahasiswaa',
+    ]);
 });
 Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
-    return view('home.mahasiswa-alumni.registrasi-alumni', ['title' => 'Fakultas Hukum | Registrasi Alumni']);
+    return view('home.mahasiswa-alumni.registrasi-alumni', [
+        'title' => 'Fakultas Hukum | Registrasi Alumni',
+    ]);
 });
 
 // navbar - tridharma
 Route::get('/tridharma/penelitian', function () {
-    return view('home.tridharma.penelitian', ['title' => 'Fakultas Hukum | Penelitian']);
+    return view('home.tridharma.penelitian', [
+        'title' => 'Fakultas Hukum | Penelitian',
+    ]);
 });
 Route::get('/tridharma/pengabdian', function () {
-    return view('home.tridharma.pengabdian', ['title' => 'Fakultas Hukum | Pengabdian']);
+    return view('home.tridharma.pengabdian', [
+        'title' => 'Fakultas Hukum | Pengabdian',
+    ]);
 });
 Route::get('/tridharma/publikasi', function () {
-    return view('home.tridharma.publikasi', ['title' => 'Fakultas Hukum | Publikasi']);
+    return view('home.tridharma.publikasi', [
+        'title' => 'Fakultas Hukum | Publikasi',
+    ]);
 });
 Route::get('/tridharma/hak-kekayaan-intelektual', function () {
-    return view('home.tridharma.hak-kekayaan-intelektual', ['title' => 'Fakultas Hukum | Hak Kekayaan Intelektual']);
+    return view('home.tridharma.hak-kekayaan-intelektual', [
+        'title' => 'Fakultas Hukum | Hak Kekayaan Intelektual',
+    ]);
 });
 
 //navbar - layanan - fasilitas
 Route::get('/fasilitas/kriminologi', function () {
-    return view('home.layanan.fasilitas.kriminologi', ['title' => 'Fakultas Hukum | Kriminologi']);
+    return view('home.layanan.fasilitas.kriminologi', [
+        'title' => 'Fakultas Hukum | Kriminologi',
+    ]);
 });
 Route::get('/fasilitas/konstitusi', function () {
-    return view('home.layanan.fasilitas.konstitusi', ['title' => 'Fakultas Hukum | Konstitusi']);
+    return view('home.layanan.fasilitas.konstitusi', [
+        'title' => 'Fakultas Hukum | Konstitusi',
+    ]);
 });
 Route::get('/fasilitas/ruang_baca', function () {
-    return view('home.layanan.fasilitas.ruang_baca', ['title' => 'Fakultas Hukum | Ruang Baca']);
+    return view('home.layanan.fasilitas.ruang_baca', [
+        'title' => 'Fakultas Hukum | Ruang Baca',
+    ]);
 });
 
 //navbar-jaminan_mutu
 Route::get('/fasilitas/jaminan_mutu', function () {
-    return view('home.layanan.jaminan_mutu', ['title' => 'Fakultas Hukum | Jaminan Mutu']);
+    return view('home.layanan.jaminan_mutu', [
+        'title' => 'Fakultas Hukum | Jaminan Mutu',
+    ]);
 });
 
 //navbar - berita
@@ -168,17 +269,22 @@ Route::get('/berita/event', function () {
     return view('home.berita.event', ['title' => 'Fakultas Hukum | Event']);
 });
 Route::get('/berita/informasi', function () {
-    return view('home.berita.informasi', ['title' => 'Fakultas Hukum | Informasi']);
+    return view('home.berita.informasi', [
+        'title' => 'Fakultas Hukum | Informasi',
+    ]);
 });
 Route::get('/berita/pengumuman', function () {
-    return view('home.berita.pengumuman', ['title' => 'Fakultas Hukum | Pengumuman']);
+    return view('home.berita.pengumuman', [
+        'title' => 'Fakultas Hukum | Pengumuman',
+    ]);
 });
 
 //navbar ui greenmetric
 Route::get('/berita/ui_greenmetric', function () {
-    return view('home.berita.ui_greenmetric', ['title' => 'Fakultas Hukum | Ui Greenmetric']);
+    return view('home.berita.ui_greenmetric', [
+        'title' => 'Fakultas Hukum | Ui Greenmetric',
+    ]);
 });
-
 
 //route - Admin | Profil | Sejarah
 Route::get('/dashboard/profil/sejarah', [SejarahController::class, 'index']);
@@ -189,6 +295,11 @@ Route::put('/dashboard/profil/sejarah', [SejarahController::class, 'update']);
 Route::get('/dashboard/profil/visi-misi', [SejarahController::class, 'index']);
 Route::post('/dashboard/profil/visi-misi', [SejarahController::class, 'store']);
 Route::put('/dashboard/profil/visi-misi', [SejarahController::class, 'update']);
+
+//route - Admin | Profil | Tujuan
+Route::get('/dashboard/profil/tujuan', [SejarahController::class, 'index']);
+Route::post('/dashboard/profil/tujuan', [SejarahController::class, 'store']);
+Route::put('/dashboard/profil/tujuan', [SejarahController::class, 'update']);
 
 //route colors
 Route::get('/dashboard/colors', function () {
@@ -225,7 +336,9 @@ Route::get('/dashboard/base/pagination', function () {
     return view('admin.base.pagination', ['title' => 'Dashboard | Pagination']);
 });
 Route::get('/dashboard/base/placeholders', function () {
-    return view('admin.base.placeholders', ['title' => 'Dashboard | Placeholders']);
+    return view('admin.base.placeholders', [
+        'title' => 'Dashboard | Placeholders',
+    ]);
 });
 Route::get('/dashboard/base/popovers', function () {
     return view('admin.base.popovers', ['title' => 'Dashboard | Popovers']);
@@ -248,7 +361,9 @@ Route::get('/dashboard/buttons/buttons', function () {
     return view('admin.buttons.buttons', ['title' => 'Dashboard | Buttons']);
 });
 Route::get('/dashboard/buttons/button-group', function () {
-    return view('admin.buttons.button-group', ['title' => 'Dashboard | Button Group']);
+    return view('admin.buttons.button-group', [
+        'title' => 'Dashboard | Button Group',
+    ]);
 });
 Route::get('/dashboard/buttons/dropdowns', function () {
     return view('admin.buttons.dropdowns', ['title' => 'Dashboard | Dropdown']);
@@ -261,16 +376,24 @@ Route::get('/dashboard/charts', function () {
 
 //route forms
 Route::get('/dashboard/forms/checks-radios', function () {
-    return view('admin.forms.checks-radios', ['title' => 'Dashboard | Check Radios']);
+    return view('admin.forms.checks-radios', [
+        'title' => 'Dashboard | Check Radios',
+    ]);
 });
 Route::get('/dashboard/forms/floating-labels', function () {
-    return view('admin.forms.floating-labels', ['title' => 'Dashboard | Labels']);
+    return view('admin.forms.floating-labels', [
+        'title' => 'Dashboard | Labels',
+    ]);
 });
 Route::get('/dashboard/forms/form-control', function () {
-    return view('admin.forms.form-control', ['title' => 'Dashboard | Form Control']);
+    return view('admin.forms.form-control', [
+        'title' => 'Dashboard | Form Control',
+    ]);
 });
 Route::get('/dashboard/forms/input-group', function () {
-    return view('admin.forms.input-group', ['title' => 'Dashboard | Input Group']);
+    return view('admin.forms.input-group', [
+        'title' => 'Dashboard | Input Group',
+    ]);
 });
 Route::get('/dashboard/forms/layout', function () {
     return view('admin.forms.layout', ['title' => 'Dashboard | Layouts']);
@@ -282,32 +405,46 @@ Route::get('/dashboard/forms/select', function () {
     return view('admin.forms.select', ['title' => 'Dashboard | Forms Select']);
 });
 Route::get('/dashboard/forms/validation', function () {
-    return view('admin.forms.validation', ['title' => 'Dashboard | Validation']);
+    return view('admin.forms.validation', [
+        'title' => 'Dashboard | Validation',
+    ]);
 });
 
 //route - Icons
 Route::get('/dashboard/icons/coreui-icons-brand', function () {
-    return view('admin.icons.coreui-icons-brand', ['title' => 'Dashboard | Icon Brand']);
+    return view('admin.icons.coreui-icons-brand', [
+        'title' => 'Dashboard | Icon Brand',
+    ]);
 });
 Route::get('/dashboard/icons/coreui-icons-flag', function () {
-    return view('admin.icons.coreui-icons-flag', ['title' => 'Dashboard | Icon Flags']);
+    return view('admin.icons.coreui-icons-flag', [
+        'title' => 'Dashboard | Icon Flags',
+    ]);
 });
 Route::get('/dashboard/icons/coreui-icons-free', function () {
-    return view('admin.icons.coreui-icons-free', ['title' => 'Dashboard | Icon Free']);
+    return view('admin.icons.coreui-icons-free', [
+        'title' => 'Dashboard | Icon Free',
+    ]);
 });
 
 //route - Notifications
 Route::get('/dashboard/notifications/alerts', function () {
-    return view('admin.notifications.alerts', ['title' => 'Dashboard | Alerts']);
+    return view('admin.notifications.alerts', [
+        'title' => 'Dashboard | Alerts',
+    ]);
 });
 Route::get('/dashboard/notifications/badge', function () {
     return view('admin.notifications.badge', ['title' => 'Dashboard | Badge']);
 });
 Route::get('/dashboard/notifications/modals', function () {
-    return view('admin.notifications.modals', ['title' => 'Dashboard | Modals']);
+    return view('admin.notifications.modals', [
+        'title' => 'Dashboard | Modals',
+    ]);
 });
 Route::get('/dashboard/notifications/toasts', function () {
-    return view('admin.notifications.toasts', ['title' => 'Dashboard | Toasts']);
+    return view('admin.notifications.toasts', [
+        'title' => 'Dashboard | Toasts',
+    ]);
 });
 
 //route - Widgets
