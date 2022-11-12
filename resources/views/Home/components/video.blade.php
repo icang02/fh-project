@@ -1,12 +1,21 @@
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col col-lg-12">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" width="100%" height="750 px"
-                        src="https://www.youtube.com/embed/V5ktqaoS1QE?rel=0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <div class="videoWrapper"><iframe src="https://www.youtube.com/embed/V5ktqaoS1QE?rel=0" frameborder="0" allowfullscreen
+            class="video"></iframe></div>.
 </div>
+
+<style>
+    .videoWrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>

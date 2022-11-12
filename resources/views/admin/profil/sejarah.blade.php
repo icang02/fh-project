@@ -38,7 +38,6 @@
     request()->is('dashboard/layanan/fasilitas/ruang-baca') ? ($id = 'ruang-baca') : '';
     // Menu Layanan Mutu
     request()->is('dashboard/jaminan-mutu') ? ($id = 'jaminan-mutu') : '';
-    
   @endphp
   {{-- End set ID --}}
 
