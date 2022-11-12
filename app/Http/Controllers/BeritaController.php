@@ -14,7 +14,7 @@ class BeritaController extends Controller
         $beritaId = $berita[0]->id;
 
         return view('home.berita.informasi', [
-            'title' => 'Fakultas Hukum | sdsds',
+            'title' => 'Fakultas Hukum | ' . $berita[0]->nama,
             'data' => KategoriBerita::find($beritaId)->berita,
         ]);
     }

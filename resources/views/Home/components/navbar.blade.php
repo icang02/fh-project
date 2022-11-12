@@ -260,15 +260,12 @@
       </div>
 
 
-      <a href="{{ url('berita/ui_greenmetric') }}"
-        class="nav-item nav-link {{ request()->is('berita/ui_greenmetric') ? 'active txt-utama' : '' }}">UI
-        GREENMETRIC</a>
+      <a href="{{ url('berita/ui-greenmetric') }}"
+        class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
+        UI GREENMETRIC
+      </a>
     </div>
   </div>
 
-  <a href="{{ url('berita/ui-greenmetric') }}"
-    class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
-    UI GREENMETRIC
-  </a>
-  </div>
+
 </nav>
