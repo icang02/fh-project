@@ -3,7 +3,16 @@
     class="py-2 p-lg-4 d-flex justify-md-content-between justify-content-center flex-md-row flex-column align-items-center w-100">
     <img src="{{ asset('home-assets/img/logo-hukum.png') }}" class="d-block" alt="Logo" width="300">
 
-    <div class="btn btn-danger badge my-md-0 my-4 mx-auto">Language Switcher</div>
+    <div class="btn btn-danger badge my-md-0 my-4 mx-auto" id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en'
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
 
     <form class="">
       <input class="form-control px-lg-4" placeholder="Cari..">
@@ -250,9 +259,16 @@
         </div>
       </div>
 
-      <a href="{{ url('berita/ui-greenmetric') }}"
-        class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
-        UI GREENMETRIC
-      </a>
+
+      <a href="{{ url('berita/ui_greenmetric') }}"
+        class="nav-item nav-link {{ request()->is('berita/ui_greenmetric') ? 'active txt-utama' : '' }}">UI
+        GREENMETRIC</a>
     </div>
+  </div>
+
+  <a href="{{ url('berita/ui-greenmetric') }}"
+    class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
+    UI GREENMETRIC
+  </a>
+  </div>
 </nav>
