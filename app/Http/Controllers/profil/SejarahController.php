@@ -29,9 +29,6 @@ class SejarahController extends Controller
 
     public function store(Request $request, $id)
     {
-        if ($id == 1) $header = 'Sejarah';
-        if ($id == 2) $header = 'Visi & Misi';
-
         $validatedData = $request->validate([
             'judul' => 'required',
             'cover' => 'image|mimes:png,jpg,jpeg|max:4096',
@@ -51,25 +48,12 @@ class SejarahController extends Controller
             'body' => $request->body,
         ]);
 
-        return back()->with('success', "Data $header berhasil ditambahkan!");
+        return back()->with('success', "Data berhasil ditambahkan!");
     }
 
     public function update(Request $request, $id)
     {
-        if ($id == 1) {
-            $data = DataHome::find($id);
-            $header = 'Sejarah';
-        }
-        if ($id == 2) {
-            $data = DataHome::find($id);
-            $header = 'Visi & Misi';
-        }
-        // if (request()->is('dashboard/profil/sejarah')) {
-        //     $header = 'Sejarah';
-        // } else if (request()->is('dashboard/profil/visi-misi')) {
-        //     $data = DataHome::find(2);
-        //     $header = 'Visi & Misi';
-        // }
+        $data = DataHome::find($id);
 
         $rules = [
             'judul' => 'required',
@@ -100,6 +84,6 @@ class SejarahController extends Controller
             'body' => $request->body,
         ]);
 
-        return back()->with('success', "Data $header berhasil diupdate!");
+        return back()->with('success', "Data berhasil diupdate!");
     }
 }
