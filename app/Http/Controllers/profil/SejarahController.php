@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 
 class SejarahController extends Controller
 {
-    public function index()
+    public function index($menu)
     {
-        if (request()->is('dashboard/profil/sejarah')) {
-            $data = DataHome::find(1);
+        if ($menu == 'sejarah') {
+            $id = 1;
+            $data = DataHome::find($id);
             $header = 'Sejarah';
-        } else if (request()->is('dashboard/profil/visi-misi')) {
-            $data = DataHome::find(2);
+        }
+        if ($menu == 'visi-misi') {
+            $id = 2;
+            $data = DataHome::find($id);
             $header = 'Visi & Misi';
         }
 
@@ -25,15 +28,10 @@ class SejarahController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        if (request()->is('dashboard/profil/sejarah')) {
-            $id = 1;
-            $header = 'Sejarah';
-        } else if (request()->is('dashboard/profil/visi-misi')) {
-            $id = 2;
-            $header = 'Visi & Misi';
-        }
+        if ($id == 1) $header = 'Sejarah';
+        if ($id == 2) $header = 'Visi & Misi';
 
         $validatedData = $request->validate([
             'judul' => 'required',
@@ -57,15 +55,22 @@ class SejarahController extends Controller
         return back()->with('success', "Data $header berhasil ditambahkan!");
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        if (request()->is('dashboard/profil/sejarah')) {
-            $data = DataHome::find(1);
+        if ($id == 1) {
+            $data = DataHome::find($id);
             $header = 'Sejarah';
-        } else if (request()->is('dashboard/profil/visi-misi')) {
-            $data = DataHome::find(2);
+        }
+        if ($id == 2) {
+            $data = DataHome::find($id);
             $header = 'Visi & Misi';
         }
+        // if (request()->is('dashboard/profil/sejarah')) {
+        //     $header = 'Sejarah';
+        // } else if (request()->is('dashboard/profil/visi-misi')) {
+        //     $data = DataHome::find(2);
+        //     $header = 'Visi & Misi';
+        // }
 
         $rules = [
             'judul' => 'required',
