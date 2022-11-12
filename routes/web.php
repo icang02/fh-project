@@ -60,7 +60,11 @@ Route::get('/profil/sejarah', function () {
     ]);
 });
 Route::get('/profil/visi-misi', function () {
-    return view('home.profil.visi-misi', ['title' => 'Fakultas Hukum | Visi & Misi']);
+    $data = DataHome::find(2);
+    return view('home.profil.sejarah', [
+        'title' => 'Fakultas Hukum | Visi & Misi',
+        'data' => $data,
+    ]);
 });
 Route::get('/profil/tujuan', function () {
     return view('home.profil.tujuan', ['title' => 'Fakultas Hukum | Tujuan']);
@@ -176,10 +180,15 @@ Route::get('/berita/ui_greenmetric', function () {
 });
 
 
-//route - Admin | Profil | Sejarar
+//route - Admin | Profil | Sejarah
 Route::get('/dashboard/profil/sejarah', [SejarahController::class, 'index']);
 Route::post('/dashboard/profil/sejarah', [SejarahController::class, 'store']);
 Route::put('/dashboard/profil/sejarah', [SejarahController::class, 'update']);
+
+//route - Admin | Profil | Visi & Misi
+Route::get('/dashboard/profil/visi-misi', [SejarahController::class, 'index']);
+Route::post('/dashboard/profil/visi-misi', [SejarahController::class, 'store']);
+Route::put('/dashboard/profil/visi-misi', [SejarahController::class, 'update']);
 
 //route colors
 Route::get('/dashboard/colors', function () {

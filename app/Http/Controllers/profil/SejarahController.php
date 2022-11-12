@@ -10,17 +10,31 @@ class SejarahController extends Controller
 {
     public function index()
     {
-        $data = DataHome::find(1);
+        if (request()->is('dashboard/profil/sejarah')) {
+            $data = DataHome::find(1);
+            $header = 'Sejarah';
+        } else if (request()->is('dashboard/profil/visi-misi')) {
+            $data = DataHome::find(2);
+            $header = 'Visi & Misi';
+        }
 
         return view('admin.profil.sejarah', [
-            'title' => 'Dashboard | Sejarah',
+            'title' => 'Dashboard | ' . $header,
             'data' => $data,
+            'header' => $header,
         ]);
     }
 
     public function store(Request $request)
     {
-        $id = 1;    // id data
+        if (request()->is('dashboard/profil/sejarah')) {
+            $id = 1;
+            $header = 'Sejarah';
+        } else if (request()->is('dashboard/profil/visi-misi')) {
+            $id = 2;
+            $header = 'Visi & Misi';
+        }
+
         $validatedData = $request->validate([
             'judul' => 'required',
             'cover' => 'image|mimes:png,jpg,jpeg|max:4096',
@@ -40,12 +54,18 @@ class SejarahController extends Controller
             'body' => $request->body,
         ]);
 
-        return back()->with('success', 'Data sejarah berhasil ditambahkan!');
+        return back()->with('success', "Data $header berhasil ditambahkan!");
     }
 
     public function update(Request $request)
     {
-        $data = DataHome::find(1);
+        if (request()->is('dashboard/profil/sejarah')) {
+            $data = DataHome::find(1);
+            $header = 'Sejarah';
+        } else if (request()->is('dashboard/profil/visi-misi')) {
+            $data = DataHome::find(2);
+            $header = 'Visi & Misi';
+        }
 
         $rules = [
             'judul' => 'required',
@@ -76,6 +96,6 @@ class SejarahController extends Controller
             'body' => $request->body,
         ]);
 
-        return back()->with('success', 'Data sejarah berhasil diupdate!');
+        return back()->with('success', "Data $header berhasil diupdate!");
     }
 }

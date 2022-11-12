@@ -15,23 +15,15 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header"><strong>{{ $header }} Fakultas Hukum</strong>
+            <div class="card-header"><strong>Sejarah Fakultas Hukum</strong>
             </div>
             <div class="card-body">
               <div class="example">
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
 
-                    @php
-                      if (request()->is('dashboard/profil/sejarah')) {
-                          $link = 'sejarah';
-                      } elseif (request()->is('dashboard/profil/visi-misi')) {
-                          $link = 'visi-misi';
-                      }
-                    @endphp
-
                     @if ($data == null)
-                      <form action="/dashboard/profil/{{ $link }}" method="POST" enctype="multipart/form-data">
+                      <form action="/dashboard/profil/sejarah" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                           <label class="form-label" for="judul">Judul</label>
@@ -66,7 +58,7 @@
                         </div>
                       </form>
                     @else
-                      <form action="/dashboard/profil/{{ $link }}" method="POST" enctype="multipart/form-data">
+                      <form action="/dashboard/profil/sejarah" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <input type="hidden" name="id" value="{{ $data->id }}">

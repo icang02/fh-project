@@ -21,7 +21,7 @@
       <ul class="nav-group-items">
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/profil/sejarah') }}"><span
               class="nav-icon"></span> Sejarah</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/profil/visi-misi') }}"><span
               class="nav-icon"></span> Visi Misi</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
               class="nav-icon"></span> Tujuan</a></li>
