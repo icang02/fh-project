@@ -11,29 +11,35 @@ class SejarahController extends Controller
     public function index($menu)
     {
         // Menu Profil
-        if ($menu == 'sejarah') $id = 1;
-        if ($menu == 'visi-misi') $id = 2;
-        if ($menu == 'tujuan') $id = 3;
-        if ($menu == 'sasaran-strategis') $id = 4;
-        if ($menu == 'personalia') $id = 5;
-        if ($menu == 'struktur-organisasi') $id = 6;
-        if ($menu == 'tenaga-pendidikan') $id = 7;
-        if ($menu == 'tenaga-kependidikan') $id = 8;
+        // if ($menu == 'sejarah') $id = 1;
+        // if ($menu == 'visi-misi') $id = 2;
+        // if ($menu == 'tujuan') $id = 3;
+        // if ($menu == 'sasaran-strategis') $id = 4;
+        // if ($menu == 'personalia') $id = 5;
+        // if ($menu == 'struktur-organisasi') $id = 6;
+        // if ($menu == 'tenaga-pendidikan') $id = 7;
+        // if ($menu == 'tenaga-kependidikan') $id = 8;
 
         return view('admin.profil.sejarah', [
             'title' => 'Dashboard | ' . $menu,
-            'data' => DataHome::find($id),
+            'data' => DataHome::find($menu),
             'header' => $menu,
         ]);
     }
 
     public function store(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $rules = [
             'judul' => 'required',
-            'cover' => 'image|mimes:png,jpg,jpeg|max:4096',
             'body' => 'required',
-        ]);
+        ];
+
+
+        if ($request->has('cover')) {
+            $rules['cover'] = 'image|mimes:png,jpg,jpeg|max:4096';
+        }
+
+        $validatedData = $request->validate($rules);
 
         if ($request->has('cover')) {
             $imgName = uniqid() . '-' . time() . '.' . $request->file('cover')->getClientOriginalExtension();
@@ -44,7 +50,7 @@ class SejarahController extends Controller
         DataHome::create([
             'id' => $id,
             'judul' => $request->judul,
-            'cover' => $imgName,
+            'cover' => $imgName ?? 'carousel-1.jpg',
             'body' => $request->body,
         ]);
 

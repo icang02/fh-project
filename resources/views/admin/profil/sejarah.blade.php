@@ -3,16 +3,42 @@
 @section('main-content')
   {{-- Start set ID --}}
   @php
-    request()->is('dashboard/profil/sejarah') ? ($id = 1) : '';
-    request()->is('dashboard/profil/visi-misi') ? ($id = 2) : '';
-    request()->is('dashboard/profil/tujuan') ? ($id = 3) : '';
-    request()->is('dashboard/profil/sasaran-strategis') ? ($id = 4) : '';
-    request()->is('dashboard/profil/personalia') ? ($id = 5) : '';
-    request()->is('dashboard/profil/struktur-organisasi') ? ($id = 6) : '';
-    request()->is('dashboard/profil/tenaga-pendidikan') ? ($id = 7) : '';
-    request()->is('dashboard/profil/tenaga-kependidikan') ? ($id = 8) : '';
-    request()->is('dashboard/profil/rencana-strategis') ? ($id = 9) : '';
-    request()->is('dashboard/profil/rencana-operasional') ? ($id = 10) : '';
+    // Menu Profil
+    request()->is('dashboard/profil/sejarah') ? ($id = 'sejarah') : '';
+    request()->is('dashboard/profil/visi-misi') ? ($id = 'visi-misi') : '';
+    request()->is('dashboard/profil/tujuan') ? ($id = 'tujuan') : '';
+    request()->is('dashboard/profil/sasaran-strategis') ? ($id = 'sasaran-strategis') : '';
+    request()->is('dashboard/profil/personalia') ? ($id = 'personalia') : '';
+    request()->is('dashboard/profil/struktur-organisasi') ? ($id = 'struktur-organisasi') : '';
+    request()->is('dashboard/profil/tenaga-pendidikan') ? ($id = 'tenaga-pendidikan') : '';
+    request()->is('dashboard/profil/tenaga-kependidikan') ? ($id = 'tenaga-kependidikan') : '';
+    request()->is('dashboard/profil/rencana-strategis') ? ($id = 'rencana-strategis') : '';
+    request()->is('dashboard/profil/rencana-operasional') ? ($id = 'rencana-operasional') : '';
+    // Menu Program Studi
+    request()->is('dashboard/program-studi/sejarah-prodi') ? ($id = 'sejarah-prodi') : '';
+    request()->is('dashboard/program-studi/visi-misi-prodi') ? ($id = 'visi-misi-prodi') : '';
+    request()->is('dashboard/program-studi/tujuan-prodi') ? ($id = 'tujuan-prodi') : '';
+    request()->is('dashboard/program-studi/sasaran-strategis-prodi') ? ($id = 'sasaran-strategis-prodi') : '';
+    // Menu Akademik
+    request()->is('dashboard/akademik/peraturan-rektor-tentang-akademik') ? ($id = 'peraturan-rektor-tentang-akademik') : '';
+    request()->is('dashboard/akademik/kalender-akademik') ? ($id = 'kalender-akademik') : '';
+    request()->is('dashboard/akademik/jadwal-perkuliahan') ? ($id = 'jadwal-perkuliahan') : '';
+    request()->is('dashboard/akademik/jadwal-ujian') ? ($id = 'jadwal-ujian') : '';
+    // Menu Mahasiswa & Alumni
+    request()->is('dashboard/mahasiswa-alumni/lembaga-kemahasiswaan') ? ($id = 'lembaga-kemahasiswaan') : '';
+    request()->is('dashboard/mahasiswa-alumni/registrasi-alumni') ? ($id = 'registrasi-alumni') : '';
+    // Menu Tridharma
+    request()->is('dashboard/tridharma/penelitian') ? ($id = 'penelitian') : '';
+    request()->is('dashboard/tridharma/pengabdian') ? ($id = 'pengabdian') : '';
+    request()->is('dashboard/tridharma/publikasi') ? ($id = 'publikasi') : '';
+    request()->is('dashboard/tridharma/hak-kekayaan-intelektual') ? ($id = 'hak-kekayaan-intelektual') : '';
+    // Menu Layanan | Fasilitas
+    request()->is('dashboard/layanan/fasilitas/kriminologi') ? ($id = 'kriminologi') : '';
+    request()->is('dashboard/layanan/fasilitas/konstitusi') ? ($id = 'konstitusi') : '';
+    request()->is('dashboard/layanan/fasilitas/ruang-baca') ? ($id = 'ruang-baca') : '';
+    // Menu Layanan Mutu
+    request()->is('dashboard/jaminan-mutu') ? ($id = 'jaminan-mutu') : '';
+    
   @endphp
   {{-- End set ID --}}
 
@@ -60,7 +86,8 @@
                           <img src="{{ asset('admin-assets/img/data-home/' . $data->cover) }}"
                             class="img-preview img-thumbnail mb-3 d-block" width="300">
                         @else
-                          <img class="img-preview img-thumbnail mb-3 d-block" width="300">
+                          <img src="{{ asset('admin-assets/img/data-home/carousel-1.jpg') }}"
+                            class="img-preview img-thumbnail mb-3 d-block" width="300">
                         @endif
 
                         <input class="form-control @error('cover') is-invalid @enderror" type="file" name="cover"

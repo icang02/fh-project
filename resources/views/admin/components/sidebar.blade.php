@@ -46,14 +46,15 @@
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-book"></use>
         </svg>Program Studi</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/program-studi/sejarah-prodi') }}"><span
               class="nav-icon"></span> Sejarah</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/program-studi/visi-misi-prodi') }}"><span
               class="nav-icon"></span> Visi Misi</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/program-studi/tujuan-prodi') }}"><span
               class="nav-icon"></span> Tujuan</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/carousel') }}"><span
-              class="nav-icon"></span> Sasaran Strategis</a></li>
+        <li class="nav-item"><a class="nav-link"
+            href="{{ url('/dashboard/program-studi/sasaran-strategis-prodi') }}"><span class="nav-icon"></span> Sasaran
+            Strategis</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/placeholders') }}"><span
               class="nav-icon"></span> Rencana Strategis</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/popovers') }}"><span
@@ -68,15 +69,18 @@
         </svg>Akademik
       </a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion') }}"><span
-              class="nav-icon"></span> Peraturan Rektor</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb') }}"><span
-              class="nav-icon"></span> Panduan Akademik</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
-              class="nav-icon"></span> Kalender Akademik</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/carousel') }}"><span
-              class="nav-icon"></span> Jadwal Perkuliahan</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/placeholders') }}"><span
+        <li class="nav-item"><a class="nav-link"
+            href="{{ url('/dashboard/akademik/peraturan-rektor-tentang-akademik') }}"><span class="nav-icon"></span>
+            Peraturan Rektor</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/#') }}"><span class="nav-icon"></span> Panduan
+            Akademik</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/akademik/kalender-akademik') }}"><span
+              class="nav-icon"></span> Kalender
+            Akademik</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('dashboard/akademik/jadwal-perkuliahan') }}"><span
+              class="nav-icon"></span> Jadwal
+            Perkuliahan</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/akademik/jadwal-ujian') }}"><span
               class="nav-icon"></span> Jadwal Ujian</a></li>
       </ul>
     </li>
@@ -87,10 +91,12 @@
       <ul class="nav-group-items">
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion') }}"><span
               class="nav-icon"></span> Pendaftaran Mahasiswa Baru</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb') }}"><span
-              class="nav-icon"></span> Lembaga Kemahasiswaan</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
-              class="nav-icon"></span> Registrasi Alumni</a></li>
+        <li class="nav-item"><a class="nav-link"
+            href="{{ url('/dashboard/mahasiswa-alumni/lembaga-kemahasiswaan') }}"><span class="nav-icon"></span>
+            Lembaga Kemahasiswaan</a></li>
+        <li class="nav-item"><a class="nav-link"
+            href="{{ url('/dashboard/mahasiswa-alumni/registrasi-alumni') }}"><span class="nav-icon"></span>
+            Registrasi Alumni</a></li>
       </ul>
     </li>
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -99,17 +105,18 @@
           </use>
         </svg>Tridharma</a>
       <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/tridharma/penelitian') }}"><span
               class="nav-icon"></span> Penelitian</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/breadcrumb') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/tridharma/pengabdian') }}"><span
               class="nav-icon"></span> Pengabdian</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/tridharma/publikasi') }}"><span
               class="nav-icon"></span> Publikasi</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/cards') }}"><span
-              class="nav-icon"></span> Hak Kekayaan Intelektual</a></li>
+        <li class="nav-item"><a class="nav-link"
+            href="{{ url('/dashboard/tridharma/hak-kekayaan-intelektual') }}"><span class="nav-icon"></span> Hak
+            Kekayaan Intelektual</a></li>
       </ul>
     </li>
-    <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/colors') }}">
+    <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/jaminan-mutu') }}">
         <svg class="nav-icon">
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
         </svg> Jaminan Mutu</a></li>
