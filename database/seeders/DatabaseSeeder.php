@@ -28,26 +28,41 @@ class DatabaseSeeder extends Seeder
         }
 
         // Berita
-        // Berita::create([
-        //     'judul' => "Judul Berita 1",
-        //     'kategori_berita_id' => 1,
-        //     'tanggal' => now(),
-        //     'cover' => 'default.jpg',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        // ]);
-        // Berita::create([
-        //     'judul' => "Judul Berita 2",
-        //     'kategori_berita_id' => 3,
-        //     'tanggal' => now(),
-        //     'cover' => 'default.jpg',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        // ]);
-        // Berita::create([
-        //     'judul' => "Judul Berita 3",
-        //     'kategori_berita_id' => 3,
-        //     'tanggal' => now(),
-        //     'cover' => 'default.jpg',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        // ]);
+        Berita::create([
+            'judul' => "Judul Berita 1",
+            'kategori_berita_id' => 2,
+            'tanggal' => now(),
+            'cover' => 'default.jpg',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
+        ]);
+        Berita::create([
+            'judul' => "Judul Berita 2",
+            'kategori_berita_id' => 2,
+            'tanggal' => now(),
+            'cover' => 'default.jpg',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
+        ]);
+        Berita::create([
+            'judul' => "Judul Berita 3",
+            'kategori_berita_id' => 2,
+            'tanggal' => now(),
+            'cover' => 'default.jpg',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
+        ]);
+
+        Berita::create([
+            'judul' => "Judul Berita 21",
+            'kategori_berita_id' => 1,
+            'tanggal' => now(),
+            'cover' => 'default.jpg',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
+        ]);
+        Berita::create([
+            'judul' => "Judul Berita 24",
+            'kategori_berita_id' => 1,
+            'tanggal' => now(),
+            'cover' => 'default.jpg',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
+        ]);
     }
 }

@@ -237,8 +237,7 @@
 
 
       <div class="nav-item dropdown ">
-        <a href="#"
-          class="nav-link dropdown-toggle {{ request()->is('team') || request()->is('testimonial') || request()->is('404') ? 'active txt-utama' : '' }}"
+        <a href="#" class="nav-link dropdown-toggle {{ request()->is('berita') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Berita</a>
 
         <div class="dropdown-menu fade-down m-0">
@@ -251,9 +250,9 @@
         </div>
       </div>
 
-
-      <a href="{{ url('berita/ui_greenmetric') }}"
-        class="nav-item nav-link {{ request()->is('berita/ui_greenmetric') ? 'active txt-utama' : '' }}">UI
-        GREENMETRIC</a>
+      <a href="{{ url('berita/ui-greenmetric') }}"
+        class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
+        UI GREENMETRIC
+      </a>
     </div>
 </nav>

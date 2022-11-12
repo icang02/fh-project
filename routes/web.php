@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\profil\SejarahController;
 use App\Models\DataHome;
 use Illuminate\Support\Facades\Route;
@@ -453,19 +454,7 @@ Route::get('/{menu}', function ($menu) {
 // });
 
 //navbar - berita
-Route::get('/berita/event', function () {
-    return view('home.berita.event', ['title' => 'Fakultas Hukum | Event']);
-});
-Route::get('/berita/informasi', function () {
-    return view('home.berita.informasi', [
-        'title' => 'Fakultas Hukum | Informasi',
-    ]);
-});
-Route::get('/berita/pengumuman', function () {
-    return view('home.berita.pengumuman', [
-        'title' => 'Fakultas Hukum | Pengumuman',
-    ]);
-});
+Route::get('/berita/{nama}', [BeritaController::class, 'index']);
 
 //navbar ui greenmetric
 Route::get('/berita/ui_greenmetric', function () {
