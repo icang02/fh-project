@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="col">
                     <table class="table table-bordered table-hover">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="row">No</th>
                                 <th>Aksi</th>
@@ -79,11 +79,11 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td><button class="badge text-bg-info border-0" data-coreui-toggle="modal"
+                                <td><button class="badge text-bg-info text-white border-0" data-coreui-toggle="modal"
                                         data-coreui-target="#modalDetailKategori">Detail</button> <button
-                                        class="badge text-bg-warning border-0" data-coreui-toggle="modal"
+                                        class="badge text-bg-warning text-white border-0" data-coreui-toggle="modal"
                                         data-coreui-target="#modalUpdateKategori">Update</button> <button
-                                        class="badge text-bg-danger border-0">Hapus</button></td>
+                                        class="badge text-bg-danger  text-white border-0">Hapus</button></td>
                                 <td>Pengumuman</td>
                             </tr>
                         </tbody>
