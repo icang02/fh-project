@@ -27,7 +27,8 @@
                       <div class="card-body">
                         <h5 class="card-title">{{ $berita->judul }}</h5>
                         <p class="text-muted mt-3" style="font-size: 0.85rem">
-                          <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $berita->tanggal }}
+                          <i class="fa-sharp fa-solid fa-calendar-days me-1"></i>
+                          {{ \Carbon\Carbon::createFromFormat('Y-m-d', $berita->tanggal)->format('d F Y') }}
                           <i class="fa-solid fa-eye ms-3"></i> <span class="fw-bold"> {{ $berita->views }}x dilihat</span>
 
                           @if (str()->lower($berita->kategori_berita->nama) == 'event')

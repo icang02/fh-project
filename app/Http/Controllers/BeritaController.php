@@ -20,4 +20,16 @@ class BeritaController extends Controller
             'allBerita' => Berita::latest()->take(4)->get(),
         ]);
     }
+
+    public function beritaById($kategori, $id)
+    {
+        $berita = Berita::find($id);
+        $berita->increment('views');
+
+        return view('home.berita.detail-berita', [
+            'title' => 'Fakultas Hukum | Detail Berita',
+            'berita' => $berita,
+            'allBerita' => Berita::latest()->take(4)->get(),
+        ]);
+    }
 }
