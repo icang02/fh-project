@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{ $title }}</title>
+  <title>{{ $title ?? 'Fakultas Hukum | 404 Not Found' }}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -49,7 +49,9 @@
   </div>
   <!-- Spinner End -->
 
-  @include('home.components.navbar')
+  @include('home.components.navbar', [
+      'kategoriBerita' => App\Models\KategoriBerita::where('nama', '!=', 'Ui Greenmetric')->get(),
+  ])
 
   {{-- Start Main Content --}}
   @yield('main-content')

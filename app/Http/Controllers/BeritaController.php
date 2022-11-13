@@ -14,9 +14,9 @@ class BeritaController extends Controller
         $berita = KategoriBerita::where('nama', $nama)->get();
         $beritaId = $berita[0]->id;
 
-        return view('home.berita.informasi', [
+        return view('home.berita.index', [
             'title' => 'Fakultas Hukum | ' . $berita[0]->nama,
-            'data' => KategoriBerita::find($beritaId)->berita,
+            'data' => KategoriBerita::find($beritaId),
             'allBerita' => Berita::latest()->take(4)->get(),
         ]);
     }

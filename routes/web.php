@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/link', function () {
     return Artisan::call('storage:link');
 });
+// migrate fresh database
 Route::get('/seed', function () {
     return Artisan::call('migrate:fresh --seed');
 });
@@ -68,49 +69,49 @@ Route::get('/contact', function () {
 
 // Home | Navbar | Profil
 Route::get('/profil/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
 });
 
 Route::get('/akademik/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
 });
 
 Route::get('/program-studi/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
 });
 
 Route::get('/mahasiswa-alumni/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
 });
 
 Route::get('/tridharma/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
 });
 
 Route::get('/layanan/fasilitas/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
 });
 
 Route::get('/{menu}', function ($menu) {
-    return view('home.profil.sejarah', [
+    return view('home.page.data', [
         'title' => "Fakultas Hukum | " . str()->title($menu),
         'data' => DataHome::find($menu),
     ]);
@@ -118,70 +119,70 @@ Route::get('/{menu}', function ($menu) {
 
 // Route::get('/profil/sejarah', function () {
 //     $data = DataHome::find(1);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Sejarah',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/visi-misi', function () {
 //     $data = DataHome::find(2);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Visi & Misi',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/tujuan', function () {
 //     $data = DataHome::find(3);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Tujuan',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/sasaran-strategis', function () {
 //     $data = DataHome::find(4);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Sasaran Strategis',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/personalia', function () {
 //     $data = DataHome::find(5);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Personalia',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/struktur-organisasi', function () {
 //     $data = DataHome::find(6);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Struktur Organisasi',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/tenaga-pendidikan', function () {
 //     $data = DataHome::find(7);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Tenaga Pendidikan / Dosen',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/tenaga-kependidikan', function () {
 //     $data = DataHome::find(8);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Tenaga Kependidikan',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/rencana-strategis', function () {
 //     $data = DataHome::find(9);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Rencana Strategis',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/profil/rencana-operasional', function () {
 //     $data = DataHome::find(10);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Rencana Operasional',
 //         'data' => $data,
 //     ]);
@@ -190,21 +191,21 @@ Route::get('/{menu}', function ($menu) {
 // Navbar - Program Studi
 // Route::get('/program-studi/sejarah', function () {
 //     $data = DataHome::find(11);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Program Studi | Sejarah',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/program-studi/visi-misi', function () {
 //     $data = DataHome::find(12);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Program Studi | Visi Misi',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/program-studi/tujuan', function () {
 //     $data = DataHome::find(13);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Program Studi | Tujuan',
 //         'data' => $data,
 //     ]);
@@ -212,7 +213,7 @@ Route::get('/{menu}', function ($menu) {
 
 // Route::get('/program-studi/sasaran-strategis', function () {
 //     $data = DataHome::find(14);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Program Studi | Sasaran Strategis',
 //         'data' => $data,
 //     ]);
@@ -221,28 +222,28 @@ Route::get('/{menu}', function ($menu) {
 //Navbar - Akademik
 // Route::get('/akademik/peraturan-rektor-tentang-akademik', function () {
 //     $data = DataHome::find(15);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Akademik | Peraturan Rektor Tentang Akademik',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/akademik/kalender-akademik', function () {
 //     $data = DataHome::find(16);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Akademik | Kalender Akademik',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/akademik/jadwal-perkuliahan', function () {
 //     $data = DataHome::find(17);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Akademik | Jadwal Perkuliahan',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/akademik/jadwal-ujian', function () {
 //     $data = DataHome::find(18);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Akademik | Jadwal Ujian',
 //         'data' => $data,
 //     ]);
@@ -251,14 +252,14 @@ Route::get('/{menu}', function ($menu) {
 //Navbar Mahasiswa - Alumni
 // Route::get('/mahasiswa-alumni/lembaga-kemahasiswaan', function () {
 //     $data = DataHome::find(19);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Mahasiswa & Alumni | Lembaga Kemahasiswaan',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/mahasiswa-alumni/registrasi-alumni', function () {
 //     $data = DataHome::find(20);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Mahasiswa & Alumni | Registrasi Alumni',
 //         'data' => $data,
 //     ]);
@@ -267,28 +268,28 @@ Route::get('/{menu}', function ($menu) {
 //Navbar - Tridharma
 // Route::get('/tridharma/penelitian', function () {
 //     $data = DataHome::find(21);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Tridharma | Penelitian',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/tridharma/pengabdian', function () {
 //     $data = DataHome::find(22);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Tridharma | Pengabdian',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/tridharma/publikasi', function () {
 //     $data = DataHome::find(23);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Tridharma | Publikasi',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/tridharma/hak-kekayaan-intelektual', function () {
 //     $data = DataHome::find(24);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Tridharma | Hak Kekayaan Intelektual',
 //         'data' => $data,
 //     ]);
@@ -297,21 +298,21 @@ Route::get('/{menu}', function ($menu) {
 //Nabar Layanan-Fasilitas
 // Route::get('/layanan/fasilitas/kriminologi', function () {
 //     $data = DataHome::find(25);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Layanan | Faslitas | Lab. Pidana & Kriminologi',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/layanan/fasilitas/konstitusi', function () {
 //     $data = DataHome::find(26);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Layanan | Faslitas | Lab. Konstitusi (Vicon)',
 //         'data' => $data,
 //     ]);
 // });
 // Route::get('/layanan/fasilitas/ruang-baca', function () {
 //     $data = DataHome::find(27);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Layanan | Faslitas | Ruang Baca',
 //         'data' => $data,
 //     ]);
@@ -320,7 +321,7 @@ Route::get('/{menu}', function ($menu) {
 //Navbar Jaminan Mutu
 // Route::get('/jaminan-mutu', function () {
 //     $data = DataHome::find(28);
-//     return view('home.profil.sejarah', [
+//     return view('home.page.data', [
 //         'title' => 'Fakultas Hukum | Jaminan Mutu',
 //         'data' => $data,
 //     ]);
@@ -476,7 +477,7 @@ Route::get('/berita/{kategori}/{id}', function ($kategori, $id) {
 
 //navbar ui greenmetric
 Route::get('/berita/ui_greenmetric', function () {
-    return view('home.berita.ui_greenmetric', [
+    return view('home.berita.index', [
         'title' => 'Fakultas Hukum | Ui Greenmetric',
     ]);
 });

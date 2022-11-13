@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('cover');
             $table->text('body');
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

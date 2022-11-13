@@ -10,30 +10,58 @@
   }
 
   body {
-    top: 0 !important;
+    top: -15px !important;
   }
 
   #google_translate_element select {
     color: #DA251E;
     border: 1px solid #ced4da;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 0px 0px 5px;
     height: 2.4rem;
     width: 7rem;
   }
+
+  /* Navbar Dropdown */
+  .drop-down02 {
+    position: relative;
+  }
+
+  .drop2 {
+    text-transform: capitalize !important;
+    font-weight: normal !important;
+    margin-left: -1.5px !important;
+  }
+
+  .drop-down02 .sub-menu02 {
+    position: absolute !important;
+    left: 100%;
+    top: -9px !important;
+  }
+
+  .drop-down02 .dropdown-toggle {
+    padding: .25rem 1.1rem !important;
+  }
+
+  @media screen and (max-width :767px) {
+    .drop-down02 .sub-menu02 {
+      position: static !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+  }
 </style>
+
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
+
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'id'
     }, 'google_translate_element');
   }
-
-  const combo = document.querySelector('.goog-te-combo');
-  window.addEventListener('load', (event) => {
-    combo.classList.add("form-control");
-  });
 </script>
 
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-5">
@@ -47,7 +75,6 @@
       </form>
       <div id="google_translate_element" class="ms-md-3" style="margin-top: 17px"></div>
     </div>
-
 
   </div>
 </nav>
@@ -188,36 +215,6 @@
         </div>
       </div>
 
-
-
-      <style>
-        .drop-down02 {
-          position: relative;
-        }
-
-        .drop2 {
-          text-transform: capitalize !important;
-          font-weight: normal !important;
-          margin-left: -1.5px !important;
-        }
-
-        .drop-down02 .sub-menu02 {
-          position: absolute !important;
-          left: 100%;
-          top: -9px !important;
-        }
-
-        .drop-down02 .dropdown-toggle {
-          padding: .25rem 1.1rem !important;
-        }
-
-        @media screen and (max-width :767px) {
-          .drop-down02 .sub-menu02 {
-            position: static !important;
-          }
-        }
-      </style>
-
       <div class="dropdown">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="dropdown">
@@ -271,33 +268,26 @@
         </ul>
       </div>
 
-
       <a href="{{ url('jaminan-mutu') }}"
         class="nav-item nav-link {{ request()->is('jaminan-mutu') ? 'active txt-utama' : '' }}">Jaminan
         Mutu</a>
-
 
       <div class="nav-item dropdown ">
         <a href="#" class="nav-link dropdown-toggle {{ request()->is('berita') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Berita</a>
 
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('berita/event') }}"
-            class="dropdown-item {{ request()->is('berita/event') ? 'active bg-utama' : '' }}">Event</a>
-          <a href="{{ url('berita/informasi') }}"
-            class="dropdown-item {{ request()->is('berita/informasi') ? 'active bg-utama' : '' }}">Informasi</a>
-          <a href="{{ url('berita/pengumuman') }}"
-            class="dropdown-item {{ request()->is('berita/pengumuman') ? 'active bg-utama' : '' }}">Pengumuman</a>
+          @foreach ($kategoriBerita as $kategori)
+            <a href="{{ url('berita/' . str()->lower($kategori->nama)) }}"
+              class="dropdown-item {{ request()->is('berita/' . str()->lower($kategori->nama)) ? 'active bg-utama' : '' }}">{{ $kategori->nama }}</a>
+          @endforeach
         </div>
       </div>
 
-
       <a href="{{ url('berita/ui-greenmetric') }}"
         class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
-        UI GREENMETRIC
+        UI Greenmetric
       </a>
     </div>
   </div>
-
-
 </nav>

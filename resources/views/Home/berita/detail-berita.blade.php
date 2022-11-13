@@ -6,7 +6,7 @@
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
-          <h5 class="text-center">PUSAT INFORMASI</h5>
+          <h4 class="text-center">{{ $berita->kategori_berita->nama }}</h4>
           <hr class="w-25 mx-auto my-5" style="height: 3px">
           <img src="" class="img-fluid">
 
@@ -24,7 +24,7 @@
                       <h5 class="card-title">{{ $berita->judul }}</h5>
                       <p class="text-muted mt-3" style="font-size: 0.85rem">
                         <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $berita->tanggal }}
-                        <i class="fa-solid fa-eye ms-3"></i> <span class="fw-bold"> 1x dilihat</span>
+                        <i class="fa-solid fa-eye ms-3"></i> <span class="fw-bold"> {{ $berita->views }}x dilihat</span>
 
                         @if (str()->lower($berita->kategori_berita->nama) == 'event')
                           <span class="ms-2 badge btn btn-primary btn-sm rounded-3"
@@ -81,7 +81,7 @@
                               </h6>
                               <p class="text-muted">
                                 <small>
-                                  <i class="fa-solid fa-eye"></i> <span class="fw-bold"><i>12x
+                                  <i class="fa-solid fa-eye"></i> <span class="fw-bold"><i>{{ $berita->views }}x
                                       dilihat</i></span>
                                 </small>
                               </p>
