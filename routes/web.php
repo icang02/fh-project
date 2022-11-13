@@ -3,6 +3,7 @@
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\profil\SejarahController;
 use App\Models\DataHome;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// create symbolic link
+Route::get('/link', function () {
+    return Artisan::call('storage:link');
+});
 
 // Route Admin
 Route::get('/auth', function () {
