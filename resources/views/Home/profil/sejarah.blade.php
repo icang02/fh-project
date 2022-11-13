@@ -4,14 +4,14 @@
   <!-- Header Start -->
   @php
     if ($data == null) {
-        $img = 'carousel-1.jpg';
+        $img = 'storage/img/data-home/carousel-1.jpg';
     } else {
-        $img = $data->cover;
+        $img = "storage/$data->cover";
     }
   @endphp
 
   <div class="container-fluid bg-primary py-5 mb-5 page-header"
-    style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url({{ asset('admin-assets/img/data-home/' . $img) }});">
+    style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url({{ asset($img) }});">
     <div class="container py-5">
       <div class="row justify-content-center">
         <div class="col-lg-10 text-center" style="opacity: 0">
@@ -42,7 +42,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8 wow fadeInUp" data-wow-delay="0.1s">
             <div class="position-relative d-flex justify-content-center">
-              <div class="bg-light p-md-5 p-3 shadow">
+              <div class="bg-light p-md-5 p-3 shadow w-100">
                 <small>{!! $data->body !!}</small>
               </div>
             </div>

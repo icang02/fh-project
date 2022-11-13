@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('data_home', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('judul');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->text('body');
             $table->timestamps();
         });

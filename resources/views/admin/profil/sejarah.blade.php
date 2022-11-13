@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('main-content')
-  {{-- Start set ID --}}
   @php
     // Menu Profil
     request()->is('dashboard/profil/sejarah') ? ($id = 'sejarah') : '';
@@ -39,7 +38,6 @@
     // Menu Layanan Mutu
     request()->is('dashboard/jaminan-mutu') ? ($id = 'jaminan-mutu') : '';
   @endphp
-  {{-- End set ID --}}
 
   <div class="body flex-grow-1 px-3">
     <div class="container-lg">
@@ -82,11 +80,10 @@
                         <label class="form-label" for="cover">Cover</label>
 
                         @if ($data != null && $data->cover)
-                          <img src="{{ asset('admin-assets/img/data-home/' . $data->cover) }}"
-                            class="img-preview img-thumbnail mb-3 d-block" width="300">
+                          <img src="{{ asset("storage/$data->cover") }}" class="img-preview img-thumbnail mb-3 d-block"
+                            width="300">
                         @else
-                          <img src="{{ asset('admin-assets/img/data-home/carousel-1.jpg') }}"
-                            class="img-preview img-thumbnail mb-3 d-block" width="300">
+                          <img class="img-preview img-thumbnail mb-3" width="300" style="display: none">
                         @endif
 
                         <input class="form-control @error('cover') is-invalid @enderror" type="file" name="cover"
@@ -106,7 +103,7 @@
 
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button type="reset" class="btn btn-danger text-light">Reset</button>
+                        <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button>
                       </div>
                     </form>
 
@@ -115,4 +112,17 @@
               </div>
             </div>
           </div>
-        @endsection
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btnReset = document.querySelector('#reset');
+    const editor = document.querySelector('#editor');
+    const judul = document.querySelector('#judul');
+    btnReset.addEventListener('click', function() {
+      judul.value = "Fifth Avenue, New York City";
+    });
+  </script>
+@endsection

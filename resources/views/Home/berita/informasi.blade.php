@@ -26,12 +26,13 @@
                         class="card-img-top" alt="Image">
                       <div class="card-body">
                         <h5 class="card-title">{{ $berita->judul }}</h5>
-                        <p class="text-muted mt-3" style="font-size: 0.85rem">{{ $berita->tanggal }}
-                          <span class="fw-bold">@ 1x dilihat</span>
+                        <p class="text-muted mt-3" style="font-size: 0.85rem">
+                          <i class="fa-sharp fa-solid fa-calendar-days me-1"></i> {{ $berita->tanggal }}
+                          <i class="fa-solid fa-eye ms-3"></i> <span class="fw-bold"> 1x dilihat</span>
 
                           @if (str()->lower($berita->kategori_berita->nama) == 'event')
-                            <span
-                              class="ms-2 badge btn btn-danger btn-sm rounded-3">{{ str()->title($berita->kategori_berita->nama) }}
+                            <span class="ms-2 badge btn btn-primary btn-sm rounded-3"
+                              style="background-color: blue; border-color: blue;">{{ str()->title($berita->kategori_berita->nama) }}
                             </span>
                           @elseif (str()->lower($berita->kategori_berita->nama) == 'informasi')
                             <span
@@ -45,13 +46,20 @@
                             <span
                               class="ms-2 badge btn btn-success btn-sm rounded-3">{{ str()->title($berita->kategori_berita->nama) }}
                             </span>
+                          @else
+                            <span
+                              class="ms-2 badge btn btn-secondary btn-sm rounded-3">{{ str()->title($berita->kategori_berita->nama) }}
+                            </span>
                           @endif
                         </p>
-                        <p class="card-text">{!! $berita->body !!}</p>
+                        <p class="card-text">
+                          {{ Str::limit(strip_tags($berita->body), 150, ' ...') }}
+                        </p>
                       </div>
 
                       <div class="card-body">
-                        <a href="#" class="btn btn-danger card-link px-3 py-2"
+                        <a href="{{ url('/berita' . '/' . str()->lower($berita->kategori_berita->nama) . '/' . $berita->id) }}"
+                          class="btn btn-danger card-link px-3 py-2"
                           style="border-radius: 6px; font-size: 0.8rem;">Selengkapnya</a>
                       </div>
                     </div>
@@ -62,38 +70,38 @@
                   <div class="col-md-4 order-1 order-md-0">
                     <div class="shadow p-3 mb-5 bg-body rounded-3">
                       <div class="card border border-white" style="width: 100%;">
-                        <img src="" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Kategori</h5>
+                          <h5 class="card-title">Artikel Terbaru</h5>
+                          <hr>
                         </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item">Event</li>
-                          <li class="list-group-item">Berita</li>
-                          <li class="list-group-item">Pengumuman</li>
-                          <li class="list-group-item">UI Greenmetric</li>
-                        </ul>
-
                         <div class="card-body">
-                          <div class="card" style="max-width: 540px;">
-                            <div class="row g-0">
-                              <div class="col-md-4">
-                                <img
-                                  src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2022/1/27/e06af444-2e70-4f3e-b4d1-edfd3ed21d55.jpg"
-                                  class="img-fluid rounded-start" alt="...">
-                              </div>
-                              <div class="col-md-8">
-                                <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">This is a wider card with supporting text.
+
+                          @foreach ($allBerita as $berita)
+                            <div class="card border border-white" style="max-width: 540px;">
+                              <div class="row">
+                                <div class="col-lg-3 col-3">
+                                  <img src="{{ asset('storage/img/data-home/carousel-1.jpg') }}" alt="Image"
+                                    width="70" height="70" style="border-radius: 6px">
+                                </div>
+                                <div class="col-lg-9 col-9">
+                                  <h6>
+                                    <a href="{{ url('/berita' . '/' . str()->lower($berita->kategori_berita->nama) . '/' . $berita->id) }}"
+                                      class="text-dark">{{ $berita->judul }}</a>
+                                  </h6>
+                                  <p class="text-muted">
+                                    <small>
+                                      <i class="fa-solid fa-eye"></i> <span class="fw-bold"><i>12x
+                                          dilihat</i></span>
+                                    </small>
                                   </p>
-                                  <p class="card-text"><small class="text-muted">Last updated 3
-                                      mins ago</small></p>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
 
+                            </div>
+                            <hr>
+                          @endforeach
+
+                        </div>
 
                       </div>
                     </div>

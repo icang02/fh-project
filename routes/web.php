@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\profil\SejarahController;
+use App\Models\Berita;
 use App\Models\DataHome;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 // create symbolic link
 Route::get('/link', function () {
     return Artisan::call('storage:link');
+});
+Route::get('/seed', function () {
+    return Artisan::call('migrate:fresh --seed');
 });
 
 // Route Admin
@@ -461,6 +465,14 @@ Route::get('/{menu}', function ($menu) {
 
 //navbar - berita
 Route::get('/berita/{nama}', [BeritaController::class, 'index']);
+
+Route::get('/berita/{kategori}/{id}', function ($kategori, $id) {
+    return view('home.berita.detail-berita', [
+        'title' => 'Detail Berita',
+        'berita' => Berita::find($id),
+        'allBerita' => Berita::latest()->take(4)->get(),
+    ]);
+});
 
 //navbar ui greenmetric
 Route::get('/berita/ui_greenmetric', function () {

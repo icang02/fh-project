@@ -1,22 +1,54 @@
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-2">
+<style>
+  .goog-te-gadget,
+  .goog-logo-link {
+    color: transparent !important;
+  }
+
+  .goog-te-banner-frame,
+  .goog-logo-link img {
+    display: none;
+  }
+
+  body {
+    top: 0 !important;
+  }
+
+  #google_translate_element select {
+    color: #DA251E;
+    border: 1px solid #ced4da;
+    padding: 0px 5px 0px 5px;
+    height: 2.4rem;
+    width: 7rem;
+  }
+</style>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'id'
+    }, 'google_translate_element');
+  }
+
+  const combo = document.querySelector('.goog-te-combo');
+  window.addEventListener('load', (event) => {
+    combo.classList.add("form-control");
+  });
+</script>
+
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-5">
   <div
-    class="py-2 p-lg-4 d-flex justify-md-content-between justify-content-center flex-md-row flex-column align-items-center w-100">
+    class="py-2 p-lg-4 d-flex justify-md-content-between justify-content-between flex-md-row flex-column align-items-center w-100">
     <img src="{{ asset('home-assets/img/logo-hukum.png') }}" class="d-block" alt="Logo" width="300">
 
-    <div class="btn btn-danger badge my-md-0 my-4 mx-auto" id="google_translate_element"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en'
-        }, 'google_translate_element');
-      }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
+    <div class="d-flex align-items-center">
+      <form class="" class="d-block">
+        <input class="form-control px-lg-3" placeholder="Cari..">
+      </form>
+      <div id="google_translate_element" class="ms-md-3" style="margin-top: 17px"></div>
+    </div>
 
-    <form class="">
-      <input class="form-control px-lg-4" placeholder="Cari..">
-    </form>
+
   </div>
 </nav>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\profil;
 use App\Http\Controllers\Controller;
 use App\Models\DataHome;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SejarahController extends Controller
 {
@@ -26,7 +27,6 @@ class SejarahController extends Controller
             'body' => 'required',
         ];
 
-
         if ($request->has('cover')) {
             $rules['cover'] = 'image|mimes:png,jpg,jpeg|max:4096';
         }
@@ -34,15 +34,13 @@ class SejarahController extends Controller
         $validatedData = $request->validate($rules);
 
         if ($request->has('cover')) {
-            $imgName = uniqid() . '-' . time() . '.' . $request->file('cover')->getClientOriginalExtension();
-            $path = 'admin-assets/img/data-home';
-            $request->file('cover')->move(public_path($path), $imgName);
+            $imgName = $request->file('cover')->store('img/data-home');
         }
 
         DataHome::create([
             'id' => $id,
             'judul' => $request->judul,
-            'cover' => $imgName ?? 'carousel-1.jpg',
+            'cover' => $imgName ?? null,
             'body' => $request->body,
         ]);
 
@@ -66,14 +64,8 @@ class SejarahController extends Controller
 
         $imgName = $data->cover;    // cover lama
         if ($request->has('cover')) {
-            $path = 'admin-assets/img/data-home';
-
-            // Hapus cover lama
-            unlink("$path/$data->cover");
-
-            // Upload cover baru
-            $imgName = uniqid() . '-' . time() . '.' . $request->file('cover')->getClientOriginalExtension();   // cover baru
-            $request->file('cover')->move(public_path($path), $imgName);
+            Storage::delete($data->cover);
+            $imgName = $request->file('cover')->store('img/data-home');     // cover baru
         }
 
         $data->update([
