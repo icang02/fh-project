@@ -11,11 +11,9 @@ class SejarahController extends Controller
 {
     public function index($menu)
     {
-        $data = DataHome::find($menu);
-
         return view('admin.profil.sejarah', [
             'title' => 'Dashboard | ' . str()->title($menu),
-            'data' => $data,
+            'data' => DataHome::find($menu),
             'header' => str()->title($menu),
         ]);
     }
