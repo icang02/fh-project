@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 mb-5">
+<div class="container-fluid p-0">
   <div class="owl-carousel header-carousel position-relative">
     <div class="owl-carousel-item position-relative">
       <img class="img-fluid" src="{{ asset('storage/img/slider/slider1.png') }}" alt="Slider 1">

@@ -39,7 +39,7 @@
     request()->is('dashboard/jaminan-mutu') ? ($id = 'jaminan-mutu') : '';
   @endphp
 
-  <div class="body flex-grow-1 px-3">
+  <div class="body flex-grow-1 px-3 mt-1">
     <div class="container-lg">
       {{-- Start Flash Message --}}
       @if (session('success'))

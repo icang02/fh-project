@@ -1,44 +1,45 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\PageIndex;
 use App\Http\Controllers\profil\SejarahController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 // create symbolic link
-Route::get('/seed', fn() => Artisan::call('storage:link'));
+Route::get('/seed', fn () => Artisan::call('storage:link'));
 // migrate fresh database
-Route::get('/seed', fn() => Artisan::call('migrate:fresh --seed'));
+Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
 
 //route Home
 Route::get(
     '/',
-    fn() => view('home.index', [
+    fn () => view('home.index', [
         'title' => 'Fakultas Hukum Universitas Halu Oleo',
     ])
 );
 Route::get(
     '/about',
-    fn() => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
+    fn () => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
 );
 Route::get(
     '/courses',
-    fn() => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
+    fn () => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
 );
 Route::get(
     '/team',
-    fn() => view('home.team', ['title' => 'Fakultas Hukum | Team'])
+    fn () => view('home.team', ['title' => 'Fakultas Hukum | Team'])
 );
 Route::get(
     '/testimonial',
-    fn() => view('home.testimonial', [
+    fn () => view('home.testimonial', [
         'title' => 'Fakultas Hukum | Testimonial',
     ])
 );
 Route::get(
     '/contact',
-    fn() => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
+    fn () => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
 );
 
 // Home | Navbar | Profil
@@ -55,10 +56,7 @@ Route::get('/berita/{nama}', [BeritaController::class, 'index']);
 Route::get('/berita/{kategori}/{id}', [BeritaController::class, 'beritaById']);
 
 // route admin
-Route::get(
-    '/dashboard',
-    fn() => view('admin.index', ['title' => 'Dashboard | Fakultas Hukum'])
-);
+Route::get('/dashboard', fn () => view('admin.index', ['title' => 'Dashboard | Fakultas Hukum']));
 
 //route - Admin | Profil | Sejarah dan lain lain
 Route::get('/dashboard/profil/{menu}', [SejarahController::class, 'index']);
@@ -259,8 +257,8 @@ Route::get('/dashboard/widgets', function () {
 });
 
 //route kategori cekk
-Route::get('/dashboard/berita/kategori-berita', function () {
-    return view('admin.berita.kategori-berita', [
-        'title' => 'Dashboard | Kategori Berita',
-    ]);
-});
+Route::get('/dashboard/berita/kategori-berita', [KategoriBeritaController::class, 'index']);
+Route::post('/dashboard/berita/kategori-berita', [KategoriBeritaController::class, 'store']);
+Route::post('/batas-kategori-berita', [KategoriBeritaController::class, 'batas']);
+Route::put('/dashboard/berita/kategori-berita/{id}', [KategoriBeritaController::class, 'update']);
+Route::delete('/dashboard/berita/kategori-berita/{id}', [KategoriBeritaController::class, 'destroy']);
