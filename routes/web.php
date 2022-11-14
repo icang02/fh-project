@@ -293,3 +293,10 @@ Route::delete('/dashboard/berita/kategori-berita/{id}', [KategoriBeritaControlle
 Route::get('/auth', [AuthController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/auth', [AuthController::class, 'loginProses']);
 Route::post('/auth/logout', [AuthController::class, 'logout']);
+
+
+//route dosen
+Route::get('/dosen/daftar-dosen', function () {
+    return view('home.dosen.daftar-dosen', 
+    ['title' => 'Daftar Dosen']);
+});
