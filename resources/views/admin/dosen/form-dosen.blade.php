@@ -22,12 +22,13 @@
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
 
-                    <form action="{{ url('/dashboard/berita/form-berita') }}" method="POST"
-                      enctype="multipart/form-data">
+                    <form
+                      @if (isset($data)) action="{{ url('dashboard/dosen/' . $data->id) }}"@else action="{{ url('dashboard/dosen/form-dosen') }}" @endif
+                      method="POST" enctype="multipart/form-data">
                       @csrf
+
                       @if (isset($data))
                         @method('PUT')
-                        <input type="hidden" name="id" value="{{ !isset($data) ? '' : $data->id }}">
                       @endif
 
                       <div class="mb-3">
@@ -41,8 +42,10 @@
 
                       <div class="mb-3">
                         <label class="form-label" for="foto">Foto Dosen</label>
-                        <img src="{{ asset('storage/img/foto-dosen/default.png') }}" alt="foto dosen"
-                          class="img-preview img-thumbnail mb-3 d-block" width="150">
+                        <img
+                          @if (isset($data)) @if ($data->foto != null) src="{{ asset("storage/$data->foto") }}" @else src="{{ asset('storage/img/foto-dosen/default.jpg') }}" @endif
+                        @else src="{{ asset('storage/img/foto-dosen/default.jpg') }}" @endif
+                        alt="foto dosen" class="img-preview img-thumbnail mb-3 d-block" width="150">
                         <label class="text-muted form-label">Upload foto dengan rasio 3:4 dan tidak lebih dari
                           4Mb.</label>
                         <input class="form-control @error('foto') is-invalid @enderror" type="file" name="foto"
@@ -80,21 +83,26 @@
                       </div>
 
                       <div class="mb-3">
-                        <label class="form-label" for="kategori">Jabatan</label>
-                        <select class="form-select @error('kategori') is-invalid @enderror" id="kategori"
-                          name="kategori">
-                          <option>Pilih Jabatan</option>
-                          <option value="dekan" @if (!isset($data) ? '' : $data->jabatan == 'dekan') selected @endif>Dekan</option>
-                          <option value="wakil dekan" @if (!isset($data) ? '' : $data->jabatan == 'wakil dekan') selected @endif>Wakil Dekan
+                        <label class="form-label" for="jabatan">Jabatan</label>
+                        <select class="form-select @error('jabatan') is-invalid @enderror" id="jabatan" name="jabatan">
+                          <option value="">Pilih Jabatan</option>
+                          <option value="dekan" @if (!isset($data) ? '' : $data->jabatan == 'dekan') selected @endif
+                            @if (old('jabatan') == 'dekan') selected @endif>Dekan</option>
+                          <option value="wakil dekan" @if (!isset($data) ? '' : $data->jabatan == 'wakil dekan') selected @endif
+                            @if (old('jabatan') == 'wakil dekan') selected @endif>Wakil Dekan
                           </option>
-                          <option value="kepala lektor" @if (!isset($data) ? '' : $data->jabatan == 'kepala lektor') selected @endif>Kepala Lektor
+                          <option value="kepala lektor" @if (!isset($data) ? '' : $data->jabatan == 'kepala lektor') selected @endif
+                            @if (old('jabatan') == 'kepala lektor') selected @endif>Kepala Lektor
                           </option>
-                          <option value="lektor" @if (!isset($data) ? '' : $data->jabatan == 'lektor') selected @endif>Lektor</option>
-                          <option value="dosen" @if (!isset($data) ? '' : $data->jabatan == 'dosen') selected @endif>Dosen</option>
-                          <option value="asisten ahli" @if (!isset($data) ? '' : $data->jabatan == 'asisten ahli') selected @endif>Asisten Ahli
+                          <option value="lektor" @if (!isset($data) ? '' : $data->jabatan == 'lektor') selected @endif
+                            @if (old('jabatan') == 'lektor') selected @endif>Lektor</option>
+                          <option value="dosen" @if (!isset($data) ? '' : $data->jabatan == 'dosen') selected @endif
+                            @if (old('jabatan') == 'dosen') selected @endif>Dosen</option>
+                          <option value="asisten ahli" @if (!isset($data) ? '' : $data->jabatan == 'asisten ahli') selected @endif
+                            @if (old('jabatan') == 'asisten ahli') selected @endif>Asisten Ahli
                           </option>
                         </select>
-                        @error('kategori')
+                        @error('jabatan')
                           <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
@@ -111,7 +119,8 @@
 
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button>
+                        {{-- <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button> --}}
+                        <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="btn btn-danger text-light">Kembali</a>
                       </div>
                     </form>
 

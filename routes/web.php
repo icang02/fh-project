@@ -292,5 +292,8 @@ Route::post('/auth/logout', [AuthController::class, 'logout']);
 
 // Route Dosen
 Route::get('/dashboard/dosen/list-dosen', [DosenController::class, 'index']);
-Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'edit']);
+Route::get('/dashboard/dosen/form-dosen', [DosenController::class, 'dosenById']);
+Route::post('/dashboard/dosen/form-dosen', [DosenController::class, 'store']);
+Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'dosenById']);
+Route::put('/dashboard/dosen/{id}', [DosenController::class, 'update']);
 Route::delete('/dashboard/dosen/{id}', [DosenController::class, 'destroy']);

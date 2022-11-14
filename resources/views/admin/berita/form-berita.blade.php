@@ -89,7 +89,8 @@
 
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button>
+                        {{-- <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button> --}}
+                        <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="btn btn-danger text-light">Kembali</a>
                       </div>
                     </form>
 

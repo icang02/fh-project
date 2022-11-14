@@ -18,13 +18,13 @@
 
           <form action="{{ url('/dashboard/dosen/list-dosen') }}" class="d-flex ms-2">
             <input type="text" name="search" id="search" class="form-control me-1"
-              placeholder="Masukan Kata Kunci.." value="{{ request('search') }}">
-            <button type="submit" class="btn btn-primary" autocomplete="off">Cari</button>
+              placeholder="Masukan Kata Kunci.." autocomplete="off" value="{{ request('search') }}">
+            <button type="submit" class="btn btn-primary">Cari</button>
           </form>
         </div>
 
         <div class="col-md-2 mt-3 mt-md-0">
-          <a href="{{ url('/dashboard/dosem/form-dosen') }}" class="btn btn-primary"
+          <a href="{{ url('/dashboard/dosen/form-dosen') }}" class="btn btn-primary"
             style="float: right !important">Tambah</a>
         </div>
       </div>
@@ -94,13 +94,14 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col">
-          {{ $data->onEachSide(0.5)->withQueryString()->links() }}
-        </div>
+    <div class="row container-lg mt-3 mt-md-0">
+      <div class="col">
+        {{ $data->onEachSide(0.5)->withQueryString()->links() }}
       </div>
     </div>
 
+  </div>
   </div>
 @endsection

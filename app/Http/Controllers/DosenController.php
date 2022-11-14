@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DosenController extends Controller
 {
@@ -23,7 +24,7 @@ class DosenController extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function dosenById($id = null)
     {
         $data = Dosen::find($id);
 
@@ -32,6 +33,75 @@ class DosenController extends Controller
             'header' => str()->title("Form Dosen"),
             'data' => $data,
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $rules = [
+            'nama' => 'required',
+            'nip' => 'required',
+            'nidn' => 'required',
+            'email' => 'required',
+            'jabatan' => 'required',
+        ];
+
+        if ($request->has('foto')) {
+            $rules['foto'] = 'image|mimes:png,jpg,jpeg|max:4096';
+        }
+        $validatedData = $request->validate($rules);
+
+        $imgName = null;
+        if ($request->has('foto')) {
+            $imgName = $request->file('foto')->store('img/foto-dosen');
+        }
+
+        Dosen::create([
+            'nama' => ucfirst($request->nama),
+            'foto' => $imgName,
+            'nip' => $request->nip,
+            'nidn' => $request->nidn,
+            'email' => $request->email,
+            'jabatan' => $request->jabatan,
+            'detail_jabatan' => ucfirst($request->detail_jabatan),
+        ]);
+
+        return redirect('/dashboard/dosen/list-dosen')->with('success', 'Data dosen berhasil ditambahkan!');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $dosen = Dosen::find($id);
+
+        $rules = [
+            'nama' => 'required',
+            'nip' => 'required',
+            'nidn' => 'required',
+            'email' => 'required',
+            'jabatan' => 'required',
+        ];
+
+        if ($request->has('foto')) {
+            $rules['foto'] = 'image|mimes:png,jpg,jpeg|max:4096';
+        }
+        $validatedData = $request->validate($rules);
+
+        $imgName = $dosen->foto;
+        if ($request->has('foto')) {
+            if ($imgName != null) Storage::delete($dosen->foto);
+            $imgName = $request->file('foto')->store('img/foto-dosen');
+        }
+
+        $dosen->update([
+            'nama' => ucfirst($request->nama),
+            'foto' => $imgName,
+            'nip' => $request->nip,
+            'nidn' => $request->nidn,
+            'email' => $request->email,
+            'jabatan' => $request->jabatan,
+            'detail_jabatan' => ucfirst($request->detail_jabatan),
+        ]);
+
+        return redirect('/dashboard/dosen/list-dosen')->with('success', 'Data dosen berhasil diupdate!');
     }
 
     public function destroy($id)
