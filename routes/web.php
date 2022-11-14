@@ -290,6 +290,7 @@ Route::get('/auth', [AuthController::class, 'index'])->middleware('guest')->name
 Route::post('/auth', [AuthController::class, 'loginProses']);
 Route::post('/auth/logout', [AuthController::class, 'logout']);
 
+
 // Route Dosen
 Route::get('/dashboard/dosen/list-dosen', [DosenController::class, 'index']);
 Route::get('/dashboard/dosen/form-dosen', [DosenController::class, 'dosenById']);
@@ -297,3 +298,9 @@ Route::post('/dashboard/dosen/form-dosen', [DosenController::class, 'store']);
 Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'dosenById']);
 Route::put('/dashboard/dosen/{id}', [DosenController::class, 'update']);
 Route::delete('/dashboard/dosen/{id}', [DosenController::class, 'destroy']);
+
+//route halaman tenaga pendidikan
+Route::get('/dosen/daftar-dosen', function () {
+    return view('home.dosen.daftar-dosen', 
+    ['title' => 'Daftar Dosen']);
+});
