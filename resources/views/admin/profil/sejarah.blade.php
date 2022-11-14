@@ -116,18 +116,4 @@
       </div>
     </div>
   </div>
-
-  <script>
-    $(document).ready(function() {
-      const judul = document.querySelector('#judul');
-      const image = document.querySelector('#image');
-      const imgPreview = document.querySelector('.img-preview');
-
-      $('#reset').click(function() {
-        judul.value = '';
-        image.value = '';
-        imgPreview.style.display = 'none'
-      });
-    });
-  </script>
 @endsection

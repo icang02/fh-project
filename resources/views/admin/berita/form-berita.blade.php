@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('main-content')
-  <div class="body flex-grow-1 px-3 mt-1">
+  <div class="body flex-grow-1 px-1 px-md-3 mt-1">
     <div class="container-lg">
       {{-- Start Flash Message --}}
       @if (session('success'))
@@ -22,13 +22,18 @@
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
 
-                    <form action="/dashboard/profil/{{ $id }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/dashboard/berita/form-berita') }}" method="POST"
+                      enctype="multipart/form-data">
                       @csrf
+                      @if (isset($data))
+                        @method('PUT')
+                        <input type="hidden" name="id" value="{{ !isset($data) ? '' : $data->id }}">
+                      @endif
 
                       <div class="mb-3">
                         <label class="form-label" for="judul">Judul</label>
                         <input class="form-control @error('judul') is-invalid @enderror" id="judul" type="text"
-                          name="judul" value=" ">
+                          name="judul" value="{{ old('judul', !isset($data) ? '' : $data->judul) }}">
                         @error('judul')
                           <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -36,31 +41,35 @@
 
                       <div class="mb-3">
                         <label class="form-label" for="kategori">Kategori Berita</label>
-                        <select class="form-select form-select-lg-1 mb-3" aria-label=".form-select-lg example">
-                          <option selected>Pilih Kategori Berita</option>
-                          <option value="1">Pengumuman</option>
-                          <option value="2">Event</option>
-                          <option value="3">Informasi</option>
-                          <option value="4">Ui Greenmetric</option>
+                        <select class="form-select @error('kategori') is-invalid @enderror" id="kategori"
+                          name="kategori">
+                          <option value="">Pilih Kategori Berita</option>
+                          @foreach ($semuaKategori as $kategori)
+                            <option value="{{ $kategori->id }}" @if ($kategori->id == !isset($data) ? '' : $data->kategori_berita_id) selected @endif
+                              @if ($kategori->id == old('kategori')) selected @endif>
+                              {{ $kategori->nama }}</option>
+                          @endforeach
                         </select>
+                        @error('kategori')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                       </div>
-
 
                       <div class="mb-3">
                         <label class="form-label" for="tanggal">Tanggal Publikasi</label>
                         <input class="form-control @error('tanggal') is-invalid @enderror" id="tanggal" type="date"
-                          name="tanggal" value=" ">
+                          name="tanggal" value="{{ old('tanggal', !isset($data) ? '' : $data->tanggal) }}">
                         @error('tanggal')
                           <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
 
-
                       <div class="mb-3">
                         <label class="form-label" for="cover">Cover</label>
-
-                        <img class="img-preview img-thumbnail mb-3" width="300" style="display: none">
-
+                        <img @if (isset($data)) src="{{ asset("storage/$data->cover") }}" @endif
+                          alt="Cover berita" class="img-preview img-thumbnail mb-3"
+                          @if (!isset($data)) style="display: none" @else style="display: block" @endif
+                          width="300">
                         <input class="form-control @error('cover') is-invalid @enderror" type="file" name="cover"
                           id="image" onchange="previewImage()" accept="image/*">
                         @error('cover')
@@ -70,17 +79,17 @@
 
                       <div class="mb-3">
                         <label for="editor" class="form-label">Isi Berita</label>
-                        <textarea id="editor" name="body" class="@error('body') is-invalid @enderror"> </textarea>
+                        <textarea id="editor" name="body" class="@error('body') is-invalid @enderror">
+                          {{ old('body', !isset($data) ? '' : $data->body) }}
+                        </textarea>
                         @error('body')
                           <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
 
-
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="{{ '/dashboard/berita/list-berita' }}" id="reset" type="reset"
-                          class="btn btn-danger text-light">Kembali</a>
+                        <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button>
                       </div>
                     </form>
 
@@ -93,13 +102,4 @@
       </div>
     </div>
   </div>
-
-  <script>
-    const btnReset = document.querySelector('#reset');
-    const editor = document.querySelector('#editor');
-    const judul = document.querySelector('#judul');
-    btnReset.addEventListener('click', function() {
-      judul.value = "Fifth Avenue, New York City";
-    });
-  </script>
 @endsection

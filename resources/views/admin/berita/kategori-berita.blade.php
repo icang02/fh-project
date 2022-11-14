@@ -65,7 +65,7 @@
                         data-coreui-target="#modalDetailKategori-{{ $kategori->id }}"> Detail
                       </button>
                       <button class="badge text-bg-warning text-white border-0" data-coreui-toggle="modal"
-                        data-coreui-target="#modalUpdateKategori-{{ $kategori->id }}"> Update
+                        data-coreui-target="#modalUpdateKategori-{{ $kategori->id }}"> Edit
                       </button>
                       <form action="{{ url("/dashboard/berita/kategori-berita/$kategori->id") }}" method="post"
                         class="d-inline">

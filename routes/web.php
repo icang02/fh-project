@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\PageIndex;
@@ -264,30 +265,13 @@ Route::get('/dashboard/berita/kategori-berita', function () {
 });
 
 // List berita
-Route::get('/dashboard/berita/list-berita', function () {
-    return view('admin.berita.list-berita', [
-        'title' => 'Dashboard | List Berita',
-    ]);
-});
-
-
-// Create berita
-Route::get('/dashboard/berita/form-berita', function () {
-    return view('admin.berita.form-berita', [
-        'title' => 'Dashboard | Form Berita',
-        'header' => str()->title("Form Berita"),
-        'id' => "/dashboard/berita/form-berita",
-        'data' => '',
-    ]);
-});
-
-// detail Berita
-Route::get('/dashboard/berita/detail-berita', function () {
-    return view('admin.berita.detail-berita', [
-        'title' => 'Dashboard | Detail Berita',
-    ]);
-});
-
+Route::get('/dashboard/berita/list-berita', [AdminBeritaController::class, 'index']);
+Route::get('/dashboard/berita/form-berita', [AdminBeritaController::class, 'formBeritaIndex']);
+Route::post('/dashboard/berita/form-berita', [AdminBeritaController::class, 'store']);
+Route::delete('/dashboard/berita/{id}', [AdminBeritaController::class, 'destroy']);
+Route::get('/dashboard/berita/edit/{id}', [AdminBeritaController::class, 'edit']);
+Route::put('/dashboard/berita/form-berita', [AdminBeritaController::class, 'update']);
+Route::get('/dashboard/berita/{id}', [AdminBeritaController::class, 'beritaById']);
 
 Route::get('/dashboard/berita/kategori-berita', [KategoriBeritaController::class, 'index']);
 Route::post('/dashboard/berita/kategori-berita', [KategoriBeritaController::class, 'store']);
