@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\PageIndex;
 use App\Http\Controllers\profil\SejarahController;
@@ -269,11 +270,6 @@ Route::get('/dashboard/berita/kategori-berita', function () {
     ]);
 })->middleware('auth');
 
-//list-dosen
-Route::get('/dashboard/dosen/list-dosen', [AdminBeritaController::class, 'tess']);
-Route::get('/dashboard/dosen/form-dosen', [AdminBeritaController::class, 'tesss']);
-
-
 // List berita
 Route::get('/dashboard/berita/list-berita', [AdminBeritaController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/berita/form-berita', [AdminBeritaController::class, 'formBeritaIndex'])->middleware('auth');
@@ -295,7 +291,12 @@ Route::post('/auth', [AuthController::class, 'loginProses']);
 Route::post('/auth/logout', [AuthController::class, 'logout']);
 
 
-//route dosen
+// Route Dosen
+Route::get('/dashboard/dosen/list-dosen', [DosenController::class, 'index']);
+Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'edit']);
+Route::delete('/dashboard/dosen/{id}', [DosenController::class, 'destroy']);
+
+//route halaman tenaga pendidikan
 Route::get('/dosen/daftar-dosen', function () {
     return view('home.dosen.daftar-dosen', 
     ['title' => 'Daftar Dosen']);
