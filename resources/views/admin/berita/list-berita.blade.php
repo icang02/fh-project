@@ -16,10 +16,10 @@
             </select>
           </form>
 
-          <form action="" class="d-flex ms-2">
-            <input type="text" name="keyword" id="keyword" class="form-control me-1"
-              placeholder="Masukan Kata Kunci..">
-            <button type="submit" class="btn btn-primary" name="search">Cari</button>
+          <form action="{{ url('/dashboard/berita/list-berita') }}" class="d-flex ms-2">
+            <input type="text" name="search" id="search" class="form-control me-1"
+              placeholder="Masukan Kata Kunci.." value="{{ request('search') }}">
+            <button type="submit" class="btn btn-primary">Cari</button>
           </form>
         </div>
 
@@ -54,37 +54,55 @@
               </thead>
               <tbody>
 
-                @foreach ($data as $berita)
-                  <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
-                    <td>
-                      <a href="{{ url('/dashboard/berita/' . $berita->id) }}"
-                        class="badge text-bg-info text-white border-0">
-                        Detail
-                      </a>
-                      <a href="{{ url('/dashboard/berita/edit/' . $berita->id) }}"
-                        class="badge text-bg-warning text-white border-0">
-                        Edit </a>
-                      <form action="{{ url('/dashboard/berita/' . $berita->id) }}" method="post" class="d-inline">
-                        @csrf
-                        @method('delete')
-                        <button onclick="return confirm('Hapus berita?')" type="submit"
-                          class="badge text-bg-danger text-white border-0"> Hapus
-                        </button>
-                      </form>
+                @if ($data->count() == 0)
+                  <tr class="text-center">
+                    <td colspan="5">
+                      Belum ada berita.
+                      <small>
+                        <i>{{ request('search') ? 'Keyword : ' . request('search') : '' }}</i>
+                      </small>
                     </td>
-                    <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $berita->tanggal)->format('d F Y') }}</td>
-                    <td>{{ $berita->judul }}</td>
-                    <td>{{ $berita->kategori_berita->nama }}</td>
                   </tr>
-                @endforeach
+                @else
+                  @foreach ($data as $index => $berita)
+                    <tr>
+                      <th scope="row">{{ $index + $data->firstItem() }}</th>
+                      <td>
+                        <a href="{{ url('/dashboard/berita/' . $berita->id) }}"
+                          class="badge text-bg-info text-white border-0">
+                          Detail
+                        </a>
+                        <a href="{{ url('/dashboard/berita/edit/' . $berita->id) }}"
+                          class="badge text-bg-warning text-white border-0">
+                          Edit </a>
+                        <form action="{{ url('/dashboard/berita/' . $berita->id) }}" method="post" class="d-inline">
+                          @csrf
+                          @method('delete')
+                          <button onclick="return confirm('Hapus berita?')" type="submit"
+                            class="badge text-bg-danger text-white border-0"> Hapus
+                          </button>
+                        </form>
+                      </td>
+                      <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $berita->tanggal)->format('d F Y') }}</td>
+                      <td>{{ $berita->judul }}</td>
+                      <td>{{ $berita->kategori_berita->nama }}</td>
+                    </tr>
+                  @endforeach
+                @endif
 
               </tbody>
             </table>
-          </div>
 
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          {{ $data->onEachSide(0.5)->withQueryString()->links() }}
         </div>
       </div>
     </div>
+
   </div>
 @endsection

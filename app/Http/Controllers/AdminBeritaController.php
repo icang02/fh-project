@@ -13,7 +13,7 @@ class AdminBeritaController extends Controller
     {
         $data = Berita::paginate(10);
         if (request('search')) {
-            $data = Berita::where('nama', 'like', '%' . request('search') . '%')->paginate(10);
+            $data = Berita::where('judul', 'like', '%' . request('search') . '%')->paginate(10);
         }
 
         return view('admin.berita.list-berita', [

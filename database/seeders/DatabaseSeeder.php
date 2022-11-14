@@ -36,41 +36,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Berita
-        Berita::create([
-            'judul' => "Judul Berita 1",
-            'kategori_berita_id' => 2,
-            'tanggal' => now(),
-            'cover' => 'default.jpg',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        ]);
-        Berita::create([
-            'judul' => "Judul Berita 2",
-            'kategori_berita_id' => 2,
-            'tanggal' => now(),
-            'cover' => 'default.jpg',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        ]);
-        Berita::create([
-            'judul' => "Judul Berita 3",
-            'kategori_berita_id' => 2,
-            'tanggal' => now(),
-            'cover' => 'default.jpg',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        ]);
-
-        Berita::create([
-            'judul' => "Judul Berita 21",
-            'kategori_berita_id' => 1,
-            'tanggal' => now(),
-            'cover' => 'default.jpg',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        ]);
-        Berita::create([
-            'judul' => "Judul Berita 24",
-            'kategori_berita_id' => 1,
-            'tanggal' => now(),
-            'cover' => 'default.jpg',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde aliquam debitis consectetur libero cum laborum deleniti, id voluptas tenetur',
-        ]);
+        for ($i = 0; $i < 24; $i++) {
+            $date = fake()->dateTimeBetween('-7 days', '+2 months');
+            Berita::create([
+                'judul' => fake()->sentence(),
+                'kategori_berita_id' => rand(1, 4),
+                'tanggal' => $date,
+                'cover' => 'default.jpg',
+                'body' => fake()->paragraph(10),
+                'updated_at' => $date,
+            ]);
+        }
     }
 }

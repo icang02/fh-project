@@ -62,9 +62,9 @@
       {{-- header --}}
       @include('admin.components.header')
 
-      Start Main Content
+      {{-- Start Main Content --}}
       @yield('main-content')
-      End Main Content
+      {{-- End Main Content --}}
 
       @include('admin.components.footer')
     </div>
