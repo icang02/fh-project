@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Berita;
 use App\Models\KategoriBerita;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +27,13 @@ class DatabaseSeeder extends Seeder
                 'nama' => $brt,
             ]);
         }
+
+        User::create([
+            'name' => 'Administrator',
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
 
         // Berita
         Berita::create([
