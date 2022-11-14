@@ -272,19 +272,18 @@ Route::get('/dashboard/berita/list-berita', function () {
 
 
 // Create berita
-Route::get('/dashboard/berita/create-berita', function () {
-    return view('admin.berita.create-berita', [
-        'title' => 'Dashboard | Create Berita',
-        'header' => str() -> title(" "),
-        'id' => str() -> title("/dashboard/berita/create-berita"),
-        'data' => str() -> title(" ")
-
+Route::get('/dashboard/berita/form-berita', function () {
+    return view('admin.berita.form-berita', [
+        'title' => 'Dashboard | Form Berita',
+        'header' => str()->title("Form Berita"),
+        'id' => "/dashboard/berita/form-berita",
+        'data' => '',
     ]);
 });
 
 // detail Berita
-Route::get('/dashboard/berita/detail', function () {
-    return view('admin.berita.detail', [
+Route::get('/dashboard/berita/detail-berita', function () {
+    return view('admin.berita.detail-berita', [
         'title' => 'Dashboard | Detail Berita',
     ]);
 });
