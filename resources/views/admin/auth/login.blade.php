@@ -16,7 +16,7 @@
               {{-- End error message --}}
 
               <h1>Login</h1>
-              <p class="text-medium-emphasis">Masukkan password dengan benar</p>
+              <p class="text-medium-emphasis">Masukkan password dengan benar.</p>
 
               <form action="" method="post">
                 @csrf
@@ -54,15 +54,12 @@
             </div>
           </div>
 
-          <div class="card col-md-5 text-white bg-primary py-5">
+          <div class="card col-md-5 text-white py-5" id="form-bg"
+            style="background-image: url({{ asset('storage/img/slider/slider2.png') }}); background-size: cover; background-positition: center;">
             <div class="card-body text-center">
-              <div>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                  labore
-                  et dolore magna aliqua.</p>
-                <button class="btn btn-lg btn-outline-light mt-3" type="button">Register Now!</button>
-              </div>
+              <h2>Fakultas Hukum</h2>
+              <p>S M A R T</p>
+              <button class="btn btn-lg btn-outline-light mt-3" type="button">UHO Bisa Jagad Kita</button>
             </div>
           </div>
         </div>
