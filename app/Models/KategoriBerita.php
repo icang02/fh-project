@@ -13,6 +13,13 @@ class KategoriBerita extends Model
     protected $guarded = [''];
     public $timestamps = false;
 
+    public function scopeDaily($query, $filters)
+    {
+        $query->where($filters['search'] ?? false, function ($query, $search) {
+            return $query->where('nama', 'like', '%' . $search . '%');
+        });
+    }
+
     public function berita()
     {
         return $this->HasMany(Berita::class);

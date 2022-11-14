@@ -9,7 +9,10 @@ class KategoriBeritaController extends Controller
 {
     public function index()
     {
-        $data = KategoriBerita::all();
+        $data = KategoriBerita::paginate(10);
+        if (request('search')) {
+            $data = KategoriBerita::where('nama', 'like', '%' . request('search') . '%')->paginate(10);
+        }
 
         return view('admin.berita.kategori-berita', [
             'title' => 'Dashboard | Kategori Berita',

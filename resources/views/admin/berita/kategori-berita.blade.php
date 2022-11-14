@@ -16,10 +16,10 @@
             </select>
           </form>
 
-          <form action="" class="d-flex ms-2">
-            <input type="text" name="keyword" id="keyword" class="form-control me-1"
-              placeholder="Masukan Kata Kunci..">
-            <button type="submit" class="btn btn-primary" name="search">Cari</button>
+          <form action="/dashboard/berita/kategori-berita" class="d-flex ms-2">
+            <input type="text" name="search" id="search" class="form-control me-1"
+              placeholder="Masukan Kata Kunci.." value="{{ request('search') }}">
+            <button type="submit" class="btn btn-primary">Cari</button>
           </form>
         </div>
 
@@ -53,7 +53,8 @@
 
               @if ($data->count() == 0)
                 <tr class="text-center">
-                  <td colspan="3">Belum ada kategori berita.</td>
+                  <td colspan="3">Belum ada kategori berita. <i>{{ request('search') ?? '' }}</i>
+                  </td>
                 </tr>
               @else
                 @foreach ($data as $kategori)
