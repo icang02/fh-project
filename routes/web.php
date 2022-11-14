@@ -264,3 +264,31 @@ Route::get('/dashboard/berita/kategori-berita', function () {
         'title' => 'Dashboard | Kategori Berita',
     ]);
 });
+
+// List berita
+Route::get('/dashboard/berita/list-berita', function () {
+    return view('admin.berita.list-berita', [
+        'title' => 'Dashboard | List Berita',
+    ]);
+});
+
+
+// Create berita
+Route::get('/dashboard/berita/create-berita', function () {
+    return view('admin.berita.create-berita', [
+        'title' => 'Dashboard | Create Berita',
+        'header' => str() -> title(" "),
+        'id' => str() -> title("/dashboard/berita/create-berita"),
+        'data' => str() -> title(" ")
+
+    ]);
+});
+
+// detail Berita
+Route::get('/dashboard/berita/detail', function () {
+    return view('admin.berita.detail', [
+        'title' => 'Dashboard | Detail Berita',
+    ]);
+});
+
+

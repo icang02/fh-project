@@ -140,7 +140,7 @@
                     </use>
                 </svg>Berita</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/base/accordion') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/berita/list-berita') }}"><span
                             class="nav-icon"></span> List Berita</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/berita/kategori-berita') }}"><span
                             class="nav-icon"></span> Kategori Berita</a></li>
