@@ -39,7 +39,7 @@
     request()->is('dashboard/jaminan-mutu') ? ($id = 'jaminan-mutu') : '';
   @endphp
 
-  <div class="body flex-grow-1 px-3">
+  <div class="body flex-grow-1 px-3 mt-1">
     <div class="container-lg">
       {{-- Start Flash Message --}}
       @if (session('success'))
@@ -103,7 +103,7 @@
 
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button>
+                        <button id="reset" type="button" class="btn btn-danger text-light">Reset</button>
                       </div>
                     </form>
 
@@ -118,11 +118,16 @@
   </div>
 
   <script>
-    const btnReset = document.querySelector('#reset');
-    const editor = document.querySelector('#editor');
-    const judul = document.querySelector('#judul');
-    btnReset.addEventListener('click', function() {
-      judul.value = "Fifth Avenue, New York City";
+    $(document).ready(function() {
+      const judul = document.querySelector('#judul');
+      const image = document.querySelector('#image');
+      const imgPreview = document.querySelector('.img-preview');
+
+      $('#reset').click(function() {
+        judul.value = '';
+        image.value = '';
+        imgPreview.style.display = 'none'
+      });
     });
   </script>
 @endsection

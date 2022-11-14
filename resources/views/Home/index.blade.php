@@ -1,23 +1,40 @@
 @extends('layouts.home')
 
 @section('main-content')
-    <!-- Carousel Start -->
+  <style>
+    .jarak {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  </style>
+
+  <!-- Carousel Start -->
+  <div style="padding-bottom: 50px">
     @include('home.components.jumbotron')
-    <!-- Carousel End -->
+  </div>
+  <!-- Carousel End -->
 
-    <!-- Service Start -->
+  <!-- Service Start -->
+  <div class="jarak">
     @include('home.components.services')
-    <!-- Service End -->
+  </div>
+  <!-- Service End -->
 
-    <!-- About Start -->
+  <!-- About Start -->
+  <div class="jarak">
     @include('home.components.video')
-    <!-- About End -->
+  </div>
+  <!-- About End -->
 
-    <!-- Team Start -->
+  <!-- Team Start -->
+  <div class="jarak">
     @include('home.components.team')
-    <!-- Team End -->
+  </div>
+  <!-- Team End -->
 
-    <!-- Visi Misi Start -->
+  <!-- Visi Misi Start -->
+  <div class="jarak">
     @include('home.components.visi-misi')
-    <!-- Visi Misi End -->
+  </div>
+  <!-- Visi Misi End -->
 @endsection
