@@ -264,6 +264,11 @@ Route::get('/dashboard/berita/kategori-berita', function () {
     ]);
 });
 
+//list-dosen
+Route::get('/dashboard/dosen/list-dosen', [AdminBeritaController::class, 'tess']);
+Route::get('/dashboard/dosen/form-dosen', [AdminBeritaController::class, 'tesss']);
+
+
 // List berita
 Route::get('/dashboard/berita/list-berita', [AdminBeritaController::class, 'index']);
 Route::get('/dashboard/berita/form-berita', [AdminBeritaController::class, 'formBeritaIndex']);

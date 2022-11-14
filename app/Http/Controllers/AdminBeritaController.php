@@ -9,6 +9,32 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminBeritaController extends Controller
 {
+    public function tesss()
+    {
+        return view('admin.dosen.form-dosen', [
+            'title' => 'Dashboard | Form Dosen',
+            'header' => str()->title("Form Berita"),
+            'semuaKategori' => KategoriBerita::all(),
+        ]);
+    }
+
+    public function tess()
+    {
+        $data = Berita::paginate(10);
+        if (request('search')) {
+            $data = Berita::where('nama', 'like', '%' . request('search') . '%')->paginate(10);
+        }
+
+        return view('admin.dosen.list-dosen', [
+            'title' => 'Dashboard | List Dosen',
+            'data' => $data,
+        ]);
+    }
+
+
+
+
+
     public function index()
     {
         $data = Berita::paginate(10);
@@ -21,6 +47,7 @@ class AdminBeritaController extends Controller
             'data' => $data,
         ]);
     }
+
 
     public function beritaById($id)
     {

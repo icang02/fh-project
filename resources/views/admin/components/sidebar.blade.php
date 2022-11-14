@@ -32,7 +32,7 @@
                 <li class="nav-item"><a class="nav-link"
                         href="{{ url('/dashboard/profil/struktur-organisasi') }}"><span class="nav-icon"></span>
                         Struktur Organisasi</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/profil/tenaga-pendidikan') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/dosen/list-dosen') }}"><span
                             class="nav-icon"></span> Tenaga Pendidikan</a></li>
                 <li class="nav-item"><a class="nav-link"
                         href="{{ url('/dashboard/profil/tenaga-kependidikan') }}"><span class="nav-icon"></span> Tenaga
