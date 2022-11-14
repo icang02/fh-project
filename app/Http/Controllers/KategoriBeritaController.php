@@ -48,7 +48,7 @@ class KategoriBeritaController extends Controller
         $kategoriBerita = KategoriBerita::find($id);
         $kategoriBerita->delete();
 
-        return back()->with('success', 'Kategori berita berhasil diupdate!');
+        return back()->with('success', 'Kategori berita berhasil dihapus!');
     }
 
     public function batas(Request $request)

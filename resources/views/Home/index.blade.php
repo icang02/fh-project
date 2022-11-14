@@ -5,7 +5,6 @@
     .jarak {
       padding-top: 50px;
       padding-bottom: 50px;
-      /* border: 1px solid; */
     }
   </style>
 

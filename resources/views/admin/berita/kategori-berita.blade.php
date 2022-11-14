@@ -3,42 +3,44 @@
 @section('main-content')
   <div class="body px-3 mt-1">
     <div class="container-lg">
-      <div class="row">
-        <div class="col col-1">
+
+      <div class="row justify-content-between">
+        <div class="col-md-10 d-flex">
           <form action="{{ url('/batas-kategori-berita') }}" method="post" id="formBatas">
             <select name="batas" id="batas" class="form-select">
-              <option onclick="return document.getElementById('formBatas').submit()" value="5">5</option>
-              <option onclick="return document.getElementById('formBatas').submit()" value="10">10</option>
-              <option onclick="return document.getElementById('formBatas').submit()" value="25">25</option>
-              <option onclick="return document.getElementById('formBatas').submit()" value="50">50</option>
-              <option onclick="return document.getElementById('formBatas').submit()" value="100">100</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
             </select>
           </form>
+
+          <form action="" class="d-flex ms-2">
+            <input type="text" name="keyword" id="keyword" class="form-control me-1"
+              placeholder="Masukan Kata Kunci..">
+            <button type="submit" class="btn btn-primary" name="search">Cari</button>
+          </form>
         </div>
-        <div class="col col-3" style="float: right !important">
-          <input type="text" name="keyword" id="keyword" class="form-control"
-            placeholder="Masukan Kata Kunci Pencarian">
-        </div>
-        <div class="col col-1">
-          <input type="submit" style="float: left !important" class="btn btn-primary" name="search" value="Cari">
-        </div>
-        <div class="col col-7 align-right">
+
+        <div class="col-md-2 mt-3 mt-md-0">
           <button class="btn btn-primary" style="float: right !important" type="button" data-coreui-toggle="modal"
             data-coreui-target="#modalAddKategori">Tambah</button>
         </div>
       </div>
+
       <div class="row mt-3">
 
-        {{-- Start Flash Message --}}
-        @if (session('success'))
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Sukses</strong> — {{ session('success') }}
-            <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
-          </div>
-        @endif
-        {{-- End Flash Message --}}
-
         <div class="col">
+          {{-- Start Flash Message --}}
+          @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Sukses</strong> — {{ session('success') }}
+              <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+          {{-- End Flash Message --}}
+
           <table class="table table-bordered table-hover">
             <thead class="table-dark">
               <tr>
@@ -48,7 +50,6 @@
               </tr>
             </thead>
             <tbody>
-
 
               @if ($data->count() == 0)
                 <tr class="text-center">
