@@ -112,4 +112,22 @@ class DosenController extends Controller
 
         return back()->with('success', 'Data dosen berhasil dihapus!');
     }
+
+
+    // Halaman depan
+    public function semuaDosen()
+    {
+        $data = Dosen::paginate(10);
+        if (request('search')) {
+            $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
+                ->orWhere('jabatan', 'like', '%' . request('search') . '%')
+                ->orWhere('nip', 'like', '%' . request('search') . '%')
+                ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(10);
+        }
+
+        return view('home.dosen.daftar-dosen', [
+            'title' => 'Fakultas Hukum | Daftar Dosen',
+            'semuaDosen' => $data,
+        ]);
+    }
 }

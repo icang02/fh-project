@@ -300,7 +300,4 @@ Route::put('/dashboard/dosen/{id}', [DosenController::class, 'update']);
 Route::delete('/dashboard/dosen/{id}', [DosenController::class, 'destroy']);
 
 //route halaman tenaga pendidikan
-Route::get('/dosen/daftar-dosen', function () {
-    return view('home.dosen.daftar-dosen', 
-    ['title' => 'Daftar Dosen']);
-});
+Route::get('/dosen/daftar-dosen', [DosenController::class, 'semuaDosen']);

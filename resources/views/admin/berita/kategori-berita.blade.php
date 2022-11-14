@@ -53,11 +53,12 @@
 
               @if ($data->count() == 0)
                 <tr class="text-center">
-                  <td colspan="5">
-                    Belum kategori ada berita.
-                    <small>
-                      <i>{{ request('search') ? 'Keyword : ' . request('search') : '' }}</i>
-                    </small>
+                  <td colspan="7">
+                    @if (request('search'))
+                      Kategori berita tidak ditemukan. <i>Keyword : {{ request('search') }}</i>
+                    @else
+                      Belum ada kategori berita.
+                    @endif
                   </td>
                 </tr>
               @else
