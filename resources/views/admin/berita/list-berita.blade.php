@@ -19,7 +19,7 @@
           <form action="{{ url('/dashboard/berita/list-berita') }}" class="d-flex ms-2">
             <input type="text" name="search" id="search" class="form-control me-1"
               placeholder="Masukan Kata Kunci.." value="{{ request('search') }}">
-            <button type="submit" class="btn btn-primary">Cari</button>
+            <button type="submit" class="btn btn-primary" autocomplete="off">Cari</button>
           </form>
         </div>
 
