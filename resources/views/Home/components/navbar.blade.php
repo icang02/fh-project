@@ -141,8 +141,8 @@
       <a href="{{ url('/') }}"
         class="nav-item nav-link ms-0 ms-md-4 {{ request()->is('/') ? 'active txt-utama' : '' }}">Beranda</a>
 
-      <a href="{{ url('/about') }}"
-        class="nav-item nav-link {{ request()->is('about') ? 'active txt-utama' : '' }}">Spada</a>
+      <a href="{{ url('/spada') }}"
+        class="nav-item nav-link {{ request()->is('spada') ? 'active txt-utama' : '' }}">Spada</a>
 
       <div class="nav-item dropdown ">
         <a href="#"

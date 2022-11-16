@@ -15,41 +15,49 @@ use Illuminate\Support\Facades\Route;
 // create symbolic link
 Route::get('/seed', function () {
     $seed = Artisan::call('storage:link');
-    if ($seed == 0) return redirect('/');
+    if ($seed == 0) {
+        return redirect('/');
+    }
 });
 // migrate fresh database
-Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
+Route::get('/seed', fn() => Artisan::call('migrate:fresh --seed'));
 
 //route Home
 Route::get(
     '/',
-    fn () => view('home.index', [
+    fn() => view('home.index', [
         'title' => 'Fakultas Hukum Universitas Halu Oleo',
     ])
 );
 Route::get(
     '/about',
-    fn () => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
+    fn() => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
 );
 Route::get(
     '/courses',
-    fn () => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
+    fn() => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
 );
 Route::get(
     '/team',
-    fn () => view('home.team', ['title' => 'Fakultas Hukum | Team'])
+    fn() => view('home.team', ['title' => 'Fakultas Hukum | Team'])
 );
 Route::get(
     '/testimonial',
-    fn () => view('home.testimonial', [
+    fn() => view('home.testimonial', [
         'title' => 'Fakultas Hukum | Testimonial',
     ])
 );
 Route::get(
     '/contact',
-    fn () => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
+    fn() => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
 );
 
+//SPADA
+Route::get('/spada', function () {
+    return view('home.page.spada', [
+        'title' => 'Fakultas Hukum | SPADA',
+    ]);
+});
 // Home | Navbar | Profil
 Route::get('/profil/{menu}', [PageIndex::class, 'index']);
 Route::get('/program-studi/{menu}', [PageIndex::class, 'index']);
@@ -60,15 +68,24 @@ Route::get('/layanan/fasilitas/{menu}', [PageIndex::class, 'index']);
 Route::get('/jaminan-mutu', [PageIndex::class, 'index']);
 
 //navbar - berita
-Route::get('/
-berita/kategori/{id}', [BeritaController::class, 'index']);
+Route::get(
+    '/
+berita/kategori/{id}',
+    [BeritaController::class, 'index']
+);
 Route::get('/berita/{kategori}/{id}', [BeritaController::class, 'beritaById']);
 
 // route admin
-Route::get('/dashboard', fn () => view('admin.index', ['title' => 'Dashboard | Fakultas Hukum']))->middleware('auth');
+Route::get(
+    '/dashboard',
+    fn() => view('admin.index', ['title' => 'Dashboard | Fakultas Hukum'])
+)->middleware('auth');
 
 //route - Admin | Profil | Sejarah dan lain lain
-Route::get('/dashboard/profil/{menu}', [SejarahController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/profil/{menu}', [
+    SejarahController::class,
+    'index',
+])->middleware('auth');
 Route::post('/dashboard/profil/{id}', [SejarahController::class, 'store']);
 Route::put('/dashboard/profil/{id}', [SejarahController::class, 'update']);
 
@@ -87,12 +104,18 @@ Route::put('/dashboard/program-studi/{id}', [
 ]);
 
 // route - Admin | Menu Akademik
-Route::get('/dashboard/akademik/{menu}', [SejarahController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/akademik/{menu}', [
+    SejarahController::class,
+    'index',
+])->middleware('auth');
 Route::post('/dashboard/akademiki/{id}', [SejarahController::class, 'store']);
 Route::put('/dashboard/akademiki/{id}', [SejarahController::class, 'update']);
 
 // route - Admin | Menu Tridharma
-Route::get('/dashboard/tridharma/{menu}', [SejarahController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/tridharma/{menu}', [
+    SejarahController::class,
+    'index',
+])->middleware('auth');
 Route::post('/dashboard/tridharmai/{id}', [SejarahController::class, 'store']);
 Route::put('/dashboard/tridharmai/{id}', [SejarahController::class, 'update']);
 
@@ -111,7 +134,10 @@ Route::put('/dashboard/mahasiswa-alumni/{id}', [
 ]);
 
 // route - Admin | Menu Jaminan Mutu
-Route::get('/dashboard/jaminan-mutu', [SejarahController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/jaminan-mutu', [
+    SejarahController::class,
+    'index',
+])->middleware('auth');
 
 // --------------------------------------------------------
 //route colors
@@ -277,29 +303,69 @@ Route::get('/dashboard/berita/kategori-berita', function () {
 })->middleware('auth');
 
 // List berita
-Route::get('/dashboard/berita/list-berita', [AdminBeritaController::class, 'index'])->middleware('auth');
-Route::get('/dashboard/berita/form-berita', [AdminBeritaController::class, 'formBeritaIndex'])->middleware('auth');
-Route::post('/dashboard/berita/form-berita', [AdminBeritaController::class, 'store']);
-Route::delete('/dashboard/berita/{id}', [AdminBeritaController::class, 'destroy']);
-Route::get('/dashboard/berita/edit/{id}', [AdminBeritaController::class, 'edit'])->middleware('auth');
-Route::put('/dashboard/berita/form-berita', [AdminBeritaController::class, 'update']);
-Route::get('/dashboard/berita/{id}', [AdminBeritaController::class, 'beritaById'])->middleware('auth');
+Route::get('/dashboard/berita/list-berita', [
+    AdminBeritaController::class,
+    'index',
+])->middleware('auth');
+Route::get('/dashboard/berita/form-berita', [
+    AdminBeritaController::class,
+    'formBeritaIndex',
+])->middleware('auth');
+Route::post('/dashboard/berita/form-berita', [
+    AdminBeritaController::class,
+    'store',
+]);
+Route::delete('/dashboard/berita/{id}', [
+    AdminBeritaController::class,
+    'destroy',
+]);
+Route::get('/dashboard/berita/edit/{id}', [
+    AdminBeritaController::class,
+    'edit',
+])->middleware('auth');
+Route::put('/dashboard/berita/form-berita', [
+    AdminBeritaController::class,
+    'update',
+]);
+Route::get('/dashboard/berita/{id}', [
+    AdminBeritaController::class,
+    'beritaById',
+])->middleware('auth');
 
-Route::get('/dashboard/berita/kategori-berita', [KategoriBeritaController::class, 'index'])->middleware('auth');
-Route::post('/dashboard/berita/kategori-berita', [KategoriBeritaController::class, 'store']);
-Route::post('/batas-kategori-berita', [KategoriBeritaController::class, 'batas']);
-Route::put('/dashboard/berita/kategori-berita/{id}', [KategoriBeritaController::class, 'update']);
-Route::delete('/dashboard/berita/kategori-berita/{id}', [KategoriBeritaController::class, 'destroy']);
+Route::get('/dashboard/berita/kategori-berita', [
+    KategoriBeritaController::class,
+    'index',
+])->middleware('auth');
+Route::post('/dashboard/berita/kategori-berita', [
+    KategoriBeritaController::class,
+    'store',
+]);
+Route::post('/batas-kategori-berita', [
+    KategoriBeritaController::class,
+    'batas',
+]);
+Route::put('/dashboard/berita/kategori-berita/{id}', [
+    KategoriBeritaController::class,
+    'update',
+]);
+Route::delete('/dashboard/berita/kategori-berita/{id}', [
+    KategoriBeritaController::class,
+    'destroy',
+]);
 
 // Auth Route
-Route::get('/auth', [AuthController::class, 'index'])->middleware('guest')->name('login');
+Route::get('/auth', [AuthController::class, 'index'])
+    ->middleware('guest')
+    ->name('login');
 Route::post('/auth', [AuthController::class, 'loginProses']);
 Route::post('/auth/logout', [AuthController::class, 'logout']);
 
-
 // Route Dosen
 Route::get('/dashboard/dosen/list-dosen', [DosenController::class, 'index']);
-Route::get('/dashboard/dosen/form-dosen', [DosenController::class, 'dosenById']);
+Route::get('/dashboard/dosen/form-dosen', [
+    DosenController::class,
+    'dosenById',
+]);
 Route::post('/dashboard/dosen/form-dosen', [DosenController::class, 'store']);
 Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'dosenById']);
 Route::put('/dashboard/dosen/{id}', [DosenController::class, 'update']);
@@ -315,7 +381,6 @@ Route::delete('/dashboard/jabatan/{id}', [JabatanController::class, 'destroy']);
 Route::get('/dashboard/link-terkait', [LinkController::class, 'index']);
 Route::put('/dashboard/link-terkait/{id}', [LinkController::class, 'update']);
 // Route::delete('/dashboard/link-terkait/{id}', [LinkController::class, 'destroy']);
-
 
 //route halaman tenaga pendidikan
 Route::get('/dosen/daftar-dosen', [DosenController::class, 'semuaDosen']);
