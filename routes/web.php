@@ -384,3 +384,21 @@ Route::put('/dashboard/link-terkait/{id}', [LinkController::class, 'update']);
 
 //route halaman tenaga pendidikan
 Route::get('/dosen/daftar-dosen', [DosenController::class, 'semuaDosen']);
+
+//halaman registrasi alumni
+Route::get('/alumni/registrasi-alumni', function () {
+    return view('home.Alumni.registrasi-alumni', ['title' => 'Dashboard | ']);
+});
+
+//halaman admin registrasi alumni
+Route::get('/dashboard/alumni/list-alumni', function () {
+    return view('admin.Alumni.list-alumni', ['title' => 'Dashboard | ']);
+});
+
+Route::get('/dashboard/alumni/detail-alumni', function () {
+    return view('admin.Alumni.detail-alumni', ['title' => 'Dashboard | ']);
+});
+
+
+
+
