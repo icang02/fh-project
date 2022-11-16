@@ -5,8 +5,8 @@
     <div class="container-lg">
 
       <div class="row justify-content-between">
-        <div class="col-md-10 d-flex">
-          <form action="{{ url('/batas-kategori-berita') }}" method="post" id="formBatas">
+        <div class="col-md-8 d-flex">
+          {{-- <form action="{{ url('/batas-kategori-berita') }}" method="post" id="formBatas">
             <select name="batas" id="batas" class="form-select">
               <option value="5">5</option>
               <option value="10">10</option>
@@ -14,18 +14,20 @@
               <option value="50">50</option>
               <option value="100">100</option>
             </select>
-          </form>
+          </form> --}}
 
-          <form action="{{ url('/dashboard/dosen/list-dosen') }}" class="d-flex ms-2">
-            <input type="text" name="search" id="search" class="form-control me-1"
-              placeholder="Masukan Kata Kunci.." value="{{ request('search') }}">
+          <form action="{{ url('/dashboard/dosen/list-dosen') }}" class="d-flex">
+            <input type="text" name="search" id="search" class="form-control me-1" placeholder="Masukan Kata Kunci.."
+              value="{{ request('search') }}">
             <button type="submit" class="btn btn-primary" autocomplete="off">Cari</button>
           </form>
         </div>
 
-        <div class="col-md-2 mt-3 mt-md-0">
-          <a href="{{ url('/dashboard/dosem/form-dosen') }}" class="btn btn-primary"
-            style="float: right !important">Tambah</a>
+        <div class="col-md-4 mt-3 mt-md-0">
+          <a href="{{ url('/dashboard/dosen/form-dosen') }}" class="btn btn-primary"
+            style="float: right !important">Tambah Dosen</a>
+          <a href="{{ url('/dashboard/daftar-jabatan') }}" class="btn btn-warning me-1"
+            style="float: right !important">Daftar Jabatan</a>
         </div>
       </div>
 
@@ -50,8 +52,7 @@
                   <th style="width: 13%">Nama Dosen</th>
                   <th style="width: 7%">NIP</th>
                   <th style="width: 7%">NIDN</th>
-                  <th style="width: 5%">Jabatan</th>
-                  <th style="width: 10%">Detail Jabatan</th>
+                  <th style="width: 9%">Jabatan</th>
                 </tr>
               </thead>
               <tbody>
@@ -85,8 +86,7 @@
                       <td>{{ $dosen->nama }}</td>
                       <td>{{ $dosen->nip }}</td>
                       <td>{{ $dosen->nidn }}</td>
-                      <td>{{ str()->title($dosen->jabatan) }}</td>
-                      <td>{{ $dosen->detail_jabatan ?? '-' }}</td>
+                      <td>{{ $dosen->jabatan->nama }}</td>
                     </tr>
                   @endforeach
                 @endif
@@ -98,7 +98,7 @@
 
       <div class="row">
         <div class="col">
-          {{ $data->onEachSide(0.5)->withQueryString()->links() }}
+          {{ $data->onEachSide(0)->withQueryString()->links() }}
         </div>
       </div>
     </div>

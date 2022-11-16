@@ -108,8 +108,10 @@
 
     <div class="form-search">
       <div id="google_translate_element"></div>
-      <form class="d-block">
-        <input class="form-control px-lg-3 search" placeholder="Cari..">
+      <form action="" class="d-block">
+        <form action="/dashboard/berita/kategori-berita" class="d-flex ms-2">
+          <input class="form-control px-lg-3 search" name="search" placeholder="Cari..">
+        </form>
       </form>
     </div>
 
@@ -184,11 +186,11 @@
           <a href="{{ url('program-studi/sasaran-strategis-prodi') }}"
             class="dropdown-item {{ request()->is('program-studi/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran
             Strategis</a>
-          <a href="{{ url('#') }}"
+          <a href="{{ $links[3]->link }}"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Strategis
             Program
             Studi</a>
-          <a href="{{ url('#') }}"
+          <a href="{{ $links[4]->link }}"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Operasional
             Program
             Studi</a>
@@ -204,7 +206,7 @@
             Rektor
             Tentang
             Akademik</a>
-          <a href="{{ url('https://drive.google.com/open?id=1NlrMD4TpqW3Oj5Dxf-ee9xsj8nKfBwZF') }}"
+          <a href="{{ $links[5]->link }}"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Panduan
             Akademik</a>
           <a href="{{ url('akademik/kalender-akademik') }}"
@@ -224,7 +226,7 @@
           class="nav-link dropdown-toggle {{ request()->is('mahasiswa-alumni*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Mahasiswa & Alumni</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ url('https://uho.ac.id/search?q=SNMPTN+SBMPTN+SMMPTN') }}"
+          <a href="{{ $links[6]->link }}"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Pendaftaran
             Mahasiswa Baru</a>
           <a href="{{ url('mahasiswa-alumni/lembaga-kemahasiswaan') }}"
@@ -284,21 +286,20 @@
                 <a class="nav-link dropdown-toggle drop2" href="#" id="navbarDropdown"
                   data-bs-toggle="dropdown" aria-expanded="false">Sistem Informasi</a>
                 <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="https://siakadbeta.uho.ac.id/">SIAKAD</a></li>
-                  <li><a class="dropdown-item" href="http://wisuda.uho.ac.id/">WISUDA</a></li>
-                  <li><a class="dropdown-item"
-                      href="http://sitedi.uho.ac.id/login.php?accesscheck=%2Findex.php">SITEDI</a>
+                  <li><a class="dropdown-item" href="{{ $links[8]->link }}">SIAKAD</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[9]->link }}">WISUDA</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[10]->link }}">SITEDI</a>
                   </li>
-                  <li><a class="dropdown-item" href="http://ojs.uho.ac.id/index.php/holrev">HOLREV</a></li>
-                  <li><a class="dropdown-item" href="http://simlitabmas.dikti.go.id/">SIMLITABMAS</a></li>
-                  <li><a class="dropdown-item" href="http://sister.uho.ac.id/">SISTER</a></li>
-                  <li><a class="dropdown-item" href="http://sinta2.ristekdikti.go.id/author/?mod=login">SINTA</a></li>
-                  <li><a class="dropdown-item" href="http://lib.uho.ac.id/library">E-LIBRARY</a>
+                  <li><a class="dropdown-item" href="{{ $links[11]->link }}">HOLREV</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[12]->link }}">SIMLITABMAS</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[13]->link }}">SISTER</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[14]->link }}">SINTA</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[15]->link }}">E-LIBRARY</a>
                   </li>
-                  <li><a class="dropdown-item" href="http://118.97.35.235/sipatuk">SIPATUK</a></li>
+                  <li><a class="dropdown-item" href="{{ $links[16]->link }}">SIPATUK</a></li>
                 </ul>
               </li>
-              <li><a class="dropdown-item" href="http://www.klinikhukumuho.com/">Klinik Hukum UHO</a>
+              <li><a class="dropdown-item" href="{{ $links[7]->link }}">Klinik Hukum UHO</a>
               </li>
             </ul>
           </li>
@@ -315,15 +316,15 @@
 
         <div class="dropdown-menu fade-down m-0">
           @foreach ($kategoriBerita as $kategori)
-            <a href="{{ url('berita/' . str()->lower($kategori->nama)) }}"
-              class="dropdown-item {{ request()->is('berita/' . str()->lower($kategori->nama)) ? 'active bg-utama' : '' }}">{{ $kategori->nama }}</a>
+            <a href="{{ url('berita/kategori/' . $kategori->id) }}"
+              class="dropdown-item {{ request()->is('berita/kategori/' . $kategori->id) ? 'active bg-utama' : '' }}">{{ $kategori->nama }}</a>
           @endforeach
         </div>
       </div>
 
-      <a href="{{ url('berita/ui-greenmetric') }}"
+      <a href="{{ url("berita/kategori/$uiGreenmetric->id") }}"
         class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
-        UI Greenmetric
+        {{ $uiGreenmetric->nama }}
       </a>
     </div>
   </div>

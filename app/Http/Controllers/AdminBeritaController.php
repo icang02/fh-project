@@ -11,7 +11,7 @@ class AdminBeritaController extends Controller
 {
     public function index()
     {
-        $data = Berita::paginate(10);
+        $data = Berita::latest()->paginate(10);
         if (request('search')) {
             $data = Berita::where('judul', 'like', '%' . request('search') . '%')->paginate(10);
         }

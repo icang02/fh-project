@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dosen;
+use App\Models\Jabatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -27,11 +28,13 @@ class DosenController extends Controller
     public function dosenById($id = null)
     {
         $data = Dosen::find($id);
+        $semuaJabatan = Jabatan::all();
 
         return view('admin.dosen.form-dosen', [
             'title' => 'Dashboard | Form Dosen',
             'header' => str()->title("Form Dosen"),
             'data' => $data,
+            'semuaJabatan' => $semuaJabatan,
         ]);
     }
 
@@ -62,7 +65,6 @@ class DosenController extends Controller
             'nidn' => $request->nidn,
             'email' => $request->email,
             'jabatan' => $request->jabatan,
-            'detail_jabatan' => ucfirst($request->detail_jabatan),
         ]);
 
         return redirect('/dashboard/dosen/list-dosen')->with('success', 'Data dosen berhasil ditambahkan!');
@@ -98,7 +100,6 @@ class DosenController extends Controller
             'nidn' => $request->nidn,
             'email' => $request->email,
             'jabatan' => $request->jabatan,
-            'detail_jabatan' => ucfirst($request->detail_jabatan),
         ]);
 
         return redirect('/dashboard/dosen/list-dosen')->with('success', 'Data dosen berhasil diupdate!');

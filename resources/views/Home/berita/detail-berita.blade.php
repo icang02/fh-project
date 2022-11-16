@@ -17,9 +17,11 @@
               <div class="col-md-8">
                 <div class="shadow p-3 mb-5 bg-body rounded-3">
                   <div class="card border border-white" style="width: 100%;">
-                    <img
-                      src="https://asset-a.grid.id//crop/0x0:0x0/700x465/photo/2021/07/13/gambar-ilustrasi-bisa-memperjela-20210713123218.jpg"
-                      class="card-img-top" alt="Image">
+                    @if ($berita->cover == null)
+                      <img src="{{ asset('storage/img/cover-berita/default.png') }}" class="card-img-top" alt="Image">
+                    @else
+                      <img src="{{ asset('storage/' . $berita->cover) }}" class="card-img-top" alt="Image">
+                    @endif
                     <div class="card-body">
                       <h5 class="card-title">{{ $berita->judul }}</h5>
                       <p class="text-muted mt-3" style="font-size: 0.85rem">
@@ -72,8 +74,8 @@
                         <div class="card border border-white" style="max-width: 540px;">
                           <div class="row">
                             <div class="col-lg-3 col-3">
-                              <img src="{{ asset('storage/img/data-home/carousel-1.jpg') }}" alt="Image" width="70"
-                                height="70" style="border-radius: 6px">
+                              <img src="{{ asset('storage/img/data-home/carousel-1.jpg') }}" alt="Image"
+                                width="70" height="70" style="border-radius: 6px">
                             </div>
                             <div class="col-lg-9 col-9">
                               <h6>

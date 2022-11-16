@@ -86,33 +86,14 @@
                         <label class="form-label" for="jabatan">Jabatan</label>
                         <select class="form-select @error('jabatan') is-invalid @enderror" id="jabatan" name="jabatan">
                           <option value="">Pilih Jabatan</option>
-                          <option value="dekan" @if (!isset($data) ? '' : $data->jabatan == 'dekan') selected @endif
-                            @if (old('jabatan') == 'dekan') selected @endif>Dekan</option>
-                          <option value="wakil dekan" @if (!isset($data) ? '' : $data->jabatan == 'wakil dekan') selected @endif
-                            @if (old('jabatan') == 'wakil dekan') selected @endif>Wakil Dekan
-                          </option>
-                          <option value="kepala lektor" @if (!isset($data) ? '' : $data->jabatan == 'kepala lektor') selected @endif
-                            @if (old('jabatan') == 'kepala lektor') selected @endif>Kepala Lektor
-                          </option>
-                          <option value="lektor" @if (!isset($data) ? '' : $data->jabatan == 'lektor') selected @endif
-                            @if (old('jabatan') == 'lektor') selected @endif>Lektor</option>
-                          <option value="dosen" @if (!isset($data) ? '' : $data->jabatan == 'dosen') selected @endif
-                            @if (old('jabatan') == 'dosen') selected @endif>Dosen</option>
-                          <option value="asisten ahli" @if (!isset($data) ? '' : $data->jabatan == 'asisten ahli') selected @endif
-                            @if (old('jabatan') == 'asisten ahli') selected @endif>Asisten Ahli
-                          </option>
+                          @foreach ($semuaJabatan as $jabatan)
+                            <option value="{{ $jabatan->id }}" @if (!isset($data) ? '' : $data->jabatan_id == $jabatan->id) selected @endif
+                              @if ($jabatan->id == old('jabatan')) selected @endif>
+                              {{ $jabatan->nama }}
+                            </option>
+                          @endforeach
                         </select>
                         @error('jabatan')
-                          <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                      </div>
-
-                      <div class="mb-3">
-                        <label class="form-label" for="detail_jabatan">Detail Jabatan</label>
-                        <input class="form-control @error('detail_jabatan') is-invalid @enderror" id="detail_jabatan"
-                          type="text" name="detail_jabatan"
-                          value="{{ old('detail_jabatan', !isset($data) ? '' : $data->detail_jabatan) }}">
-                        @error('detail_jabatan')
                           <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>

@@ -120,6 +120,7 @@
         <svg class="nav-icon">
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
         </svg> Jaminan Mutu</a></li>
+
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
         <svg class="nav-icon">
           <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-newspaper">
@@ -132,6 +133,18 @@
               class="nav-icon"></span> Kategori Berita</a></li>
       </ul>
     </li>
+
+    <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        <svg class="nav-icon">
+          <use xlink:href="{{ asset('admin-assets') }}/vendors/@coreui/icons/svg/free.svg#cil-newspaper">
+          </use>
+        </svg>Master Data</a>
+      <ul class="nav-group-items">
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/link-terkait') }}"><span
+              class="nav-icon"></span> Link Terkait</a></li>
+      </ul>
+    </li>
+
     <li class="nav-title">Theme</li>
     <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/colors') }}">
         <svg class="nav-icon">

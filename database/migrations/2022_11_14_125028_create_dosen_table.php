@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('nip')->nullable();
             $table->string('nidn');
             $table->string('email');
-            $table->string('jabatan');
-            $table->string('detail_jabatan')->nullable();
+            $table->foreignId('jabatan_id');
             $table->timestamps();
         });
     }

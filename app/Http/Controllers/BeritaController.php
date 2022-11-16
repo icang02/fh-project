@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 
 class BeritaController extends Controller
 {
-    public function index($nama)
+    public function index($id)
     {
-        if ($nama == 'ui-greenmetric') $nama = 'Ui Greenmetric';
-        $berita = KategoriBerita::where('nama', $nama)->get();
-        $beritaId = $berita[0]->id;
+        $berita = Berita::where('kategori_berita_id', $id)->orderBy('tanggal', 'DESC')->paginate(5);
+        $titleKategori = KategoriBerita::find($id)->nama;
 
         return view('home.berita.index', [
-            'title' => 'Fakultas Hukum | ' . $berita[0]->nama,
-            'data' => KategoriBerita::find($beritaId),
-            'allBerita' => Berita::latest()->take(4)->get(),
+            'title' => "Fakultas Hukum | $titleKategori",
+            'header' => $titleKategori,
+            'data' => $berita,
+            'allBerita' => Berita::orderBy('tanggal', 'DESC')->take(4)->get(),
         ]);
     }
 

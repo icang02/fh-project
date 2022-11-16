@@ -51,6 +51,8 @@
 
   @include('home.components.navbar', [
       'kategoriBerita' => App\Models\KategoriBerita::where('nama', '!=', 'Ui Greenmetric')->get(),
+      'uiGreenmetric' => App\Models\KategoriBerita::where('nama', '=', 'Ui Greenmetric')->get()->first(),
+      'links' => App\Models\Link::all(),
   ])
 
   {{-- Start Main Content --}}

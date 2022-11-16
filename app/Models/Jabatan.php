@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dosen extends Model
+class Jabatan extends Model
 {
     use HasFactory;
-    protected $table = 'dosen';
+    protected $table = 'jabatan';
     protected $guarded = [''];
+    public $timestamps = false;
 
-    public function jabatan()
+    public function dosen()
     {
-        return $this->belongsTo(Jabatan::class);
+        return $this->hasMany(Dosen::class);
     }
 }
