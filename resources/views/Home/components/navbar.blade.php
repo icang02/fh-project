@@ -43,6 +43,28 @@
     border-radius: 4px;
   }
 
+  .navbar1 {
+    /* transform: translateY(-25px); */
+    margin-top: -20px;
+  }
+
+  .form-search {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    /* border: 1px solid; */
+  }
+
+  .form-search>div {
+    width: 130px;
+  }
+
+  .form-search>form>input {
+    height: 2.35rem;
+    width: 200px;
+    margin-left: 7px;
+  }
+
   /* End google translate */
 
   @media screen and (max-width:767px) {
@@ -50,18 +72,23 @@
       position: static !important;
     }
 
+    .navbar1 {
+      margin-top: 0px;
+    }
+
     .form-search {
-      margin-top: 30px;
+      display: block;
+      padding-top: 27px;
     }
 
     .form-search>div {
       width: 130px;
       margin: auto;
-      margin-bottom: 7px
+      margin-bottom: 7px;
     }
 
-    .form-search>input {
-      width: 250px;
+    .form-search>form>input {
+      width: 200px !important;
     }
 
   }
@@ -84,7 +111,7 @@
   });
 </script>
 
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-4 px-md-5">
+<nav class="navbar1 navbar navbar-expand-lg bg-white navbar-light shadow px-4 px-md-5">
   <div
     class="py-1 px-lg-3 pt-lg-4 d-flex justify-md-content-between justify-content-between flex-md-row flex-column align-items-center w-100">
     <a href="/">
@@ -93,7 +120,9 @@
 
     <div class="form-search">
       <div id="google_translate_element"></div>
-      <input class="form-control" name="search" placeholder="Cari.." style="margin-top: -18px;">
+      <form action="#">
+        <input class="form-control" name="search" placeholder="Cari.." style="margin-top: -18px;">
+      </form>
     </div>
 
   </div>
