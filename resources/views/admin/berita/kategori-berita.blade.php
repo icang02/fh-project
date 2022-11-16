@@ -6,7 +6,7 @@
 
       <div class="row justify-content-between">
         <div class="col-md-10 d-flex">
-          <form action="{{ url('/batas-kategori-berita') }}" method="post" id="formBatas">
+          {{-- <form action="{{ url('/batas-kategori-berita') }}" method="post" id="formBatas">
             <select name="batas" id="batas" class="form-select">
               <option value="5">5</option>
               <option value="10">10</option>
@@ -14,11 +14,11 @@
               <option value="50">50</option>
               <option value="100">100</option>
             </select>
-          </form>
+          </form> --}}
 
-          <form action="/dashboard/berita/kategori-berita" class="d-flex ms-2">
-            <input type="text" name="search" id="search" class="form-control me-1"
-              placeholder="Masukan Kata Kunci.." value="{{ request('search') }}">
+          <form action="/dashboard/berita/kategori-berita" class="d-flex">
+            <input type="text" name="search" id="search" class="form-control me-1" placeholder="Masukan Kata Kunci.."
+              value="{{ request('search') }}">
             <button type="submit" class="btn btn-primary">Cari</button>
           </form>
         </div>
@@ -36,6 +36,13 @@
           @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
               <strong>Sukses</strong> — {{ session('success') }}
+              <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+
+          @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error</strong> — {{ session('error') }}
               <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
             </div>
           @endif

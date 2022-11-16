@@ -43,51 +43,53 @@
           @endif
           {{-- End Flash Message --}}
 
-          <table class="table table-bordered table-hover">
-            <thead class="table-dark">
-              <tr>
-                <th scope="row" style="width: 5%">No</th>
-                <th style="width: 10%">Aksi</th>
-                <th style="width: 15%">Judul</th>
-                <th style="width: 60%">Link</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              @if ($data->count() == 0)
-                <tr class="text-center">
-                  <td colspan="7">
-                    @if (request('search'))
-                      Nama jabatan tidak ditemukan. <i>Keyword : {{ request('search') }}</i>
-                    @else
-                      Belum ada data jabatan.
-                    @endif
-                  </td>
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th>>No</th>
+                  <th>Aksi</th>
+                  <th>Judul</th>
+                  <th>Link</th>
                 </tr>
-              @else
-                @foreach ($data as $index => $link)
-                  <tr>
-                    <th scope="row">{{ $index + $data->firstItem() }}</th>
-                    <td>
-                      <button class="badge text-bg-warning text-white border-0" data-coreui-toggle="modal"
-                        data-coreui-target="#modalUpdateKategori-{{ $link->id }}"> Edit
-                      </button>
-                      {{-- <form action="{{ url("/dashboard/link-terkait/$link->id") }}" method="post" class="d-inline">
+              </thead>
+              <tbody>
+
+                @if ($data->count() == 0)
+                  <tr class="text-center">
+                    <td colspan="7">
+                      @if (request('search'))
+                        Nama jabatan tidak ditemukan. <i>Keyword : {{ request('search') }}</i>
+                      @else
+                        Belum ada data link terkait.
+                      @endif
+                    </td>
+                  </tr>
+                @else
+                  @foreach ($data as $index => $link)
+                    <tr>
+                      <th>{{ $index + $data->firstItem() }}</th>
+                      <td>
+                        <button class="badge text-bg-warning text-white border-0" data-coreui-toggle="modal"
+                          data-coreui-target="#modalUpdateKategori-{{ $link->id }}"> Edit
+                        </button>
+                        {{-- <form action="{{ url("/dashboard/link-terkait/$link->id") }}" method="post" class="d-inline">
                         @csrf
                         @method('delete')
                         <button onclick="return confirm('Hapus {{ $link->id }}?')" type="submit"
                           class="badge text-bg-danger text-white border-0"> Hapus
                         </button>
                       </form> --}}
-                    </td>
-                    <td>{{ $link->judul }}</td>
-                    <td>{{ $link->link }}</td>
-                  </tr>
-                @endforeach
-              @endif
+                      </td>
+                      <td>{{ $link->judul }}</td>
+                      <td><a href="{{ $link->link }}" target="_blank">{{ $link->link }}</a></td>
+                    </tr>
+                  @endforeach
+                @endif
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
 
           {{-- ISI MODAL TAMBAH --}}
           {{-- <div class="modal fade" id="modalAddKategori" tabindex="-1" aria-labelledby="modalAddKategoriLabel"

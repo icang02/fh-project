@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\KategoriBerita;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,12 @@ class KategoriBeritaController extends Controller
     public function destroy($id)
     {
         $kategoriBerita = KategoriBerita::find($id);
+
+        $berita = Berita::where('kategori_berita_id', $id)->get()->first();
+        if ($berita) {
+            return back()->with('error', 'Kategori berita masih digunakan.');
+        }
+
         $kategoriBerita->delete();
 
         return back()->with('success', 'Kategori berita berhasil dihapus!');

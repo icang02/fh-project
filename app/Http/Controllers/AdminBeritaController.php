@@ -22,7 +22,6 @@ class AdminBeritaController extends Controller
         ]);
     }
 
-
     public function beritaById($id)
     {
         $data = Berita::find($id);
@@ -117,7 +116,7 @@ class AdminBeritaController extends Controller
     public function destroy($id)
     {
         $berita = Berita::find($id);
-        Storage::delete($berita->cover);
+        if ($berita->cover != null) Storage::delete($berita->cover);
         $berita->delete();
 
         return back()->with('success', 'Berita berhasil dihapus!');

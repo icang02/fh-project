@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Berita
-        for ($i = 0; $i < 24; $i++) {
+        for ($i = 0; $i < 113; $i++) {
             $date = fake()->dateTimeBetween('-7 days', '+2 months');
             Berita::create([
                 'judul' => fake()->sentence(),
@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
 
         // Dosen
         $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
-        for ($i = 0; $i < 500; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             if (rand(1, 1000) % 2 == 0) {
                 $dt_jbt = fake()->sentence(3);
             } else {

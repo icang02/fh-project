@@ -41,6 +41,13 @@
               <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
             </div>
           @endif
+
+          @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error</strong> — {!! session('error') !!}
+              <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
           {{-- End Flash Message --}}
 
           <table class="table table-bordered table-hover">

@@ -14,7 +14,6 @@ class DosenController extends Controller
         $data = Dosen::paginate(10);
         if (request('search')) {
             $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
-                ->orWhere('jabatan', 'like', '%' . request('search') . '%')
                 ->orWhere('nip', 'like', '%' . request('search') . '%')
                 ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(10);
         }
@@ -108,12 +107,11 @@ class DosenController extends Controller
     public function destroy($id)
     {
         $dosen = Dosen::find($id);
-        Storage::delete($dosen->foto);
+        if ($dosen->foto != null) Storage::delete($dosen->foto);
         $dosen->delete();
 
         return back()->with('success', 'Data dosen berhasil dihapus!');
     }
-
 
     // Halaman depan
     public function semuaDosen()

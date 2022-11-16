@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use App\Models\Jabatan;
 use Illuminate\Http\Request;
 
@@ -45,6 +46,12 @@ class JabatanController extends Controller
     {
         $jabatan = Jabatan::find($id);
         $nama = $jabatan->nama;
+
+        $dosen = Dosen::where('jabatan_id', $id)->get()->first();
+        if ($dosen) {
+            return back()->with('error', 'Jabatan masih digunakan.');
+        }
+
         $jabatan->delete();
         return back()->with('success', "Jabatan <i>$nama</i> berhasil dihapus!");
     }

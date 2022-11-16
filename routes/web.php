@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminBeritaController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DosenController;
@@ -31,7 +32,10 @@ Route::get(
 );
 Route::get(
     '/about',
-    fn () => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
+    fn () => view('home.about', [
+        'title' => 'Fakultas Hukum | Spada',
+        'links' => App\Models\Link::all(),
+    ])
 );
 Route::get(
     '/courses',
@@ -56,6 +60,7 @@ Route::get(
 Route::get('/spada', function () {
     return view('home.page.spada', [
         'title' => 'Fakultas Hukum | SPADA',
+        'links' => App\Models\Link::all(),
     ]);
 });
 // Home | Navbar | Profil
@@ -387,14 +392,11 @@ Route::get('/dosen/daftar-dosen', [DosenController::class, 'semuaDosen']);
 
 //halaman registrasi alumni
 Route::get('/alumni/registrasi-alumni', function () {
-    return view('home.Alumni.registrasi-alumni', ['title' => 'Dashboard | ']);
+    return view('home.Alumni.registrasi-alumni', ['title' => 'Dashboard | Alumni']);
 });
 
 //halaman admin registrasi alumni
-Route::get('/dashboard/alumni/list-alumni', function () {
-    return view('admin.Alumni.list-alumni', ['title' => 'Dashboard | ']);
-});
-
-Route::get('/dashboard/alumni/detail-alumni', function () {
-    return view('admin.Alumni.detail-alumni', ['title' => 'Dashboard | ']);
-});
+Route::get('/dashboard/alumni/list-alumni', [AlumniController::class, 'index']);
+Route::post('/dashboard/alumni/store', [AlumniController::class, 'store']);
+Route::delete('/dashboard/alumni/{id}', [AlumniController::class, 'destroy']);
+Route::get('/dashboard/alumni/{id}', [AlumniController::class, 'detail']);
