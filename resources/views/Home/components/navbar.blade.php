@@ -24,47 +24,22 @@
 
 
   /* Google translate */
-  .goog-te-gadget,
-  .goog-logo-link {
+  .goog-te-gadget {
     color: transparent !important;
   }
 
-  .goog-te-banner-frame,
-  .goog-logo-link img {
+  .goog-te-banner-frame.skiptranslate,
+  .goog-te-gadget>span {
     display: none;
-  }
-
-  body {
-    top: -15px !important;
   }
 
   #google_translate_element select {
     color: #DA251E;
-    border: 1px solid #ced4da;
     height: 2.35rem;
-    padding-left: 8px;
-    transform: translateY(9px);
-    margin-right: 10px !important;
     border-radius: 4px;
   }
 
-  .goog-te-combo {
-    margin: 0px !important;
-  }
-
-  #google_translate_element {
-    /* border: 1px solid; */
-  }
-
-  .form-search {
-    display: flex;
-    align-items: center;
-    /* width: 100%; */
-    /* border: 1px solid blue; */
-    /*  */
-  }
-
-  .search {
+  .form-control {
     border-radius: 4px;
   }
 
@@ -76,15 +51,19 @@
     }
 
     .form-search {
-      display: block;
-      width: 100%;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      margin-top: 30px;
     }
 
-    body {
-      top: 0 !important;
+    .form-search>div {
+      width: 130px;
+      margin: auto;
+      margin-bottom: 7px
     }
+
+    .form-search>input {
+      width: 250px;
+    }
+
   }
 </style>
 
@@ -97,6 +76,12 @@
       pageLanguage: 'id'
     }, 'google_translate_element');
   }
+
+  window.addEventListener("load", (event) => {
+    const select = document.querySelector('.goog-te-combo');
+
+    select.classList.add("form-select");
+  });
 </script>
 
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-4 px-md-5">
@@ -108,11 +93,7 @@
 
     <div class="form-search">
       <div id="google_translate_element"></div>
-      <form action="" class="d-block">
-        <form action="/dashboard/berita/kategori-berita" class="d-flex ms-2">
-          <input class="form-control px-lg-3 search" name="search" placeholder="Cari..">
-        </form>
-      </form>
+      <input class="form-control" name="search" placeholder="Cari.." style="margin-top: -18px;">
     </div>
 
   </div>
