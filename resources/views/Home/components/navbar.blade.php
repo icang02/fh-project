@@ -21,69 +21,71 @@
     }
 
     /* End dropdown */
-
-
     /* Google translate */
-    .goog-te-gadget,
-    .goog-logo-link {
+    .goog-te-gadget {
         color: transparent !important;
     }
 
-    .goog-te-banner-frame,
-    .goog-logo-link img {
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-gadget>span {
         display: none;
-    }
-
-    body {
-        top: -15px !important;
     }
 
     #google_translate_element select {
         color: #DA251E;
-        border: 1px solid #ced4da;
         height: 2.35rem;
-        padding-left: 8px;
-        transform: translateY(9px);
-        margin-right: 10px !important;
         border-radius: 4px;
     }
 
-    .goog-te-combo {
-        margin: 0px !important;
+    .form-control {
+        border-radius: 4px;
     }
 
-    #google_translate_element {
-        /* border: 1px solid; */
+    .navbar1 {
+        /* transform: translateY(-25px); */
+        margin-top: -20px;
     }
 
     .form-search {
         display: flex;
         align-items: center;
-        /* width: 100%; */
-        /* border: 1px solid blue; */
-        /*  */
+        padding-top: 16px;
+        /* border: 1px solid; */
     }
 
-    .search {
-        border-radius: 4px;
+    .form-search>div {
+        width: 130px;
+    }
+
+    .form-search>form>input {
+        height: 2.35rem;
+        width: 200px;
+        margin-left: 7px;
     }
 
     /* End google translate */
-
     @media screen and (max-width:767px) {
         .drop-down02 .sub-menu02 {
             position: static !important;
         }
 
-        .form-search {
-            display: block;
-            width: 100%;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .navbar1 {
+            margin-top: 0px;
         }
 
-        body {
-            top: 0 !important;
+        .form-search {
+            display: block;
+            padding-top: 27px;
+        }
+
+        .form-search>div {
+            width: 130px;
+            margin: auto;
+            margin-bottom: 7px;
+        }
+
+        .form-search>form>input {
+            width: 200px !important;
         }
     }
 </style>
@@ -97,9 +99,13 @@
             pageLanguage: 'id'
         }, 'google_translate_element');
     }
+    window.addEventListener("load", (event) => {
+        const select = document.querySelector('.goog-te-combo');
+        select.classList.add("form-select");
+    });
 </script>
 
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow px-4 px-md-5">
+<nav class="navbar1 navbar navbar-expand-lg bg-white navbar-light shadow px-4 px-md-5">
     <div
         class="py-1 px-lg-3 pt-lg-4 d-flex justify-md-content-between justify-content-between flex-md-row flex-column align-items-center w-100">
         <a href="/">
@@ -108,8 +114,8 @@
 
         <div class="form-search">
             <div id="google_translate_element"></div>
-            <form class="d-block">
-                <input class="form-control px-lg-3 search" placeholder="Cari..">
+            <form action="#">
+                <input class="form-control" name="search" placeholder="Cari.." style="margin-top: -18px;">
             </form>
         </div>
 
@@ -184,11 +190,11 @@
                     <a href="{{ url('program-studi/sasaran-strategis-prodi') }}"
                         class="dropdown-item {{ request()->is('program-studi/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran
                         Strategis</a>
-                    <a href="{{ url('#') }}"
+                    <a href="{{ $links[3]->link }}"
                         class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Strategis
                         Program
                         Studi</a>
-                    <a href="{{ url('#') }}"
+                    <a href="{{ $links[4]->link }}"
                         class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Operasional
                         Program
                         Studi</a>
@@ -205,7 +211,7 @@
                         Rektor
                         Tentang
                         Akademik</a>
-                    <a href="{{ url('https://drive.google.com/open?id=1NlrMD4TpqW3Oj5Dxf-ee9xsj8nKfBwZF') }}"
+                    <a href="{{ $links[5]->link }}"
                         class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Panduan
                         Akademik</a>
                     <a href="{{ url('akademik/kalender-akademik') }}"
@@ -225,14 +231,14 @@
                     class="nav-link dropdown-toggle {{ request()->is('mahasiswa-alumni*') ? 'active txt-utama' : '' }}"
                     data-bs-toggle="dropdown">Mahasiswa & Alumni</a>
                 <div class="dropdown-menu fade-down m-0">
-                    <a href="{{ url('https://uho.ac.id/search?q=SNMPTN+SBMPTN+SMMPTN') }}"
+                    <a href="{{ $links[6]->link }}"
                         class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Pendaftaran
                         Mahasiswa Baru</a>
                     <a href="{{ url('mahasiswa-alumni/lembaga-kemahasiswaan') }}"
                         class="dropdown-item {{ request()->is('mahasiswa-alumni/lembaga-kemahasiswaan') ? 'active bg-utama' : '' }}">Lembaga
                         Kemahasiswaan</a>
                     <a href="{{ url('alumni/registrasi-alumni') }}"
-                        class="dropdown-item {{ request()->is('mahasiswa-alumni/registrasi-alumni') ? 'active bg-utama' : '' }}">Registrasi
+                        class="dropdown-item {{ request()->is('alumni/registrasi-alumni') ? 'active bg-utama' : '' }}">Registrasi
                         Alumni</a>
                 </div>
             </div>
@@ -283,24 +289,20 @@
                                 <a class="nav-link dropdown-toggle drop2" href="#" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">Sistem Informasi</a>
                                 <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="https://siakadbeta.uho.ac.id/">SIAKAD</a></li>
-                                    <li><a class="dropdown-item" href="http://wisuda.uho.ac.id/">WISUDA</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="http://sitedi.uho.ac.id/login.php?accesscheck=%2Findex.php">SITEDI</a>
+                                    <li><a class="dropdown-item" href="{{ $links[8]->link }}">SIAKAD</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[9]->link }}">WISUDA</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[10]->link }}">SITEDI</a>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            href="http://ojs.uho.ac.id/index.php/holrev">HOLREV</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="http://simlitabmas.dikti.go.id/">SIMLITABMAS</a></li>
-                                    <li><a class="dropdown-item" href="http://sister.uho.ac.id/">SISTER</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="http://sinta2.ristekdikti.go.id/author/?mod=login">SINTA</a></li>
-                                    <li><a class="dropdown-item" href="http://lib.uho.ac.id/library">E-LIBRARY</a>
+                                    <li><a class="dropdown-item" href="{{ $links[11]->link }}">HOLREV</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[12]->link }}">SIMLITABMAS</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[13]->link }}">SISTER</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[14]->link }}">SINTA</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[15]->link }}">E-LIBRARY</a>
                                     </li>
-                                    <li><a class="dropdown-item" href="http://118.97.35.235/sipatuk">SIPATUK</a></li>
+                                    <li><a class="dropdown-item" href="{{ $links[16]->link }}">SIPATUK</a></li>
                                 </ul>
                             </li>
-                            <li><a class="dropdown-item" href="http://www.klinikhukumuho.com/">Klinik Hukum UHO</a>
+                            <li><a class="dropdown-item" href="{{ $links[7]->link }}">Klinik Hukum UHO</a>
                             </li>
                         </ul>
                     </li>
@@ -318,15 +320,15 @@
 
                 <div class="dropdown-menu fade-down m-0">
                     @foreach ($kategoriBerita as $kategori)
-                        <a href="{{ url('berita/' . str()->lower($kategori->nama)) }}"
-                            class="dropdown-item {{ request()->is('berita/' . str()->lower($kategori->nama)) ? 'active bg-utama' : '' }}">{{ $kategori->nama }}</a>
+                        <a href="{{ url('berita/kategori/' . $kategori->id) }}"
+                            class="dropdown-item {{ request()->is('berita/kategori/' . $kategori->id) ? 'active bg-utama' : '' }}">{{ $kategori->nama }}</a>
                     @endforeach
                 </div>
             </div>
 
-            <a href="{{ url('berita/ui-greenmetric') }}"
+            <a href="{{ url("berita/kategori/$uiGreenmetric->id") }}"
                 class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
-                UI Greenmetric
+                {{ $uiGreenmetric->nama }}
             </a>
         </div>
     </div>

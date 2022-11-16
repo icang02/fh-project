@@ -51,6 +51,8 @@
 
   @include('home.components.navbar', [
       'kategoriBerita' => App\Models\KategoriBerita::where('nama', '!=', 'Ui Greenmetric')->get(),
+      'uiGreenmetric' => App\Models\KategoriBerita::where('nama', '=', 'Ui Greenmetric')->get()->first(),
+      'links' => App\Models\Link::all(),
   ])
 
   {{-- Start Main Content --}}
@@ -74,6 +76,16 @@
 
   <!-- Template Javascript -->
   <script src="{{ asset('home-assets') }}/js/main.js"></script>
+
+  <script>
+    window.addEventListener("load", (event) => {
+      const body = document.querySelector(`body`);
+
+      for (let i = 0; i < body.attributes.length; i++) {
+        body.removeAttribute(body.attributes[i].name);
+      }
+    });
+  </script>
 </body>
 
 </html>

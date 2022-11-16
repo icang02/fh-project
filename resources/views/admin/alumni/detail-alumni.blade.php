@@ -114,8 +114,6 @@
                                 voluptatum atque?</p>
                         </div>
 
-
-
                         <div class="card-body">
                             <a href="{{ url('/dashboard/alumni/list-alumni') }}"
                                 class="btn btn-danger text-light">Kembali</a>

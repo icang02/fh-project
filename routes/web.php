@@ -4,14 +4,19 @@ use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriBeritaController;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\PageIndex;
 use App\Http\Controllers\profil\SejarahController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 // create symbolic link
-Route::get('/seed', fn () => Artisan::call('storage:link'));
+Route::get('/seed', function () {
+    $seed = Artisan::call('storage:link');
+    if ($seed == 0) return redirect('/');
+});
 // migrate fresh database
 Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
 
@@ -55,7 +60,8 @@ Route::get('/layanan/fasilitas/{menu}', [PageIndex::class, 'index']);
 Route::get('/jaminan-mutu', [PageIndex::class, 'index']);
 
 //navbar - berita
-Route::get('/berita/{nama}', [BeritaController::class, 'index']);
+Route::get('/
+berita/kategori/{id}', [BeritaController::class, 'index']);
 Route::get('/berita/{kategori}/{id}', [BeritaController::class, 'beritaById']);
 
 // route admin
@@ -298,6 +304,18 @@ Route::post('/dashboard/dosen/form-dosen', [DosenController::class, 'store']);
 Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'dosenById']);
 Route::put('/dashboard/dosen/{id}', [DosenController::class, 'update']);
 Route::delete('/dashboard/dosen/{id}', [DosenController::class, 'destroy']);
+
+// Route jabatan
+Route::get('/dashboard/daftar-jabatan', [JabatanController::class, 'index']);
+Route::post('/dashboard/daftar-jabatan', [JabatanController::class, 'store']);
+Route::put('/dashboard/jabatan/{id}', [JabatanController::class, 'update']);
+Route::delete('/dashboard/jabatan/{id}', [JabatanController::class, 'destroy']);
+
+// Master data
+Route::get('/dashboard/link-terkait', [LinkController::class, 'index']);
+Route::put('/dashboard/link-terkait/{id}', [LinkController::class, 'update']);
+// Route::delete('/dashboard/link-terkait/{id}', [LinkController::class, 'destroy']);
+
 
 //route halaman tenaga pendidikan
 Route::get('/dosen/daftar-dosen', [DosenController::class, 'semuaDosen']);

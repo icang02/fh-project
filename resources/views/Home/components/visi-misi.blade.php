@@ -72,4 +72,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
+  @media only screen and (max-width: 576px) {
+    .visi2 {
+      background-size: 0;
+    }
+  }
 </style>
