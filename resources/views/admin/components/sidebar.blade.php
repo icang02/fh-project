@@ -146,6 +146,8 @@
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/link-terkait') }}"><span
                             class="nav-icon"></span> Link Terkait</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/visi-misi') }}"><span
+                            class="nav-icon"></span>Index Visi Misi</a></li>
             </ul>
         </li>
 

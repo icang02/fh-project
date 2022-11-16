@@ -334,6 +334,15 @@ Route::get('/dashboard/alumni/detail-alumni', function () {
     return view('admin.Alumni.detail-alumni', ['title' => 'Dashboard | ']);
 });
 
+//halaman visi misi
+Route::get('/dashboard/visi-misi', function () {
+    return view('admin.master-data.index-visi-misi', ['title' => 'Dashboard | ']);
+});
+
+Route::get('/dashboard/edit-visi-misi', function () {
+    return view('admin.master-data.edit-visi-misi', ['title' => 'Dashboard | ']);
+});
+
 
 
 
