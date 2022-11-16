@@ -96,7 +96,8 @@
 <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
-            pageLanguage: 'id'
+            pageLanguage: 'id', 
+            includedLanguages: 'id,en'
         }, 'google_translate_element');
     }
     window.addEventListener("load", (event) => {
