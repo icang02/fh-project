@@ -11,7 +11,7 @@ class DosenController extends Controller
 {
     public function index()
     {
-        if (request()->is('dosen/daftar-dosen*')) {
+        if (request()->is('dashboard/dosen/list-dosen*') || request()->is('dosen/daftar-dosen*')) {
             $data = Dosen::paginate(10);
             if (request('search')) {
                 $data = Dosen::where('nama', 'like', '%' . request('search') . '%')

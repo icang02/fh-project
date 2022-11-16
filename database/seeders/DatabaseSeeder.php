@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Link::create([
             'judul' => 'Reset Akun SPADA Dosen dan Mahasiswa',
-            'link' => 'https://www.uho.ac.id/fakultas/fhukum/sistem-pembelajaran-dalam-jaringan-spada/#',
+            'link' => '#',
         ]);
         Link::create([
             'judul' => 'Rencana Strategis Program Studi',
