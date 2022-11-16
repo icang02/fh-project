@@ -400,3 +400,7 @@ Route::get('/dashboard/alumni/list-alumni', [AlumniController::class, 'index']);
 Route::post('/dashboard/alumni/store', [AlumniController::class, 'store']);
 Route::delete('/dashboard/alumni/{id}', [AlumniController::class, 'destroy']);
 Route::get('/dashboard/alumni/{id}', [AlumniController::class, 'detail']);
+
+// Halaman admin visi misi halaman depan
+Route::get('/dashboard/visi-misi', [LinkController::class, 'visiMisi']);
+Route::put('/dashboard/visi-misi/{id}', [LinkController::class, 'updateVisiMisi']);

@@ -3,10 +3,13 @@
 @section('main-content')
   <!-- Header Start -->
   @php
-    if ($data == null) {
-        $img = 'storage/img/data-home/carousel-1.jpg';
+    if (!isset($data)) {
+        $img = 'storage/img/data-home/default.jpg';
     } else {
         $img = "storage/$data->cover";
+        if ($data->cover == null) {
+            $img = 'storage/img/data-home/default.jpg';
+        }
     }
   @endphp
 

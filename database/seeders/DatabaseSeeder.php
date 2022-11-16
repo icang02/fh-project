@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
 
         // Dosen
         $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 300; $i++) {
             if (rand(1, 1000) % 2 == 0) {
                 $dt_jbt = fake()->sentence(3);
             } else {

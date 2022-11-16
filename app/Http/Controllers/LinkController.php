@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
+use App\Models\VisiMisi;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller
@@ -31,5 +32,30 @@ class LinkController extends Controller
         $link->update(['link' => $request->link]);
 
         return back()->with('success', 'Link terkait berhasil diupdate!');
+    }
+
+    // VISI MISI HALAMAN HOME
+    public function visiMisi()
+    {
+        $data = VisiMisi::all();
+
+        return view('admin.master-data.visi-misi', [
+            'title' => 'Dashboard | Visi Misi',
+            'data' => $data,
+        ]);
+    }
+
+    public function updateVisiMisi(Request $request, $id)
+    {
+        $rules = [
+            'body' => 'required',
+        ];
+
+        $request->validate($rules);
+
+        $data = VisiMisi::find($id);
+        $data->update(['body' => $request->body]);
+
+        return back()->with('success', "Data $data->nama berhasil diupdate!");
     }
 }

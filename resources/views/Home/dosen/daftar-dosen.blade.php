@@ -71,7 +71,7 @@
                     </div>
                   @endforeach
 
-                  <nav style="margin-top: 10px" aria-label="Page navigation example">
+                  {{-- <nav style="margin-top: 10px" aria-label="Page navigation example">
                     <ul class="pagination">
                       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                       <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -79,7 +79,13 @@
                       <li class="page-item"><a class="page-link" href="#">3</a></li>
                       <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
-                  </nav>
+                  </nav> --}}
+
+                  <div class="row mt-3">
+                    <div class="col">
+                      {{ $semuaDosen->onEachSide(0.5)->withQueryString()->links() }}
+                    </div>
+                  </div>
                 </div>
 
 
@@ -111,6 +117,8 @@
                   </div>
                 </div>
               </div>
+
+
             </div>
 
           </div>

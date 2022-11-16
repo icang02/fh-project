@@ -27,7 +27,7 @@
     <div class="form-search">
       <div id="google_translate_element"></div>
       <form action="#">
-        <input class="form-control" name="search" placeholder="Cari.." style="margin-top: -18px;">
+        <input class="form-control" name="search" placeholder="Cari berita.." style="margin-top: -18px;">
       </form>
     </div>
 

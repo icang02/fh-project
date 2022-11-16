@@ -34,7 +34,7 @@
 
   <!-- Visi Misi Start -->
   <div class="jarak">
-    @include('home.components.visi-misi')
+    @include('home.components.visi-misi', ['data' => App\Models\VisiMisi::all()])
   </div>
   <!-- Visi Misi End -->
 @endsection

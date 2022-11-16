@@ -62,7 +62,7 @@ class SejarahController extends Controller
 
         $imgName = $data->cover;    // cover lama
         if ($request->has('cover')) {
-            Storage::delete($data->cover);
+            if ($data->cover != null) Storage::delete($data->cover);
             $imgName = $request->file('cover')->store('img/data-home');     // cover baru
         }
 

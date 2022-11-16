@@ -11,11 +11,20 @@ class DosenController extends Controller
 {
     public function index()
     {
-        $data = Dosen::paginate(10);
-        if (request('search')) {
-            $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
-                ->orWhere('nip', 'like', '%' . request('search') . '%')
-                ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(10);
+        if (request()->is('dosen/daftar-dosen*')) {
+            $data = Dosen::paginate(10);
+            if (request('search')) {
+                $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
+                    ->orWhere('nip', 'like', '%' . request('search') . '%')
+                    ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(10);
+            }
+        }
+        if (request()->is('dosen/daftar-tenaga-kependidikan*')) {
+            $data = Dosen::paginate(10);
+            if (request('search')) {
+                $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
+                    ->orWhere('nip', 'like', '%' . request('search') . '%')->paginate(10);
+            }
         }
 
         return view('admin.dosen.list-dosen', [
@@ -116,12 +125,11 @@ class DosenController extends Controller
     // Halaman depan
     public function semuaDosen()
     {
-        $data = Dosen::paginate(10);
+        $data = Dosen::paginate(15);
         if (request('search')) {
             $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
-                ->orWhere('jabatan', 'like', '%' . request('search') . '%')
                 ->orWhere('nip', 'like', '%' . request('search') . '%')
-                ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(10);
+                ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(15);
         }
 
         return view('home.dosen.daftar-dosen', [

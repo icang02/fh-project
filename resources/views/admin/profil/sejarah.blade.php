@@ -95,7 +95,7 @@
 
                       <div class="mb-3">
                         <label for="editor" class="form-label">Body</label>
-                        <textarea id="editor" name="body" class="@error('body') is-invalid @enderror">{{ old('body', $data != null ? $data->body : '') }}</textarea>
+                        <textarea id="editor1" name="body" class="@error('body') is-invalid @enderror">{{ old('body', $data != null ? $data->body : '') }}</textarea>
                         @error('body')
                           <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
