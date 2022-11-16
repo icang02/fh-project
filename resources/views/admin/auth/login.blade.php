@@ -55,7 +55,7 @@
           </div>
 
           <div class="card col-md-5 text-white py-5" id="form-bg"
-            style="background-image: url({{ asset('storage/img/slider/slider2.png') }}); background-size: cover; background-positition: center;">
+            style="background-image: url({{ asset('storage/img/slider/slider2.jpg') }}); background-size: cover;">
             <div class="card-body text-center">
               <h2>Fakultas Hukum</h2>
               <p>S M A R T</p>

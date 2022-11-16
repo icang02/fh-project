@@ -29,7 +29,7 @@ class BeritaController extends Controller
         return view('home.berita.detail-berita', [
             'title' => 'Fakultas Hukum | Detail Berita',
             'berita' => $berita,
-            'allBerita' => Berita::latest()->take(4)->get(),
+            'allBerita' => Berita::orderBy('tanggal', 'DESC')->take(4)->get(),
         ]);
     }
 }

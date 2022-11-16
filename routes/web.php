@@ -20,36 +20,36 @@ Route::get('/seed', function () {
     }
 });
 // migrate fresh database
-Route::get('/seed', fn() => Artisan::call('migrate:fresh --seed'));
+Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
 
 //route Home
 Route::get(
     '/',
-    fn() => view('home.index', [
+    fn () => view('home.index', [
         'title' => 'Fakultas Hukum Universitas Halu Oleo',
     ])
 );
 Route::get(
     '/about',
-    fn() => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
+    fn () => view('home.about', ['title' => 'Fakultas Hukum | Spada'])
 );
 Route::get(
     '/courses',
-    fn() => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
+    fn () => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
 );
 Route::get(
     '/team',
-    fn() => view('home.team', ['title' => 'Fakultas Hukum | Team'])
+    fn () => view('home.team', ['title' => 'Fakultas Hukum | Team'])
 );
 Route::get(
     '/testimonial',
-    fn() => view('home.testimonial', [
+    fn () => view('home.testimonial', [
         'title' => 'Fakultas Hukum | Testimonial',
     ])
 );
 Route::get(
     '/contact',
-    fn() => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
+    fn () => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
 );
 
 //SPADA
@@ -78,7 +78,7 @@ Route::get('/berita/{kategori}/{id}', [BeritaController::class, 'beritaById']);
 // route admin
 Route::get(
     '/dashboard',
-    fn() => view('admin.index', ['title' => 'Dashboard | Fakultas Hukum'])
+    fn () => view('admin.index', ['title' => 'Dashboard | Fakultas Hukum'])
 )->middleware('auth');
 
 //route - Admin | Profil | Sejarah dan lain lain
@@ -398,7 +398,3 @@ Route::get('/dashboard/alumni/list-alumni', function () {
 Route::get('/dashboard/alumni/detail-alumni', function () {
     return view('admin.Alumni.detail-alumni', ['title' => 'Dashboard | ']);
 });
-
-
-
-
