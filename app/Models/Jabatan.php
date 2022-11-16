@@ -16,4 +16,9 @@ class Jabatan extends Model
     {
         return $this->hasMany(Dosen::class);
     }
+
+    public function tenaga_kependidikan()
+    {
+        return $this->hasMany(TenagaKependidikan::class);
+    }
 }

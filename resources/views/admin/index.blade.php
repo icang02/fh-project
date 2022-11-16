@@ -3,6 +3,7 @@
 @php
   $countDosen = App\Models\Dosen::all()->count();
   $countBerita = App\Models\Berita::all()->count();
+  $countTenagaKependidikan = App\Models\TenagaKependidikan::all()->count();
 @endphp
 
 @section('main-content')
@@ -34,7 +35,7 @@
           <div class="card mb-4 text-white bg-info">
             <div class="card-body pb-0 d-flex justify-content-between align-items-start">
               <div>
-                <div class="fs-2 fw-semibold">26K</div>
+                <div class="fs-2 fw-semibold">{{ $countTenagaKependidikan }}</div>
                 <div>Total Tenaga Kependidikan </div>
               </div>
               <div class="icons">
@@ -45,8 +46,8 @@
               </div>
             </div>
             <div>
-              <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="d-flex btn mt-3 justify-content-center text-white"
-                style="background-color: #46546c">More Info</a>
+              <a href="{{ url('/dashboard/tenaga-kependidikan') }}"
+                class="d-flex btn mt-3 justify-content-center text-white" style="background-color: #46546c">More Info</a>
             </div>
           </div>
         </div>

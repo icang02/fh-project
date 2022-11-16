@@ -6,7 +6,11 @@
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
-          <h4 class="text-center">DAFTAR TENAGA PENDIDIKAN/DOSEN</h4>
+          @if (request()->is('dosen'))
+            <h4 class="text-center">DAFTAR TENAGA PENDIDIKAN/DOSEN</h4>
+          @else
+            <h4 class="text-center">DAFTAR TENAGA KEPENDIDIKAN</h4>
+          @endif
           <hr class="w-25 mx-auto my-5" style="height: 3px">
           <img src="" class="img-fluid">
 
@@ -14,10 +18,15 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8">
-                  <h5 style="margin-bottom: 25px">Daftar Dosen Fakultas Hukum Universitas Halu Oleo</h5>
+
+                  @if (request()->is('dosen*'))
+                    <h5 style="margin-bottom: 25px">Daftar Dosen Fakultas Hukum Universitas Halu Oleo</h5>
+                  @else
+                    <h5 style="margin-bottom: 25px">Daftar Tenaga Kependidikan Fakultas Hukum Universitas Halu Oleo</h5>
+                  @endif
 
                   @if ($semuaDosen->count() == 0)
-                    <h6 class="text-center text-muted lead">Data dosen tidak ditemukan.</h6>
+                    <p class="text-center text-muted">Data tidak ditemukan.</p>
                   @endif
 
                   @foreach ($semuaDosen as $dosen)
@@ -50,11 +59,16 @@
                                     <a class="text-dark fw-bold">{{ $dosen->jabatan->nama }}</a>
                                   </h6>
                                   <h6>
-                                    <a class="text-dark">NIP : {{ $dosen->nip }}</a>
+                                    <a class="text-dark">NIP : {{ $dosen->nip ?? '' }}</a>
                                   </h6>
-                                  <h6>
-                                    <a class="text-dark">NIDN : {{ $dosen->nidn }}</a>
-                                  </h6>
+
+                                  @if (request()->is('dosen*'))
+                                    <h6>
+                                      <a class="text-dark">NIDN : {{ $dosen->nidn }}</a>
+                                    </h6>
+                                  @endif
+
+
                                   <p class="text-muted">
                                     <small>
                                       <i class="fa-solid fa-at"></i> <span
@@ -93,7 +107,7 @@
                   <div class="shadow p-3 mb-3 bg-body rounded-3">
                     <div class="card border border-white" style="width: 100%;">
                       <div class="card-body">
-                        <h5 class="card-title">Pencarian Dosen</h5>
+                        <h5 class="card-title">Pencarian Data</h5>
                         <hr>
                       </div>
                       <div class="card-body">
@@ -104,11 +118,19 @@
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                               <span style="width: 90px" class="btn btn-secondary" id="basic-addon2">cari</span>
                             </div> --}}
-                            <form action="{{ url('/dosen/daftar-dosen') }}" class="d-flex">
-                              <input type="text" name="search" id="search" class="form-control me-1"
-                                placeholder="Cari dosen.." value="{{ request('search') }}">
-                              <button type="submit" class="btn btn-primary" autocomplete="off">Cari</button>
-                            </form>
+                            @if (request()->is('dosen*'))
+                              <form action="{{ url('/dosen/daftar-dosen') }}" class="d-flex">
+                                <input type="text" name="search" id="search" class="form-control me-1"
+                                  placeholder="Cari data.." value="{{ request('search') }}">
+                                <button type="submit" class="btn btn-primary" autocomplete="off">Cari</button>
+                              </form>
+                            @else
+                              <form action="{{ url('/tenaga-kependidikan') }}" class="d-flex">
+                                <input type="text" name="search" id="search" class="form-control me-1"
+                                  placeholder="Cari data.." value="{{ request('search') }}">
+                                <button type="submit" class="btn btn-primary" autocomplete="off">Cari</button>
+                              </form>
+                            @endif
                           </div>
                         </div>
                         <hr>

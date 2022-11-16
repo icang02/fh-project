@@ -74,7 +74,7 @@
           <a href="{{ url('/dosen/daftar-dosen') }}"
             class="dropdown-item {{ request()->is('profil/tenaga-pendidikan') ? 'active bg-utama' : '' }}">Tenaga
             Pendidikan/Dosen</a>
-          <a href="{{ url('profil/tenaga-kependidikan') }}"
+          <a href="{{ url('/tenaga-kependidikan') }}"
             class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
           <a href="{{ url('profil/rencana-strategis') }}"

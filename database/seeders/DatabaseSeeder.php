@@ -9,7 +9,9 @@ use App\Models\Dosen;
 use App\Models\Jabatan;
 use App\Models\KategoriBerita;
 use App\Models\Link;
+use App\Models\TenagaKependidikan;
 use App\Models\User;
+use App\Models\VisiMisi;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -53,7 +55,7 @@ class DatabaseSeeder extends Seeder
 
         // Dosen
         $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
-        for ($i = 0; $i < 300; $i++) {
+        for ($i = 0; $i < 121; $i++) {
             if (rand(1, 1000) % 2 == 0) {
                 $dt_jbt = fake()->sentence(3);
             } else {
@@ -66,22 +68,32 @@ class DatabaseSeeder extends Seeder
                 'nip' => fake()->ean13(),
                 'nidn' => fake()->ean8(),
                 'email' => fake()->email(),
-                'jabatan_id' => rand(1, 5),
+                'jabatan_id' => rand(1, 6),
             ]);
         }
 
         $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 76; $i++) {
+            if (rand(1, 1000) % 2 == 0) {
+                $dt_jbt = fake()->sentence(3);
+            } else {
+                $dt_jbt = null;
+            }
+
+            TenagaKependidikan::create([
+                'nama' => fake()->name(),
+                'foto' => null,
+                'nip' => fake()->ean13(),
+                'email' => fake()->email(),
+                'jabatan_id' => rand(1, 6),
+            ]);
+        }
+
+        for ($i = 0; $i <= 5; $i++) {
             Jabatan::create([
                 'nama' => str()->title($jbt[$i]),
             ]);
         }
-        for ($i = 0; $i < 25; $i++) {
-            Jabatan::create([
-                'nama' => fake()->jobTitle(),
-            ]);
-        }
-
 
         // Data link terkait
         Link::create([
@@ -151,6 +163,15 @@ class DatabaseSeeder extends Seeder
         Link::create([
             'judul' => 'SIPATUK',
             'link' => 'http://118.97.35.235/sipatuk',
+        ]);
+
+        VisiMisi::create([
+            'nama' => 'Visi',
+            'body' => '<p>Menjadi Fakultas yang Unggul di Indonesia, Berbudaya Akademik dan Bermartabat untuk Membentuk Sumber Daya Manusia cerdas dalam pengembangan ilmu hukum, penegakan dan advokasi hukum bagi Pembangunan Kemaritiman dan Perdesaan</p>'
+        ]);
+        VisiMisi::create([
+            'nama' => 'Misi',
+            'body' => '<ol><li>Mengembangkan pendidikan dan pengajaran yang berbasis riset agar menghasilkan lulusan berkualitas dan berdaya saing dengan mengintegrasikan kemajuan teknologi dalam rangka pengembangan ilmu hukum.</li><li>Mengembangkan penelitian unggulan dan pengabdian kepada masyarakat dibidang ilmu hukum dan profesional sebagai yuris khususnya hukum kemarItiman dan keagrariaan yang berorientasi pada publikasi nasional dan internasional yang bereputasi serta HaKI.</li><li>Mengembangkan potensi kreatifitas mahasiswa dibidang kerohanian dan karakter, penalaran, olah raga, seni dan kewirausahaan, untuk membangun atmosfir akademik yang kondusif, bersih, indah, sejuk dan aman.</li><li>Menyelenggarakan tata kelola fakultas yang akuntabel, transparan dan terpercaya serta meningkatkan kualitas pelaksanaan sistem penjaminan mutu dan kerjasama fakultas agar menjamin kepastian layanan kepada&nbsp;stakeholders.</li></ol>'
         ]);
     }
 }

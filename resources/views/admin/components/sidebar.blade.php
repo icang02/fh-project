@@ -34,7 +34,7 @@
             Struktur Organisasi</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/dosen/list-dosen') }}"><span
               class="nav-icon"></span> Tenaga Pendidikan</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/profil/tenaga-kependidikan') }}"><span
+        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/tenaga-kependidikan') }}"><span
               class="nav-icon"></span> Tenaga
             Kependidikan</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/profil/rencana-strategis') }}"><span

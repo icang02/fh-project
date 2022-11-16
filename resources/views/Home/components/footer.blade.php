@@ -13,8 +13,8 @@
       <div class="col-lg-3 col-md-6">
         <h5 class="text-white mb-3">TENTANG SITUS</h5>
         <a class="btn btn-link" href="{{ url('/') }}">Beranda</a>
-        <a class="btn btn-link" href="{{ url('#') }}">Spada</a>
-        <a class="btn btn-link" href="{{ url('about') }}">Tentang</a>
+        <a class="btn btn-link" href="{{ url('/spada') }}">Spada</a>
+        <a class="btn btn-link" href="{{ url('/profil/sejarah') }}">Tentang</a>
         <a class="btn btn-link" href="{{ url('#') }}">Hubungi Kami</a>
         <a class="btn btn-link" href="{{ url('#') }}">Umpan Balik</a>
       </div>
@@ -35,13 +35,17 @@
           <a class="btn btn-outline-light btn-social" href="{{ url('mailto:Fhukumuho@yahoo.co.id') }}"><i
               class="fa fa-envelope"></i></a>
         </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center ms-auto">
-          <div class="mb-3">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=fakultas%20hukum%20uho&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center ms-auto">
+        <div class="mb-3">
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=fakultas%20hukum%20uho&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+          </div>
         </div>
       </div>
-      
+
     </div>
   </div>
   <div class="container">
