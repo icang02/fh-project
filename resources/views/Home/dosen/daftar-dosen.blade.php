@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-lg-9 col-9">
                                   <h6>
-                                    <a class="text-dark fw-bold">{{ str()->title($dosen->jabatan) }}</a>
+                                    <a class="text-dark fw-bold">{{ $dosen->jabatan->nama }}</a>
                                   </h6>
                                   <h6>
                                     <a class="text-dark">NIP : {{ $dosen->nip }}</a>

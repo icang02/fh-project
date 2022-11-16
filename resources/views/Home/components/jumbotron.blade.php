@@ -1,7 +1,7 @@
 <div class="container-fluid p-0">
   <div class="owl-carousel header-carousel position-relative">
     <div class="owl-carousel-item position-relative">
-      <img class="img-fluid" src="{{ asset('storage/img/slider/slider1.png') }}" alt="Slider 1">
+      <img class="img-fluid" src="{{ asset('storage/img/slider/' . 'slider1.png') }}" alt="Slider 1">
       <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
         style="background: rgba(24, 29, 56, .7);">
         <div class="container">
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="owl-carousel-item position-relative">
-      <img class="img-fluid" src="{{ asset('storage/img/slider/slider2.png') }}" alt="Slider 2">
+      <img class="img-fluid" src="{{ asset('storage/img/slider/' . 'slider2.jpg') }}" alt="Slider 2">
       <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
         style="background: rgba(24, 29, 56, .7);">
         <div class="container">

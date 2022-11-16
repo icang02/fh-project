@@ -11,9 +11,9 @@ class AdminBeritaController extends Controller
 {
     public function index()
     {
-        $data = Berita::latest()->paginate(10);
+        $data = Berita::orderBy('tanggal', 'DESC')->paginate(10);
         if (request('search')) {
-            $data = Berita::where('judul', 'like', '%' . request('search') . '%')->paginate(10);
+            $data = Berita::where('judul', 'like', '%' . request('search') . '%')->orderBy('tanggal', 'DESC')->paginate(10);
         }
 
         return view('admin.berita.list-berita', [
@@ -99,7 +99,7 @@ class AdminBeritaController extends Controller
 
         $imgName = $berita->cover;
         if ($request->has('cover')) {
-            Storage::delete($berita->cover);
+            if ($berita->cover != null) Storage::delete($berita->cover);
             $imgName = $request->file('cover')->store('img/cover-berita');
         }
 

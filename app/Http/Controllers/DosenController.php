@@ -108,7 +108,7 @@ class DosenController extends Controller
     public function destroy($id)
     {
         $dosen = Dosen::find($id);
-        // Storage::delete($d->cover);
+        Storage::delete($dosen->foto);
         $dosen->delete();
 
         return back()->with('success', 'Data dosen berhasil dihapus!');
