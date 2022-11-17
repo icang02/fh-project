@@ -6,8 +6,19 @@
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
-          <h4 class="text-center"> {{ $header }} </h4>
+          <h4 class="text-center">
+            @if (request('search'))
+              {{ $header }}
+            @else
+              {{ $header }}
+            @endif
+          </h4>
+
           <hr class="w-25 mx-auto my-5" style="height: 3px">
+
+          @if (request('search'))
+            <p class="text-muted text-center mt-4 mb-5">Hasil Pencarian : <i>{{ request('search') }}</i></p>
+          @endif
 
           {{-- Start Ui Greenmetric --}}
           @if (str()->lower($header) == 'ui greenmetric')
@@ -70,7 +81,9 @@
 
             <div class="row">
               @if ($data->count() == 0)
-                <h5 class="text-center">Belum ada berita</h5>
+                <h5 class="text-center text-muted">
+                  {{ request('search') ? 'Judul berita tidak ditemukan' : 'Belum ada berita' }}
+                </h5>
               @endif
 
               @foreach ($data as $index => $berita)

@@ -22,7 +22,6 @@
                 @csrf
                 <div class="input-group mb-3">
                   <span class="input-group-text">
-                    <i class="fa-solid fa-lock">Icon</i>
                   </span>
                   <input class="form-control @error('username') is-invalid @enderror" type="text" name="username"
                     placeholder="Username" value="{{ old('username') }}">
@@ -33,7 +32,6 @@
 
                 <div class="input-group mb-4">
                   <span class="input-group-text">
-                    <i class="fa-solid fa-lock">Icon</i>
                   </span>
                   <input class="form-control @error('password') is-invalid @enderror" type="password" name="password"
                     placeholder="Password" autocomplete="off">

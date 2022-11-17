@@ -15,7 +15,7 @@
               <div class="mb-5">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                   {{ session('success') }}
-                  <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
               </div>
             @endif
@@ -23,7 +23,7 @@
             <form action="{{ url('/dashboard/alumni/store') }}" method="POST">
               @csrf
               <div class="mb-3">
-                <label class="form-label" for="nama">Nama Lengkap Dan Gelar</label>
+                <label class="form-label" for="nama">Nama Lengkap dan Gelar</label>
                 <input class="form-control form-control-sm @error('nama') is-invalid @enderror" id="nama"
                   type="text" name="nama" value="{{ old('nama') }}">
                 @error('nama')
@@ -89,7 +89,7 @@
               <div class="mb-3">
                 <label class="form-label" for="hp">Nomor Handphone</label>
                 <input class="form-control form-control-sm @error('hp') is-invalid @enderror" id="hp"
-                  type="text" name="hp" value="{{ old('hp') }}">
+                  type="telp" name="hp" value="{{ old('hp') }}">
                 @error('hp')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -119,7 +119,7 @@
                   <div class="mb-3">
                     <label class="form-label" for="tanggal_masuk">Tanggal Masuk</label>
                     <input class="form-control form-control-sm @error('tanggal_masuk') is-invalid @enderror"
-                      id="tanggal_masuk" type="input" name="tanggal_masuk" value="{{ old('tanggal_masuk') }}">
+                      id="tanggal_masuk" type="date" name="tanggal_masuk" value="{{ old('tanggal_masuk') }}">
                     @error('tanggal_masuk')
                       <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -130,7 +130,7 @@
                   <div class="mb-3">
                     <label class="form-label" for="bulan_tahun_lulus">Bulan Dan Tahun Lulus</label>
                     <input class="form-control form-control-sm @error('bulan_tahun_lulus') is-invalid @enderror"
-                      id="bulan_tahun_lulus" type="text" name="bulan_tahun_lulus"
+                      id="bulan_tahun_lulus" type="month" name="bulan_tahun_lulus"
                       value="{{ old('bulan_tahun_lulus') }}">
                     @error('bulan_tahun_lulus')
                       <div class="invalid-feedback">{{ $message }}</div>

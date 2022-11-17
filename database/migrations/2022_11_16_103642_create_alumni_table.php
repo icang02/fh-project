@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('email', 50);
             $table->string('hp', 20);
             $table->string('konsentrasi', 50);
-            $table->string('tanggal_masuk');
-            $table->string('bulan_tahun_lulus');
+            $table->date('tanggal_masuk');
+            $table->string('bulan_tahun_lulus', 20);
             $table->string('status_kerja', 20);
             $table->string('is_pns', 10);
             $table->string('kesesuaian_pekerjaan', 20);

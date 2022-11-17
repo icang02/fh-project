@@ -79,6 +79,7 @@ berita/kategori/{id}',
     [BeritaController::class, 'index']
 );
 Route::get('/berita/{kategori}/{id}', [BeritaController::class, 'beritaById']);
+Route::get('/berita', [BeritaController::class, 'searchBerita']);
 
 // route admin
 Route::get(

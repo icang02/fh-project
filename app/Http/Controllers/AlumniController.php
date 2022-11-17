@@ -31,6 +31,7 @@ class AlumniController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $rules = [
             'nama' => 'required',
             'jenis_kelamin' => 'required',
@@ -49,7 +50,7 @@ class AlumniController extends Controller
         ];
 
         $validatedData = $request->validate($rules);
-        Alumni::create($validatedData);
+        Alumni::create($request->all());
 
         return back()->with('success', 'Terimas kasih, data Anda telah direkam.');
     }

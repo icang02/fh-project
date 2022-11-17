@@ -26,8 +26,9 @@
 
     <div class="form-search">
       <div id="google_translate_element"></div>
-      <form action="#">
-        <input class="form-control" name="search" placeholder="Cari berita.." style="margin-top: -18px;">
+      <form action="{{ url('/berita') }}">
+        <input type="search" class="form-control" name="search" placeholder="Cari berita.." autocomplete="off"
+          style="margin-top: -18px;">
       </form>
     </div>
 
@@ -92,22 +93,20 @@
           data-bs-toggle="dropdown">Program Studi</a>
         <div class="dropdown-menu fade-down m-0">
           <a href="{{ url('program-studi/sejarah-prodi') }}"
-            class="dropdown-item {{ request()->is('program-studi/sejarah') ? 'active bg-utama' : '' }}">Sejarah</a>
+            class="dropdown-item {{ request()->is('program-studi/sejarah-prodi') ? 'active bg-utama' : '' }}">Sejarah</a>
           <a href="{{ url('program-studi/visi-misi-prodi') }}"
-            class="dropdown-item {{ request()->is('program-studi/visi-misi') ? 'active bg-utama' : '' }}">Visi
+            class="dropdown-item {{ request()->is('program-studi/visi-misi-prodi') ? 'active bg-utama' : '' }}">Visi
             dan
             Misi</a>
           <a href="{{ url('program-studi/tujuan-prodi') }}"
-            class="dropdown-item {{ request()->is('program-studi/tujuan') ? 'active bg-utama' : '' }}">Tujuan</a>
+            class="dropdown-item {{ request()->is('program-studi/tujuan-prodi') ? 'active bg-utama' : '' }}">Tujuan</a>
           <a href="{{ url('program-studi/sasaran-strategis-prodi') }}"
-            class="dropdown-item {{ request()->is('program-studi/sasaran-strategis') ? 'active bg-utama' : '' }}">Sasaran
+            class="dropdown-item {{ request()->is('program-studi/sasaran-strategis-prodi') ? 'active bg-utama' : '' }}">Sasaran
             Strategis</a>
-          <a href="{{ $links[3]->link }}"
-            class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Strategis
+          <a href="{{ $links[3]->link }}" target="_blank" class="dropdown-item">Rencana Strategis
             Program
             Studi</a>
-          <a href="{{ $links[4]->link }}"
-            class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Rencana Operasional
+          <a href="{{ $links[4]->link }}" target="_blank" class="dropdown-item">Rencana Operasional
             Program
             Studi</a>
         </div>
@@ -122,7 +121,7 @@
             Rektor
             Tentang
             Akademik</a>
-          <a href="{{ $links[5]->link }}"
+          <a href="{{ $links[5]->link }}" target="_blank"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Panduan
             Akademik</a>
           <a href="{{ url('akademik/kalender-akademik') }}"
@@ -142,7 +141,7 @@
           class="nav-link dropdown-toggle {{ request()->is('mahasiswa-alumni*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Mahasiswa & Alumni</a>
         <div class="dropdown-menu fade-down m-0">
-          <a href="{{ $links[6]->link }}"
+          <a href="{{ $links[6]->link }}" target="_blank"
             class="dropdown-item {{ request()->is('#') ? 'active bg-utama' : '' }}">Pendaftaran
             Mahasiswa Baru</a>
           <a href="{{ url('mahasiswa-alumni/lembaga-kemahasiswaan') }}"
@@ -155,7 +154,8 @@
       </div>
 
       <div class="nav-item dropdown ">
-        <a href="#" class="nav-link dropdown-toggle {{ request()->is('tridharma*') ? 'active txt-utama' : '' }}"
+        <a href="#"
+          class="nav-link dropdown-toggle {{ request()->is('tridharma*') ? 'active txt-utama' : '' }}"
           data-bs-toggle="dropdown">Tridharma</a>
         <div class="dropdown-menu fade-down m-0">
           <a href="{{ url('tridharma/penelitian') }}"
@@ -239,7 +239,7 @@
       </div>
 
       <a href="{{ url("berita/kategori/$uiGreenmetric->id") }}"
-        class="nav-item nav-link {{ request()->is('berita/ui-greenmetric') ? 'active txt-utama' : '' }}">
+        class="nav-item nav-link {{ request()->is('berita/ui*') ? 'active txt-utama' : '' }}">
         {{ $uiGreenmetric->nama }}
       </a>
     </div>

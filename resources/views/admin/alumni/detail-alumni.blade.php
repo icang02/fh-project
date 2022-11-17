@@ -32,7 +32,8 @@
                 </div>
                 <div class="ms-5">
                   <h6 class="card-title fw-bold">Tanggal Lahir</h6>
-                  <p class="card-text">{{ $data->tanggal_lahir }}2</p>
+                  <p class="card-text">
+                    {{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tanggal_lahir)->format('d F Y') }}</p>
                   </p>
                 </div>
 
@@ -64,11 +65,13 @@
             <div class="card-body d-flex">
               <div>
                 <h6 class="card-title fw-bold">Tahun Masuk</h6>
-                <p class="card-text">{{ str()->title($data->tanggal_masuk) }}</p>
+                <p class="card-text">
+                  {{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tanggal_masuk)->format('d F Y') }}</p>
               </div>
               <div class="ms-5">
                 <h6 class="card-title fw-bold">Bulan dan Tahun Lulus</h6>
-                <p class="card-text">{{ str()->title($data->bulan_tahun_lulus) }}</p>
+                <p class="card-text">
+                  {{ date($data->bulan_tahun_lulus) }}</p>
                 </p>
               </div>
 
@@ -84,8 +87,8 @@
               </div>
 
               <div class="mt-4">
-                <h6 class="card-title fw-bold">Status Berkerja Saat Ini ?</h6>
-                <p class="card-text">{{ str()->title($data->is_pns) }}</p>
+                <h6 class="card-title fw-bold">Status Bekerja Saat Ini ?</h6>
+                <p class="card-text">{{ $data->is_pns }}</p>
               </div>
 
               <div class="mt-4">
@@ -97,7 +100,7 @@
               <div class="mt-4">
                 <h6 class="card-title fw-bold">Berapa lama Anda menunggu sejak lulus dari FH-UHO hingga
                   mendapat pekerjaan pertama Anda?</h6>
-                <p class="card-text">{{ $data->durasi_nganggur }}</p>
+                <p class="card-text">{{ $data->lama_menganggur }}</p>
               </div>
             </div>
 
@@ -106,7 +109,7 @@
             <div class="card-body">
               <h6 class="card-title fw-bold">Saran</h6>
               <p class="card-text">
-                {{ $data->saran != null ? ucfirst($data->saran) : '-' }}
+                {{ $data->saran ?? '-' }}
               </p>
             </div>
 

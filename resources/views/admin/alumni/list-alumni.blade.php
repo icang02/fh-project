@@ -78,8 +78,8 @@
                           </form>
                         </td>
                         <td>{{ $alumni->nama }}</td>
-                        <td>{{ str()->title($alumni->tanggal_masuk) }}</td>
-                        <td>{{ str()->title($alumni->bulan_tahun_lulus) }}</td>
+                        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $alumni->tanggal_masuk)->format('d F Y') }}</td>
+                        <td>{{ $alumni->bulan_tahun_lulus }}</td>
                         <td>{{ $alumni->hp }}</td>
                       </tr>
                     @endforeach
