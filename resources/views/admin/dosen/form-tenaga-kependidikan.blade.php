@@ -23,7 +23,7 @@
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
 
                     <form
-                      @if (isset($data)) action="{{ url('dashboard/dosen/' . $data->id) }}"@else action="{{ url('dashboard/dosen/form-dosen') }}" @endif
+                      @if (isset($data)) action="{{ url('dashboard/tenaga-kependidikan/' . $data->id) }}"@else action="{{ url('dashboard/tenaga-kependidikan') }}" @endif
                       method="POST" enctype="multipart/form-data">
 
                       @csrf
@@ -66,15 +66,6 @@
                       </div>
 
                       <div class="mb-3">
-                        <label class="form-label" for="nidn">NIDN</label>
-                        <input class="form-control @error('nidn') is-invalid @enderror" id="nidn" type="text"
-                          name="nidn" value="{{ old('nidn', !isset($data) ? '' : $data->nidn) }}">
-                        @error('nidn')
-                          <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                      </div>
-
-                      <div class="mb-3">
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control @error('email') is-invalid @enderror" id="email" type="text"
                           name="email" value="{{ old('email', !isset($data) ? '' : $data->email) }}">
@@ -101,7 +92,8 @@
 
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="btn btn-danger text-light">Kembali</a>
+                        <a href="{{ url('/dashboard/tenaga-kependidikan') }}"
+                          class="btn btn-danger text-light">Kembali</a>
                       </div>
                     </form>
 

@@ -66,10 +66,12 @@
 
                       <div class="mb-3">
                         <label class="form-label" for="cover">Cover</label>
-                        <img @if (isset($data)) src="{{ asset("storage/$data->cover") }}" @endif
-                          alt="Cover berita" class="img-preview img-thumbnail mb-3"
-                          @if (!isset($data)) style="display: none" @else style="display: block" @endif
-                          width="300">
+                        <img
+                          @if (isset($data)) @if ($data->cover != null) src="{{ asset("storage/$data->cover") }}" @else  src="{{ asset('storage/img/cover-berita/default.png') }}" @endif
+                          @endif
+                        alt="Cover berita" class="img-preview img-thumbnail mb-3"
+                        @if (!isset($data)) style="display: none" @else style="display: block" @endif
+                        width="300">
                         <input class="form-control @error('cover') is-invalid @enderror" type="file" name="cover"
                           id="image" onchange="previewImage()" accept="image/*">
                         @error('cover')
@@ -78,8 +80,8 @@
                       </div>
 
                       <div class="mb-3">
-                        <label for="editor" class="form-label">Isi Berita</label>
-                        <textarea id="editor" name="body" class="@error('body') is-invalid @enderror">
+                        <label for="editor1" class="form-label">Isi Berita</label>
+                        <textarea id="editor1" name="body" class="@error('body') is-invalid @enderror">
                           {{ old('body', !isset($data) ? '' : $data->body) }}
                         </textarea>
                         @error('body')

@@ -10,6 +10,8 @@ use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\PageIndex;
 use App\Http\Controllers\profil\SejarahController;
+use App\Http\Controllers\TenagaKependidikanController;
+use App\Models\TenagaKependidikan;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -368,14 +370,21 @@ Route::post('/auth/logout', [AuthController::class, 'logout']);
 
 // Route Dosen
 Route::get('/dashboard/dosen/list-dosen', [DosenController::class, 'index']);
-Route::get('/dashboard/dosen/form-dosen', [
-    DosenController::class,
-    'dosenById',
-]);
+Route::get('/dashboard/dosen/form-dosen', [DosenController::class, 'dosenById']);
 Route::post('/dashboard/dosen/form-dosen', [DosenController::class, 'store']);
 Route::get('/dashboard/dosen/edit/{id}', [DosenController::class, 'dosenById']);
 Route::put('/dashboard/dosen/{id}', [DosenController::class, 'update']);
 Route::delete('/dashboard/dosen/{id}', [DosenController::class, 'destroy']);
+
+// Halaman Dashboard Tenaga Kependidikan
+Route::get('/dashboard/tenaga-kependidikan', [TenagaKependidikanController::class, 'index']);
+Route::post('/dashboard/tenaga-kependidikan', [TenagaKependidikanController::class, 'store']);
+Route::put('/dashboard/tenaga-kependidikan/{id}', [TenagaKependidikanController::class, 'update']);
+Route::delete('/dashboard/tenaga-kependidikan/{id}', [TenagaKependidikanController::class, 'destroy']);
+Route::get('/dashboard/form-tenaga-kependidikan', [TenagaKependidikanController::class, 'dosenById']);
+Route::get('/dashboard/tenaga-kependidikan/edit/{id}', [TenagaKependidikanController::class, 'dosenById']);
+// Halaman Home
+Route::get('/tenaga-kependidikan', [TenagaKependidikanController::class, 'semuaDosen']);
 
 // Route jabatan
 Route::get('/dashboard/daftar-jabatan', [JabatanController::class, 'index']);
@@ -405,12 +414,3 @@ Route::get('/dashboard/alumni/{id}', [AlumniController::class, 'detail']);
 // Halaman admin visi misi halaman depan
 Route::get('/dashboard/visi-misi', [LinkController::class, 'visiMisi']);
 Route::put('/dashboard/visi-misi/{id}', [LinkController::class, 'updateVisiMisi']);
-
-// Halaman Dashboard Tenaga Kependidikan
-Route::get('/dashboard/tenaga-kependidikan', [DosenController::class, 'index']);
-Route::get('/dashboard/tenaga-kependidikan/edit/{id}', [DosenController::class, 'dosenById']);
-Route::get('/dashboard/form-tenaga-kependidikan', [DosenController::class, 'dosenById']);
-Route::post('/dashboard/tenaga-kependidikan', [DosenController::class, 'store']);
-Route::put('/dashboard/tenaga-kependidikan/{id}', [DosenController::class, 'update']);
-Route::delete('/dashboard/tenaga-kependidikan/{id}', [DosenController::class, 'destroy']);
-Route::get('/tenaga-kependidikan', [DosenController::class, 'semuaDosen']);

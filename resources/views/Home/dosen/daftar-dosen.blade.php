@@ -26,7 +26,13 @@
                   @endif
 
                   @if ($semuaDosen->count() == 0)
-                    <p class="text-center text-muted">Data tidak ditemukan.</p>
+                    <p class="text-center text-muted">
+                      @if (request('search'))
+                        Data tidak ditemukan.
+                      @else
+                        Belum ada data.
+                      @endif
+                    </p>
                   @endif
 
                   @foreach ($semuaDosen as $dosen)

@@ -46,18 +46,19 @@ class AdminBeritaController extends Controller
             'judul' => 'required',
             'kategori' => 'required',
             'tanggal' => 'required',
-            'cover' => 'required|image|mimes:png,jpg,jpeg|max:4096',
+            'cover' => 'image|mimes:png,jpg,jpeg|max:4096',
             'body' => 'required',
         ];
 
         $validatedData = $request->validate($rules);
 
-        $imgName = $request->file('cover')->store('img/cover-berita');
+        if ($request->has('cover'))
+            $imgName = $request->file('cover')->store('img/cover-berita');
         Berita::create([
             'judul' => str()->title($request->judul),
             'kategori_berita_id' => $request->kategori,
             'tanggal' => $request->tanggal,
-            'cover' => $imgName,
+            'cover' => $imgName ?? null,
             'body' => $request->body
         ]);
 

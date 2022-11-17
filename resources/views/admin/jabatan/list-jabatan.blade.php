@@ -26,8 +26,13 @@
         <div class="col-md-3 mt-3 mt-md-0">
           <button class="btn btn-primary" style="float: right !important" type="button" data-coreui-toggle="modal"
             data-coreui-target="#modalAddKategori">Tambah</button>
-          <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="btn btn-danger text-light me-1"
-            style="float: right !important">Kembali</a>
+          {{-- @if (request()->is('dashboard/dosen*'))
+            <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="btn btn-danger text-light me-1"
+              style="float: right !important">Kembali</a>
+          @else
+            <a href="{{ url('/dashboard/tenaga-kependidikan') }}" class="btn btn-danger text-light me-1"
+              style="float: right !important">Kembali</a>
+          @endif --}}
         </div>
       </div>
 

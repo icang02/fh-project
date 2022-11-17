@@ -2,42 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dosen;
 use App\Models\Jabatan;
 use App\Models\TenagaKependidikan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use League\Flysystem\UrlGeneration\TemporaryUrlGenerator;
 
-class DosenController extends Controller
+class TenagaKependidikanController extends Controller
 {
     public function index()
     {
-        $title = 'Dashboard | List Dosen';
-        $data = Dosen::paginate(10);
+        $title = 'Dashboard | List Tenaga Kependidikan';
+        $data = TenagaKependidikan::latest()->paginate(10);
         if (request('search')) {
-            $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
-                ->orWhere('nip', 'like', '%' . request('search') . '%')
-                ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(10);
+            $data = TenagaKependidikan::where('nama', 'like', '%' . request('search') . '%')
+                ->orWhere('nip', 'like', '%' . request('search') . '%')->paginate(10);
         }
 
-        return view('admin.dosen.list-dosen', [
+        return view('admin.dosen.list-tenaga-kependidikan', [
             'title' => $title,
             'data' => $data,
-        ]);
-    }
-
-    public function dosenById($id = null)
-    {
-        $data = Dosen::find($id);
-        $title = 'Dashboard | Form Dosen';
-        $header = 'Form Dosen';
-        $semuaJabatan = Jabatan::all();
-
-        return view('admin.dosen.form-dosen', [
-            'title' => $title,
-            'header' => $header,
-            'data' => $data,
-            'semuaJabatan' => $semuaJabatan,
         ]);
     }
 
@@ -45,7 +29,6 @@ class DosenController extends Controller
     {
         $rules = [
             'nama' => 'required',
-            'nidn' => 'required',
             'email' => 'required',
             'jabatan' => 'required',
         ];
@@ -64,23 +47,21 @@ class DosenController extends Controller
             }
         }
 
-        Dosen::create([
+        TenagaKependidikan::create([
             'nama' => ucfirst($request->nama),
             'foto' => $imgName,
             'nip' => $request->nip,
-            'nidn' => $request->nidn,
             'email' => $request->email,
             'jabatan_id' => $request->jabatan,
         ]);
-        return redirect('/dashboard/dosen/list-dosen')->with('success', 'Data dosen berhasil ditambahkan!');
+        return redirect('/dashboard/tenaga-kependidikan')->with('success', 'Data tenaga kependidikan berhasil ditambahkan!');
     }
 
     public function update(Request $request, $id)
     {
-        $dosen = Dosen::find($id);
+        $dosen = TenagaKependidikan::find($id);
         $rules = [
             'nama' => 'required',
-            'nidn' => 'required',
             'email' => 'required',
             'jabatan' => 'required',
         ];
@@ -100,17 +81,16 @@ class DosenController extends Controller
             'nama' => ucfirst($request->nama),
             'foto' => $imgName,
             'nip' => $request->nip,
-            'nidn' => $request->nidn,
             'email' => $request->email,
             'jabatan_id' => $request->jabatan,
         ]);
 
-        return redirect('/dashboard/dosen/list-dosen')->with('success', 'Data dosen berhasil diupdate!');
+        return redirect('/dashboard/tenaga-kependidikan')->with('success', 'Data tenaga kependidikan berhasil diupdate!');
     }
 
     public function destroy($id)
     {
-        $dosen = Dosen::find($id);
+        $dosen = TenagaKependidikan::find($id);
         $nama = $dosen->nama;
         if ($dosen->foto != null) Storage::delete($dosen->foto);
         $dosen->delete();
@@ -118,13 +98,27 @@ class DosenController extends Controller
         return back()->with('success', "Data dengan nama (<i>$nama</i>) berhasil dihapus!");
     }
 
-    // Halaman depan
+    public function dosenById($id = null)
+    {
+        $data = TenagaKependidikan::find($id);
+        $title = 'Dashboard | Form Tenaga Kependidikan';
+        $header = 'Form Tenaga Kependidikan';
+        $semuaJabatan = Jabatan::all();
+
+        return view('admin.dosen.form-tenaga-kependidikan', [
+            'title' => $title,
+            'header' => $header,
+            'data' => $data,
+            'semuaJabatan' => $semuaJabatan,
+        ]);
+    }
+
     public function semuaDosen()
     {
-        $data = Dosen::paginate(15);
+        $data = TenagaKependidikan::paginate(15);
         $title = 'Fakultas Hukum | Daftar Dosen';
         if (request('search')) {
-            $data = Dosen::where('nama', 'like', '%' . request('search') . '%')
+            $data = TenagaKependidikan::where('nama', 'like', '%' . request('search') . '%')
                 ->orWhere('nip', 'like', '%' . request('search') . '%')
                 ->orWhere('nidn', 'like', '%' . request('search') . '%')->paginate(15);
         }

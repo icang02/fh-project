@@ -28,7 +28,9 @@
 
   <!-- Team Start -->
   <div class="jarak">
-    @include('home.components.team')
+    @include('home.components.team', [
+        'dekanat' => App\Models\Dosen::whereIn('id', [1, 2, 3, 4])->get(),
+    ])
   </div>
   <!-- Team End -->
 
@@ -37,4 +39,12 @@
     @include('home.components.visi-misi', ['data' => App\Models\VisiMisi::all()])
   </div>
   <!-- Visi Misi End -->
+
+
+  @php
+    $kategoriBerita = App\Models\KategoriBerita::all();
+  @endphp
+  {{-- Start Artikel Berita --}}
+  @include('home.components.artikel-berita', ['kategoriBerita' => $kategoriBerita])
+  {{-- End Artikel Berita --}}
 @endsection

@@ -41,8 +41,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Berita
-        for ($i = 0; $i < 113; $i++) {
-            $date = fake()->dateTimeBetween('-7 days', '+2 months');
+        for ($i = 0; $i < 34; $i++) {
+            $date = fake()->dateTimeBetween('-2 month');
             Berita::create([
                 'judul' => fake()->sentence(),
                 'kategori_berita_id' => rand(1, 4),
@@ -53,47 +53,83 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        // Dosen
-        $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
-        for ($i = 0; $i < 121; $i++) {
-            if (rand(1, 1000) % 2 == 0) {
-                $dt_jbt = fake()->sentence(3);
-            } else {
-                $dt_jbt = null;
-            }
-
-            Dosen::create([
-                'nama' => fake()->name(),
-                'foto' => null,
-                'nip' => fake()->ean13(),
-                'nidn' => fake()->ean8(),
-                'email' => fake()->email(),
-                'jabatan_id' => rand(1, 6),
-            ]);
-        }
-
-        $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
-        for ($i = 0; $i < 76; $i++) {
-            if (rand(1, 1000) % 2 == 0) {
-                $dt_jbt = fake()->sentence(3);
-            } else {
-                $dt_jbt = null;
-            }
-
-            TenagaKependidikan::create([
-                'nama' => fake()->name(),
-                'foto' => null,
-                'nip' => fake()->ean13(),
-                'email' => fake()->email(),
-                'jabatan_id' => rand(1, 6),
-            ]);
-        }
-
-        for ($i = 0; $i <= 5; $i++) {
+        $jbt = [
+            'Dekan',
+            'Wakil Dekan Bidang Akademik',
+            'Wakil Dekan Bidang Adm Umum, Perencanaan dan Keuangan',
+            'Wakil Dekan Bidang Adm Umum, Perencanaan dan Keuangan',
+            'Kepala Lektor',
+            'Lektor',
+            'Dosen',
+            'Asisten Ahli',
+        ];
+        for ($i = 0; $i < count($jbt); $i++) {
             Jabatan::create([
-                'nama' => str()->title($jbt[$i]),
+                'nama' => $jbt[$i]
             ]);
         }
+
+        // Dosen
+        Dosen::create([
+            'nama' => 'Dr. Herman, S.H., LL.M.',
+            'foto' => null,
+            'nip' => fake()->ean13(),
+            'nidn' => fake()->ean8(),
+            'email' => fake()->email(),
+            'jabatan_id' => 1,
+        ]);
+        Dosen::create([
+            'nama' => 'Dr. Herman, S.H., LL.M.',
+            'foto' => null,
+            'nip' => fake()->ean13(),
+            'nidn' => fake()->ean8(),
+            'email' => fake()->email(),
+            'jabatan_id' => 2,
+        ]);
+        Dosen::create([
+            'nama' => 'Siti Aisah Abdullah, S.H., M.H.',
+            'foto' => null,
+            'nip' => fake()->ean13(),
+            'nidn' => fake()->ean8(),
+            'email' => fake()->email(),
+            'jabatan_id' => 3,
+        ]);
+        Dosen::create([
+            'nama' => 'Lade Sirjon, S.H., LL.M.',
+            'foto' => null,
+            'nip' => fake()->ean13(),
+            'nidn' => fake()->ean8(),
+            'email' => fake()->email(),
+            'jabatan_id' => 4,
+        ]);
+
+        // for ($i = 0; $i < 54; $i++) {
+        //     Dosen::create([
+        //         'nama' => fake()->name(),
+        //         'foto' => null,
+        //         'nip' => fake()->ean13(),
+        //         'nidn' => fake()->ean8(),
+        //         'email' => fake()->email(),
+        //         'jabatan_id' => rand(1, 6),
+        //     ]);
+        // }
+
+        // $jbt = ['dekan', 'wakil dekan', 'kepala lektor', 'lektor', 'dosen', 'asisten ahli'];
+        // for ($i = 0; $i < 15; $i++) {
+        //     if (rand(1, 1000) % 2 == 0) {
+        //         $dt_jbt = fake()->sentence(3);
+        //     } else {
+        //         $dt_jbt = null;
+        //     }
+
+        //     TenagaKependidikan::create([
+        //         'nama' => fake()->name(),
+        //         'foto' => null,
+        //         'nip' => fake()->ean13(),
+        //         'email' => fake()->email(),
+        //         'jabatan_id' => rand(5, 6),
+        //     ]);
+        // }
 
         // Data link terkait
         Link::create([
