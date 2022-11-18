@@ -2,7 +2,7 @@
 
 @section('main-content')
   <!-- Service Start -->
-  <div class="container-xxl px-0 px-md-5 py-5 pt-custom">
+  <div class="container-xxl px-0 px-md-5 py-5 pt-custom overflow-hidden">
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
@@ -15,7 +15,7 @@
             <div class="row">
 
               <div class="col-md-8">
-                <div class="shadow p-3 mb-5 bg-body rounded-3">
+                <div class="shadow p-lg-3 p-1 mb-5 bg-body rounded-3">
                   <div class="card border border-white" style="width: 100%;">
                     @if ($berita->cover == null)
                       <img src="{{ asset('storage/img/cover-berita/default.png') }}" class="card-img-top" alt="Image">
@@ -51,7 +51,7 @@
                           </span>
                         @endif
                       </p>
-                      <p class="card-text">{!! $berita->body !!}</p>
+                      <p class="card-text" style="text-align: left">{!! $berita->body !!}</p>
                     </div>
 
                     <div class="card-body ms-auto">

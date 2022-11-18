@@ -2,7 +2,7 @@
 
 @section('main-content')
   <!-- Service Start -->
-  <div class="container-xxl px-0 px-md-5 py-5 pt-custom">
+  <div class="container-xxl px-0 px-md-5 py-5 pt-custom overflow-hidden">
     <div class="container px-0 px-md-5">
 
       <div class="row">
@@ -256,12 +256,9 @@
   <hr class="mx-auto my-5" style="height: 3px">
 
   <div class="text-center">
-    <a href="#" class="btn btn-danger btn-sm">KEMBALI KE ATAS</a>
+    <a href="{{ url('#') }}" class="btn btn-danger btn-sm">KEMBALI KE ATAS</a>
   </div>
 
   <img src="https://www.uho.ac.id/fakultas/fhukum/wp-content/uploads/sites/7/2019/04/UHO-BISA.png"
     class="img-fluid d-block mt-3 mx-auto">
-  </div>
-
-  <!-- Service End -->
 @endsection

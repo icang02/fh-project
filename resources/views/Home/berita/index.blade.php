@@ -2,7 +2,7 @@
 
 @section('main-content')
   <!-- Service Start -->
-  <div class="container-xxl px-0 px-md-5 py-5 pt-custom">
+  <div class="container-xxl px-0 px-md-5 py-5 pt-custom overflow-hidden">
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
@@ -88,7 +88,7 @@
 
               @foreach ($data as $index => $berita)
                 <div class="col-md-8">
-                  <div class="shadow p-3 mb-5 bg-body rounded-3">
+                  <div class="shadow p-3 mb-4 bg-body rounded-3">
                     <div class="card border border-white" style="width: 100%;">
                       @if ($berita->cover == null)
                         <img src="{{ asset('storage/img/cover-berita/' . 'default.png') }}" class="card-img-top"
@@ -139,6 +139,14 @@
                   </div>
                 </div>
 
+                @if ($index + 1 == $data->count())
+                  <div class="row">
+                    <div class="col">
+                      {{ $data->onEachSide(0)->withQueryString()->links() }}
+                    </div>
+                  </div>
+                @endif
+
                 @if ($index < 1)
                   <div class="col-md-4 order-1 order-md-0">
                     <div class="shadow p-3 mb-5 bg-body rounded-3">
@@ -160,22 +168,11 @@
               @endforeach
             </div>
 
-            <div class="row">
-              <div class="col">
-                {{ $data->onEachSide(0)->withQueryString()->links() }}
-              </div>
-            </div>
-
           </div>
 
           <hr class="mx-auto my-5" style="height: 3px">
+          @include('home.components.jagad-uho')
 
-          <div class="text-center">
-            <a href="#" class="btn btn-danger btn-sm">KEMBALI KE ATAS</a>
-          </div>
-
-          <img src="https://www.uho.ac.id/fakultas/fhukum/wp-content/uploads/sites/7/2019/04/UHO-BISA.png"
-            class="img-fluid d-block mt-3 mx-auto">
         </div>
       </div>
     </div>

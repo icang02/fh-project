@@ -22,7 +22,7 @@
 
           <h3 class="p-2">{{ $item->nama }}</h3>
           <div class="ms-4">
-            <p class="ms-5">{!! $item->body !!}</p>
+            <p>{!! $item->body !!}</p>
           </div>
         </div>
       @endforeach

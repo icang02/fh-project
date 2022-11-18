@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'jabatan_id' => 1,
         ]);
         Dosen::create([
-            'nama' => 'Dr. Herman, S.H., LL.M.',
+            'nama' => 'Dr. Guasman Tatawu, S.H., M.H.',
             'foto' => null,
             'nip' => fake()->ean13(),
             'nidn' => fake()->ean8(),

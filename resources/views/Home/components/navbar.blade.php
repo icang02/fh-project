@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{ asset('home-assets/css/navbar.css') }}">
 <script type="text/javascript" src="{{ asset('home-assets/js/translate.js') }}"></script>
+{{-- <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script> --}}
 <script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
