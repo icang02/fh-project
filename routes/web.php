@@ -8,20 +8,12 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\LinkController;
-use App\Http\Controllers\PageIndex;
+use App\Http\Controllers\PageIndexController;
 use App\Http\Controllers\profil\SejarahController;
 use App\Http\Controllers\TenagaKependidikanController;
-use App\Models\TenagaKependidikan;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-// create symbolic link
-Route::get('/seed', function () {
-    $seed = Artisan::call('storage:link');
-    if ($seed == 0) {
-        return redirect('/');
-    }
-});
 // migrate fresh database
 Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
 
@@ -32,31 +24,32 @@ Route::get(
         'title' => 'Fakultas Hukum Universitas Halu Oleo',
     ])
 );
-Route::get(
-    '/about',
-    fn () => view('home.about', [
-        'title' => 'Fakultas Hukum | Spada',
-        'links' => App\Models\Link::all(),
-    ])
-);
-Route::get(
-    '/courses',
-    fn () => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
-);
-Route::get(
-    '/team',
-    fn () => view('home.team', ['title' => 'Fakultas Hukum | Team'])
-);
-Route::get(
-    '/testimonial',
-    fn () => view('home.testimonial', [
-        'title' => 'Fakultas Hukum | Testimonial',
-    ])
-);
-Route::get(
-    '/contact',
-    fn () => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
-);
+
+// Route::get(
+//     '/about',
+//     fn () => view('home.about', [
+//         'title' => 'Fakultas Hukum | Spada',
+//         'links' => App\Models\Link::all(),
+//     ])
+// );
+// Route::get(
+//     '/courses',
+//     fn () => view('home.courses', ['title' => 'Fakultas Hukum | courses'])
+// );
+// Route::get(
+//     '/team',
+//     fn () => view('home.team', ['title' => 'Fakultas Hukum | Team'])
+// );
+// Route::get(
+//     '/testimonial',
+//     fn () => view('home.testimonial', [
+//         'title' => 'Fakultas Hukum | Testimonial',
+//     ])
+// );
+// Route::get(
+//     '/contact',
+//     fn () => view('home.contact', ['title' => 'Fakultas Hukum | Contact'])
+// );
 
 //SPADA
 Route::get('/spada', function () {
@@ -66,13 +59,13 @@ Route::get('/spada', function () {
     ]);
 });
 // Home | Navbar | Profil
-Route::get('/profil/{menu}', [PageIndex::class, 'index']);
-Route::get('/program-studi/{menu}', [PageIndex::class, 'index']);
-Route::get('/akademik/{menu}', [PageIndex::class, 'index']);
-Route::get('/mahasiswa-alumni/{menu}', [PageIndex::class, 'index']);
-Route::get('/tridharma/{menu}', [PageIndex::class, 'index']);
-Route::get('/layanan/fasilitas/{menu}', [PageIndex::class, 'index']);
-Route::get('/jaminan-mutu', [PageIndex::class, 'index']);
+Route::get('/profil/{menu}', [PageIndexController::class, 'index']);
+Route::get('/program-studi/{menu}', [PageIndexController::class, 'index']);
+Route::get('/akademik/{menu}', [PageIndexController::class, 'index']);
+Route::get('/mahasiswa-alumni/{menu}', [PageIndexController::class, 'index']);
+Route::get('/tridharma/{menu}', [PageIndexController::class, 'index']);
+Route::get('/layanan/fasilitas/{menu}', [PageIndexController::class, 'index']);
+Route::get('/jaminan-mutu', [PageIndexController::class, 'index']);
 
 //navbar - berita
 Route::get(

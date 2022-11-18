@@ -79,10 +79,10 @@
           <a href="{{ url('/tenaga-kependidikan') }}"
             class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
-          <a href="{{ url('profil/rencana-strategis') }}"
+          <a href="{{ $links[17]->link }}" target="_blank"
             class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana
             Strategis</a>
-          <a href="{{ url('profil/rencana-operasional') }}"
+          <a href="{{ $links[18]->link }}" target="_blank"
             class="dropdown-item {{ request()->is('profil/rencana-operasional') ? 'active bg-utama' : '' }}">Rencana
             Operasional</a>
         </div>

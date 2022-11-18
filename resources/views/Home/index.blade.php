@@ -42,7 +42,7 @@
 
 
   @php
-    $kategoriBerita = App\Models\KategoriBerita::all();
+    $kategoriBerita = App\Models\KategoriBerita::take(4)->get();
   @endphp
   {{-- Start Artikel Berita --}}
   @include('home.components.artikel-berita', ['kategoriBerita' => $kategoriBerita])
