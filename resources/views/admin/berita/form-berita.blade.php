@@ -67,7 +67,7 @@
                       <div class="mb-3">
                         <label class="form-label" for="cover">Cover</label>
                         <img
-                          @if (isset($data)) @if ($data->cover != null) src="{{ asset("storage/$data->cover") }}" @else  src="{{ asset('storage/img/cover-berita/default.png') }}" @endif
+                          @if (isset($data)) @if ($data->cover != null) src="{{ asset("storage/$data->cover") }}" @else  src="{{ asset('storage/img/1-default-img/cover-berita.png') }}" @endif
                           @endif
                         alt="Cover berita" class="img-preview img-thumbnail mb-3"
                         @if (!isset($data)) style="display: none" @else style="display: block" @endif

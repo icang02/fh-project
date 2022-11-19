@@ -53,7 +53,7 @@
           </div>
 
           <div class="card col-md-5 text-white py-5" id="form-bg"
-            style="background-image: url({{ asset('storage/img/slider/slider2.jpg') }}); background-size: cover;">
+            style="background-image: url({{ asset('storage/img/1-default-img/cover-berita.png') }}); background-size: cover;">
             <div class="card-body text-center">
               <h2>Fakultas Hukum</h2>
               <p>S M A R T</p>

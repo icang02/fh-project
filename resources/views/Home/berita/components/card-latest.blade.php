@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-3 col-3">
         @if ($berita->cover == null)
-          <img src="{{ asset('storage/img/cover-berita/' . 'default.png') }}" alt="Image" width="70" height="70"
+          <img src="{{ asset('storage/img/1-default-img/cover-berita.png') }}" alt="Image" width="70" height="70"
             style="border-radius: 6px">
         @else
           <img src="{{ asset('storage/' . $berita->cover) }}" alt="Image" width="70" height="70"

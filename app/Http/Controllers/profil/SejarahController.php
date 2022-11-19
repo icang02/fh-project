@@ -20,6 +20,14 @@ class SejarahController extends Controller
 
     public function store(Request $request, $id)
     {
+        dd($request->body);
+        if (str_contains($request->body, '<table>')) {
+            dd($request->body);
+        } else {
+            echo 'false';
+        }
+        die;
+        // dd($request->body);
         $rules = [
             'judul' => 'required',
             'body' => 'required',

@@ -3,12 +3,13 @@
 @section('main-content')
   <!-- Header Start -->
   @php
+    $default = 'storage/img/1-default-img/cover-berita.png';
     if (!isset($data)) {
-        $img = 'storage/img/data-home/default.jpg';
+        $img = $default;
     } else {
         $img = "storage/$data->cover";
         if ($data->cover == null) {
-            $img = 'storage/img/data-home/default.jpg';
+            $img = $default;
         }
     }
   @endphp

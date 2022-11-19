@@ -31,6 +31,11 @@
         <input type="search" class="form-control" name="search" placeholder="Cari berita.." autocomplete="off"
           style="margin-top: -18px;">
       </form>
+
+      @auth
+        <a href="{{ url('/dashboard') }}" class="btn btn-primary btn-dashboard">Dashboard</a>
+      @endauth
+
     </div>
 
   </div>

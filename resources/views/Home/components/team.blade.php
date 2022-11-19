@@ -13,7 +13,7 @@
               @if ($item->foto != null)
                 <img class="img-fluid" src="{{ asset("storage/$item->foto") }}" alt="Dekan">
               @else
-                <img class="img-fluid" src="{{ asset('storage/img/foto-dosen/default.jpg') }}" alt="Dekan">
+                <img class="img-fluid" src="{{ asset('storage/img/1-default-img/foto-dosen.jpg') }}" alt="Dekan">
               @endif
             </div>
             <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
