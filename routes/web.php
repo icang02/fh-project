@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 // migrate fresh database
-Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
+// Route::get('/seed', fn () => Artisan::call('migrate:fresh --seed'));
 
 //route Home
 Route::get(
