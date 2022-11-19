@@ -74,10 +74,10 @@
             class="dropdown-item {{ request()->is('profil/struktur-organisasi') ? 'active bg-utama' : '' }}">Struktur
             Organisasi</a>
           <a href="{{ url('/dosen/daftar-dosen') }}"
-            class="dropdown-item {{ request()->is('profil/tenaga-pendidikan') ? 'active bg-utama' : '' }}">Tenaga
-            Pendidikan/Dosen</a>
+            class="dropdown-item {{ request()->is('dosen/daftar-dosen') ? 'active bg-utama' : '' }}">Tenaga
+            Pendidik/Dosen</a>
           <a href="{{ url('/tenaga-kependidikan') }}"
-            class="dropdown-item {{ request()->is('profil/tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
+            class="dropdown-item {{ request()->is('tenaga-kependidikan') ? 'active bg-utama' : '' }}">Tenaga
             Kependidikan</a>
           <a href="{{ $links[17]->link }}" target="_blank"
             class="dropdown-item {{ request()->is('profil/rencana-strategis') ? 'active bg-utama' : '' }}">Rencana

@@ -2,7 +2,7 @@
 
   <div class="owl-carousel header-carousel position-relative">
     <div class="owl-carousel-item position-relative ">
-      <img class="img-fluid img2" src="{{ asset('storage/img/slider/' . 'slider1.png') }}" alt="Slider 1">
+      <img class="img-fluid" src="{{ asset('storage/img/slider/' . 'slider1.png') }}" alt="Slider 1">
     </div>
 
     <div class="owl-carousel-item position-relative">

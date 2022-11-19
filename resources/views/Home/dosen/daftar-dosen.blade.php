@@ -6,8 +6,8 @@
     <div class="container px-0 px-md-5">
       <div class="row">
         <div class="col">
-          @if (request()->is('dosen'))
-            <h4 class="text-center">DAFTAR TENAGA PENDIDIKAN/DOSEN</h4>
+          @if (request()->is('dosen/daftar-dosen'))
+            <h4 class="text-center">DAFTAR TENAGA PENDIDIK/DOSEN</h4>
           @else
             <h4 class="text-center">DAFTAR TENAGA KEPENDIDIKAN</h4>
           @endif
