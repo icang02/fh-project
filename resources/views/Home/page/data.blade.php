@@ -4,11 +4,11 @@
   <!-- Header Start -->
   @php
     if (!isset($data)) {
-        $img = 'storage/img/data-home/default.jpg';
+        $img = 'storage/img/1-default-img/cover-berita.png';
     } else {
         $img = "storage/$data->cover";
         if ($data->cover == null) {
-            $img = 'storage/img/data-home/default.jpg';
+            $img = 'storage/img/1-default-img/cover-berita.png';
         }
     }
   @endphp

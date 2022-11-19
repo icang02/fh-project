@@ -44,8 +44,8 @@
                       <div class="mb-3">
                         <label class="form-label" for="foto">Foto Dosen</label>
                         <img
-                          @if (isset($data)) @if ($data->foto != null) src="{{ asset("storage/$data->foto") }}" @else src="{{ asset('storage/img/foto-dosen/default.jpg') }}" @endif
-                        @else src="{{ asset('storage/img/foto-dosen/default.jpg') }}" @endif
+                          @if (isset($data)) @if ($data->foto != null) src="{{ asset("storage/$data->foto") }}" @else src="{{ asset('storage/img/1-default-img/foto-dosen.jpg') }}" @endif
+                        @else src="{{ asset('storage/1-default-img/foto-dosen.jpg') }}" @endif
                         alt="foto dosen" class="img-preview img-thumbnail mb-3 d-block" width="150">
                         <label class="text-muted form-label">Upload foto dengan rasio 3:4 dan tidak lebih dari
                           4Mb.</label>

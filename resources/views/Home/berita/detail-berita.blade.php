@@ -18,7 +18,8 @@
                 <div class="shadow p-lg-3 p-1 mb-5 bg-body rounded-3">
                   <div class="card border border-white" style="width: 100%;">
                     @if ($berita->cover == null)
-                      <img src="{{ asset('storage/img/cover-berita/default.png') }}" class="card-img-top" alt="Image">
+                      <img src="{{ asset('storage/img/1-default-img/cover-berita.png') }}" class="card-img-top"
+                        alt="Image">
                     @else
                       <img src="{{ asset('storage/' . $berita->cover) }}" class="card-img-top" alt="Image">
                     @endif
