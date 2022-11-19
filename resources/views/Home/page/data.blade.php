@@ -3,6 +3,7 @@
 @section('main-content')
   <!-- Header Start -->
   @php
+    $default = 'storage/img/1-default-img/cover-berita.png';
     if (!isset($data)) {
         $img = 'storage/img/1-default-img/cover-berita.png';
     } else {

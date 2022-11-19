@@ -55,9 +55,10 @@
                       <p class="card-text" style="text-align: left">{!! $berita->body !!}</p>
                     </div>
 
-                    <div class="card-body ms-auto">
+                    <hr>
+                    {{-- <div class="card-body ms-auto">
                       <div class="btn btn-primary">Icon</div>
-                    </div>
+                    </div> --}}
                   </div>
                 </div>
               </div>
