@@ -54,12 +54,15 @@ class AdminBeritaController extends Controller
 
         if ($request->has('cover'))
             $imgName = $request->file('cover')->store('img/cover-berita');
+
+        $body = str_replace('<table>', '<table class="table table-bordered"', $request->body);
+        $body = str_replace('<figure class="table">', '<figure class="table-responsive">', $body);
         Berita::create([
-            'judul' => str()->title($request->judul),
+            'judul' => ucfirst($request->judul),
             'kategori_berita_id' => $request->kategori,
             'tanggal' => $request->tanggal,
             'cover' => $imgName ?? null,
-            'body' => $request->body
+            'body' => $body,
         ]);
 
         return redirect('/dashboard/berita/list-berita')->with('success', 'Berita berhasil dipost!');
@@ -103,12 +106,14 @@ class AdminBeritaController extends Controller
             $imgName = $request->file('cover')->store('img/cover-berita');
         }
 
+        $body = str_replace('<table>', '<table class="table table-bordered"', $request->body);
+        $body = str_replace('<figure class="table">', '<figure class="table-responsive">', $body);
         $berita->update([
-            'judul' => str()->title($request->judul),
+            'judul' => ucfirst($request->judul),
             'kategori_berita_id' => $request->kategori,
             'tanggal' => $request->tanggal,
             'cover' => $imgName,
-            'body' => $request->body
+            'body' => $body,
         ]);
 
         return redirect('/dashboard/berita/list-berita')->with('success', 'Berita berhasil diupdate!');

@@ -15,8 +15,8 @@
         <a class="btn btn-link" href="{{ url('/') }}">Beranda</a>
         <a class="btn btn-link" href="{{ url('/spada') }}">Spada</a>
         <a class="btn btn-link" href="{{ url('/profil/sejarah') }}">Tentang</a>
-        <a class="btn btn-link" href="{{ url('#') }}">Hubungi Kami</a>
-        <a class="btn btn-link" href="{{ url('#') }}">Umpan Balik</a>
+        <a class="btn btn-link" href="{{ url('https://siakadbeta.uho.ac.id') }}" target="_blank">Siakad</a>
+        <a class="btn btn-link" href="{{ url('https://uho.ac.id/') }}" target="_blank">Universitas Halu Oleo</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-white mb-3">HUBUNGI KAMI</h5>

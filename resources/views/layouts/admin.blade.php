@@ -89,7 +89,24 @@
     <script>
       ClassicEditor
         .create(document.querySelector('#editor1'), {
-          // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+          toolbar: {
+            items: [
+              'heading', '|',
+              'fontfamily', 'fontsize', '|',
+              'alignment', '|',
+              'fontColor', 'fontBackgroundColor', '|',
+              'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+              'link', '|',
+              'outdent', 'indent', '|',
+              'bulletedList', 'numberedList', 'todoList', '|',
+              'code', 'codeBlock', '|',
+              'insertTable', '|',
+              // 'uploadImage', 'blockQuote', '|',
+              'undo', 'redo'
+            ],
+            shouldNotGroupWhenFull: true
+          }
+
         })
         .then(editor => {
           window.editor = editor;
@@ -100,7 +117,23 @@
 
       ClassicEditor
         .create(document.querySelector('#editor2'), {
-          // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+          toolbar: {
+            items: [
+              'heading', '|',
+              'fontfamily', 'fontsize', '|',
+              'alignment', '|',
+              'fontColor', 'fontBackgroundColor', '|',
+              'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+              'link', '|',
+              'outdent', 'indent', '|',
+              'bulletedList', 'numberedList', 'todoList', '|',
+              'code', 'codeBlock', '|',
+              'insertTable', '|',
+              // 'uploadImage', 'blockQuote', '|',
+              'undo', 'redo'
+            ],
+            shouldNotGroupWhenFull: true
+          }
         })
         .then(editor => {
           window.editor = editor;

@@ -9,25 +9,19 @@ use Illuminate\Support\Facades\Storage;
 
 class SejarahController extends Controller
 {
-    public function index($menu)
+    public function index($menu = 'jaminan-mutu')
     {
+        $header = ucwords(str_replace('-', ' ', $menu));
+
         return view('admin.profil.sejarah', [
-            'title' => 'Dashboard | ' . str()->title($menu),
+            'title' => 'Dashboard | ' . $header,
             'data' => DataHome::find($menu),
-            'header' => str()->title($menu),
+            'header' => $header
         ]);
     }
 
     public function store(Request $request, $id)
     {
-        dd($request->body);
-        if (str_contains($request->body, '<table>')) {
-            dd($request->body);
-        } else {
-            echo 'false';
-        }
-        die;
-        // dd($request->body);
         $rules = [
             'judul' => 'required',
             'body' => 'required',
@@ -43,11 +37,13 @@ class SejarahController extends Controller
             $imgName = $request->file('cover')->store('img/data-home');
         }
 
+        $body = str_replace('<table>', '<table class="table table-bordered"', $request->body);
+        $body = str_replace('<figure class="table">', '<figure class="table-responsive">', $body);
         DataHome::create([
             'id' => $id,
             'judul' => $request->judul,
             'cover' => $imgName ?? null,
-            'body' => $request->body,
+            'body' => $body,
         ]);
 
         return back()->with('success', "Data berhasil ditambahkan!");
@@ -74,10 +70,12 @@ class SejarahController extends Controller
             $imgName = $request->file('cover')->store('img/data-home');     // cover baru
         }
 
+        $body = str_replace('<table>', '<table class="table table-bordered"', $request->body);
+        $body = str_replace('<figure class="table">', '<figure class="table-responsive">', $body);
         $data->update([
             'judul' => $request->judul,
             'cover' => $imgName,
-            'body' => $request->body,
+            'body' => $body,
         ]);
 
         return back()->with('success', "Data berhasil diupdate!");

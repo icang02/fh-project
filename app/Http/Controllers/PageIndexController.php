@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class PageIndexController extends Controller
 {
-    public function index($menu = 'Jaminan Mutu')
+    public function index($menu = 'jaminan-mutu')
     {
         $data = DataHome::find($menu);
-        // dd($menu);
 
         return view('home.page.data', [
             'title' => "Fakultas Hukum | " . str()->title($menu),

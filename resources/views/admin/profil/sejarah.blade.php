@@ -53,7 +53,7 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header"><strong>{{ $header }} Fakultas Hukum</strong>
+            <div class="card-header"><strong>{{ $header }} | Fakultas Hukum</strong>
             </div>
             <div class="card-body">
               <div class="example">

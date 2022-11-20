@@ -1,3 +1,16 @@
+<style>
+  .form-search form input {
+    margin-top: 0 !important;
+  }
+
+  @media screen and (min-width:767px) {
+    .card-berita {
+      position: absolute;
+      right: 0;
+    }
+  }
+</style>
+
 @extends('layouts.home')
 
 @section('main-content')
@@ -22,14 +35,24 @@
 
           {{-- Start Ui Greenmetric --}}
           @if (str()->lower($header) == 'ui greenmetric')
+            @php
+              $fotoDekan = App\Models\Dosen::where('jabatan_id', 1)
+                  ->get()
+                  ->first();
+            @endphp
+
             <div class="container">
               <div class="row">
                 <div class="col-lg-4 d-flex justify-content-around">
-                  <img style="border-radius:39px"
-                    src="https://kedokteran.uho.ac.id/upload/content/content-20220915173409.jpeg" height="400">
+                  @if ($fotoDekan->foto == null)
+                    <img style="border-radius:39px" src="{{ asset('storage/img/1-default-img/foto-dosen.jpg') }}"
+                      height="400">
+                  @else
+                    <img style="border-radius:39px" src="{{ asset("storage/$fotoDekan->foto") }}" height="400">
+                  @endif
                 </div>
                 <div class="col-lg-8 mt-lg-0 mt-3">
-                  <p style="text-align:justify"><span style="font-size:16px"><strong>Fakultas Kedokteran Universitas Halu
+                  <p style="text-align:justify"><span style="font-size:16px"><strong>Fakultas Hukum Universitas Halu
                         Oleo</strong></span></p>
                   <p style="text-align:justify">Fakultas Kedokteran Universitas Halu Oleo diawali dengan berdirinya
                     Program
@@ -79,7 +102,7 @@
 
           <div class="isi mt-3">
 
-            <div class="row">
+            <div class="row position-relative">
               @if ($data->count() == 0)
                 <h5 class="text-center text-muted">
                   {{ request('search') ? 'Judul berita tidak ditemukan' : 'Belum ada berita' }}
@@ -101,7 +124,8 @@
                         <p class="text-muted mt-3" style="font-size: 0.85rem">
                           <i class="fa-sharp fa-solid fa-calendar-days me-1"></i>
                           {{ \Carbon\Carbon::createFromFormat('Y-m-d', $berita->tanggal)->format('d F Y') }}
-                          <i class="fa-solid fa-eye ms-3"></i> <span class="fw-bold"> {{ $berita->views }}x dilihat</span>
+                          <i class="fa-solid fa-eye ms-3"></i> <span class="fw-bold"> {{ $berita->views }}x
+                            dilihat</span>
 
                           @if (str()->lower($berita->kategori_berita->nama) == 'event')
                             <span class="ms-2 badge btn btn-primary btn-sm rounded-3"
@@ -148,7 +172,7 @@
                 @endif
 
                 @if ($index < 1)
-                  <div class="col-md-4 order-1 order-md-0">
+                  <div class="col-md-4 order-1 order-md-0 card-berita">
                     <div class="shadow p-3 mb-5 bg-body rounded-3">
                       <div class="card border border-white" style="width: 100%;">
                         <div class="card-body">

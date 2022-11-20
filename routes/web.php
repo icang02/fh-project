@@ -142,159 +142,159 @@ Route::get('/dashboard/jaminan-mutu', [
 
 // --------------------------------------------------------
 //route colors
-Route::get('/dashboard/colors', function () {
-    return view('admin.colors', ['title' => 'Dashboard | Colors']);
-})->middleware('auth');
-//route typography
-Route::get('/dashboard/typography', function () {
-    return view('admin.typography', ['title' => 'Dashboard | Typography']);
-})->middleware('auth');
+// Route::get('/dashboard/colors', function () {
+//     return view('admin.colors', ['title' => 'Dashboard | Colors']);
+// })->middleware('auth');
+// //route typography
+// Route::get('/dashboard/typography', function () {
+//     return view('admin.typography', ['title' => 'Dashboard | Typography']);
+// })->middleware('auth');
 
-//route Admin-Base
-Route::get('/dashboard/base/accordion', function () {
-    return view('admin.base.accordion', ['title' => 'Dashboard | Accordion']);
-})->middleware('auth');
-Route::get('/dashboard/base/breadcrumb', function () {
-    return view('admin.base.breadcrumb', ['title' => 'Dashboard | Breadcrumb']);
-})->middleware('auth');
-Route::get('/dashboard/base/cards', function () {
-    return view('admin.base.cards', ['title' => 'Dashboard | Cards']);
-})->middleware('auth');
-Route::get('/dashboard/base/carousel', function () {
-    return view('admin.base.carousel', ['title' => 'Dashboard | Carousel']);
-})->middleware('auth');
-Route::get('/dashboard/base/collapse', function () {
-    return view('admin.base.collapse', ['title' => 'Dashboard | Collapse']);
-});
-Route::get('/dashboard/base/list-group', function () {
-    return view('admin.base.list-group', ['title' => 'Dashboard | List Group']);
-})->middleware('auth');
-Route::get('/dashboard/base/navs-tabs', function () {
-    return view('admin.base.navs-tabs', ['title' => 'Dashboard | Tabs']);
-})->middleware('auth');
-Route::get('/dashboard/base/pagination', function () {
-    return view('admin.base.pagination', ['title' => 'Dashboard | Pagination']);
-})->middleware('auth');
-Route::get('/dashboard/base/placeholders', function () {
-    return view('admin.base.placeholders', [
-        'title' => 'Dashboard | Placeholders',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/base/popovers', function () {
-    return view('admin.base.popovers', ['title' => 'Dashboard | Popovers']);
-})->middleware('auth');
-Route::get('/dashboard/base/progress', function () {
-    return view('admin.base.progress', ['title' => 'Dashboard | Progress']);
-})->middleware('auth');
-Route::get('/dashboard/base/spinners', function () {
-    return view('admin.base.spinners', ['title' => 'Dashboard | Spinners']);
-})->middleware('auth');
-Route::get('/dashboard/base/tables', function () {
-    return view('admin.base.tables', ['title' => 'Dashboard | Tables']);
-})->middleware('auth');
-Route::get('/dashboard/base/tooltips', function () {
-    return view('admin.base.tooltips', ['title' => 'Dashboard | Tooltips']);
-})->middleware('auth');
+// //route Admin-Base
+// Route::get('/dashboard/base/accordion', function () {
+//     return view('admin.base.accordion', ['title' => 'Dashboard | Accordion']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/breadcrumb', function () {
+//     return view('admin.base.breadcrumb', ['title' => 'Dashboard | Breadcrumb']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/cards', function () {
+//     return view('admin.base.cards', ['title' => 'Dashboard | Cards']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/carousel', function () {
+//     return view('admin.base.carousel', ['title' => 'Dashboard | Carousel']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/collapse', function () {
+//     return view('admin.base.collapse', ['title' => 'Dashboard | Collapse']);
+// });
+// Route::get('/dashboard/base/list-group', function () {
+//     return view('admin.base.list-group', ['title' => 'Dashboard | List Group']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/navs-tabs', function () {
+//     return view('admin.base.navs-tabs', ['title' => 'Dashboard | Tabs']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/pagination', function () {
+//     return view('admin.base.pagination', ['title' => 'Dashboard | Pagination']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/placeholders', function () {
+//     return view('admin.base.placeholders', [
+//         'title' => 'Dashboard | Placeholders',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/base/popovers', function () {
+//     return view('admin.base.popovers', ['title' => 'Dashboard | Popovers']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/progress', function () {
+//     return view('admin.base.progress', ['title' => 'Dashboard | Progress']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/spinners', function () {
+//     return view('admin.base.spinners', ['title' => 'Dashboard | Spinners']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/tables', function () {
+//     return view('admin.base.tables', ['title' => 'Dashboard | Tables']);
+// })->middleware('auth');
+// Route::get('/dashboard/base/tooltips', function () {
+//     return view('admin.base.tooltips', ['title' => 'Dashboard | Tooltips']);
+// })->middleware('auth');
 
-//route - buttons
-Route::get('/dashboard/buttons/buttons', function () {
-    return view('admin.buttons.buttons', ['title' => 'Dashboard | Buttons']);
-})->middleware('auth');
-Route::get('/dashboard/buttons/button-group', function () {
-    return view('admin.buttons.button-group', [
-        'title' => 'Dashboard | Button Group',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/buttons/dropdowns', function () {
-    return view('admin.buttons.dropdowns', ['title' => 'Dashboard | Dropdown']);
-})->middleware('auth');
+// //route - buttons
+// Route::get('/dashboard/buttons/buttons', function () {
+//     return view('admin.buttons.buttons', ['title' => 'Dashboard | Buttons']);
+// })->middleware('auth');
+// Route::get('/dashboard/buttons/button-group', function () {
+//     return view('admin.buttons.button-group', [
+//         'title' => 'Dashboard | Button Group',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/buttons/dropdowns', function () {
+//     return view('admin.buttons.dropdowns', ['title' => 'Dashboard | Dropdown']);
+// })->middleware('auth');
 
-//route charts
-Route::get('/dashboard/charts', function () {
-    return view('admin.charts', ['title' => 'Dashboard | Charts']);
-})->middleware('auth');
+// //route charts
+// Route::get('/dashboard/charts', function () {
+//     return view('admin.charts', ['title' => 'Dashboard | Charts']);
+// })->middleware('auth');
 
-//route forms
-Route::get('/dashboard/forms/checks-radios', function () {
-    return view('admin.forms.checks-radios', [
-        'title' => 'Dashboard | Check Radios',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/forms/floating-labels', function () {
-    return view('admin.forms.floating-labels', [
-        'title' => 'Dashboard | Labels',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/forms/form-control', function () {
-    return view('admin.forms.form-control', [
-        'title' => 'Dashboard | Form Control',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/forms/input-group', function () {
-    return view('admin.forms.input-group', [
-        'title' => 'Dashboard | Input Group',
-    ]);
-})->middleware('auth');
+// //route forms
+// Route::get('/dashboard/forms/checks-radios', function () {
+//     return view('admin.forms.checks-radios', [
+//         'title' => 'Dashboard | Check Radios',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/forms/floating-labels', function () {
+//     return view('admin.forms.floating-labels', [
+//         'title' => 'Dashboard | Labels',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/forms/form-control', function () {
+//     return view('admin.forms.form-control', [
+//         'title' => 'Dashboard | Form Control',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/forms/input-group', function () {
+//     return view('admin.forms.input-group', [
+//         'title' => 'Dashboard | Input Group',
+//     ]);
+// })->middleware('auth');
 
-Route::get('/dashboard/forms/layout', function () {
-    return view('admin.forms.layout', ['title' => 'Dashboard | Layouts']);
-})->middleware('auth');
+// Route::get('/dashboard/forms/layout', function () {
+//     return view('admin.forms.layout', ['title' => 'Dashboard | Layouts']);
+// })->middleware('auth');
 
-Route::get('/dashboard/forms/range', function () {
-    return view('admin.forms.range', ['title' => 'Dashboard | Forms Range']);
-})->middleware('auth');
+// Route::get('/dashboard/forms/range', function () {
+//     return view('admin.forms.range', ['title' => 'Dashboard | Forms Range']);
+// })->middleware('auth');
 
-Route::get('/dashboard/forms/select', function () {
-    return view('admin.forms.select', ['title' => 'Dashboard | Forms Select']);
-})->middleware('auth');
+// Route::get('/dashboard/forms/select', function () {
+//     return view('admin.forms.select', ['title' => 'Dashboard | Forms Select']);
+// })->middleware('auth');
 
-Route::get('/dashboard/forms/validation', function () {
-    return view('admin.forms.validation', [
-        'title' => 'Dashboard | Validation',
-    ]);
-})->middleware('auth');
+// Route::get('/dashboard/forms/validation', function () {
+//     return view('admin.forms.validation', [
+//         'title' => 'Dashboard | Validation',
+//     ]);
+// })->middleware('auth');
 
-//route - Icons
-Route::get('/dashboard/icons/coreui-icons-brand', function () {
-    return view('admin.icons.coreui-icons-brand', [
-        'title' => 'Dashboard | Icon Brand',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/icons/coreui-icons-flag', function () {
-    return view('admin.icons.coreui-icons-flag', [
-        'title' => 'Dashboard | Icon Flags',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/icons/coreui-icons-free', function () {
-    return view('admin.icons.coreui-icons-free', [
-        'title' => 'Dashboard | Icon Free',
-    ]);
-})->middleware('auth');
+// //route - Icons
+// Route::get('/dashboard/icons/coreui-icons-brand', function () {
+//     return view('admin.icons.coreui-icons-brand', [
+//         'title' => 'Dashboard | Icon Brand',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/icons/coreui-icons-flag', function () {
+//     return view('admin.icons.coreui-icons-flag', [
+//         'title' => 'Dashboard | Icon Flags',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/icons/coreui-icons-free', function () {
+//     return view('admin.icons.coreui-icons-free', [
+//         'title' => 'Dashboard | Icon Free',
+//     ]);
+// })->middleware('auth');
 
-//route - Notifications
-Route::get('/dashboard/notifications/alerts', function () {
-    return view('admin.notifications.alerts', [
-        'title' => 'Dashboard | Alerts',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/notifications/badge', function () {
-    return view('admin.notifications.badge', ['title' => 'Dashboard | Badge']);
-})->middleware('auth');
-Route::get('/dashboard/notifications/modals', function () {
-    return view('admin.notifications.modals', [
-        'title' => 'Dashboard | Modals',
-    ]);
-})->middleware('auth');
-Route::get('/dashboard/notifications/toasts', function () {
-    return view('admin.notifications.toasts', [
-        'title' => 'Dashboard | Toasts',
-    ]);
-})->middleware('auth');
+// //route - Notifications
+// Route::get('/dashboard/notifications/alerts', function () {
+//     return view('admin.notifications.alerts', [
+//         'title' => 'Dashboard | Alerts',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/notifications/badge', function () {
+//     return view('admin.notifications.badge', ['title' => 'Dashboard | Badge']);
+// })->middleware('auth');
+// Route::get('/dashboard/notifications/modals', function () {
+//     return view('admin.notifications.modals', [
+//         'title' => 'Dashboard | Modals',
+//     ]);
+// })->middleware('auth');
+// Route::get('/dashboard/notifications/toasts', function () {
+//     return view('admin.notifications.toasts', [
+//         'title' => 'Dashboard | Toasts',
+//     ]);
+// })->middleware('auth');
 
-//route - Widgets
-Route::get('/dashboard/widgets', function () {
-    return view('admin.widgets', ['title' => 'Dashboard | Widgets']);
-})->middleware('auth');
+// //route - Widgets
+// Route::get('/dashboard/widgets', function () {
+//     return view('admin.widgets', ['title' => 'Dashboard | Widgets']);
+// })->middleware('auth');
 
 //route kategori cekk
 Route::get('/dashboard/berita/kategori-berita', function () {
@@ -395,7 +395,7 @@ Route::get('/dosen/daftar-dosen', [DosenController::class, 'semuaDosen']);
 
 //halaman registrasi alumni
 Route::get('/alumni/registrasi-alumni', function () {
-    return view('home.Alumni.registrasi-alumni', ['title' => 'Dashboard | Alumni']);
+    return view('home.alumni.registrasi-alumni', ['title' => 'Dashboard | Alumni']);
 });
 
 //halaman admin registrasi alumni
