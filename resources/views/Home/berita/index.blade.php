@@ -3,6 +3,10 @@
     margin-top: 0 !important;
   }
 
+  .card-container {
+    position: relative;
+  }
+
   @media screen and (min-width:767px) {
     .card-berita {
       position: absolute;
@@ -54,33 +58,19 @@
                 <div class="col-lg-8 mt-lg-0 mt-3">
                   <p style="text-align:justify"><span style="font-size:16px"><strong>Fakultas Hukum Universitas Halu
                         Oleo</strong></span></p>
-                  <p style="text-align:justify">Fakultas Kedokteran Universitas Halu Oleo diawali dengan berdirinya
-                    Program
-                    Studi Pendidikan Dokter Universitas Halu Oleo pada tahun 2009 berdasarkan Surat Keputusan Ijin
-                    Operasional PSPD UHO dari Dirjen Dikti No. 4687/D/T/2008 tanggal 31 Desember 2008.</p>
-                  <p style="text-align:justify">Secara definitif Fakultas Kedokteran UHO berdiri pada tahun 2011
-                    berdasarkan
-                    SK Rektor No. 413/SK/UN29/PP/2011 tanggal 30 September 2011 tentang berdirinya Fakultas Kedokteran
-                    internal dalam lingkungan Universitas Halu Oleo. Pendirian Fakultas Kedokteran UHO bekerjasama dengan
-                    Rumah Sakit Umum Daerah (RSUD) Propinsi Sulawesi Tenggara berdasarkan Perjanjian Kerja Sama (MOU)
-                    antara
-                    RSUD Propinsi Sulawesi Tenggara dengan Universitas Halu Oleo Nomor : 75/J29/KS/2005 dan Nomor :
-                    17/1.3/RSUD/I/2005 tanggal 10 Januari 2005.</p>
-                  <p style="text-align:justify">Selanjutnya sebagai bentuk dukungan Pemerintah Daerah Propinsi Sulawesi
-                    Tenggara terhadap Program Pendidikan Profesi Dokter adalah ditetapkannya RSUD Bahteramas Kendari
-                    sebagai
-                    Rumah Sakit Pendidikan Utama Fakultas Kedokteran Universitas Halu Oleo dengan SK Menteri Kesehatan
-                    Republik Indonesia nomor HK.02.03/I/1929/2013. Dalam rangka pelaksanaan kepaniteraan klinik profesi
-                    dokter dibentuk Badan Koordinasi Pendidikan berdasarkan Surat Keputusan Bersama Direktur RSU
-                    Bahteramas
-                    Kendari No: 13/Tahun 2014 dengan Dekan FK UHO No: 06a/UN29.36/PP/2014. Berdasarkan SK tersebut jika
-                    mahasiswa yang mengikuti kepaniteraan klinik melebihi jumlah yang telah ditentukan maka kegiatan
-                    kepaniteraan klinik dapat dialihkan ke RS satelit. Badan Koordinasi Pendidikan (Bakordik) berkedudukan
-                    di RS Pendidikan Utama.</p>
-                  <p style="text-align:justify">Surat Keputusan BAN-PT Nomor: 024/BAN-PT/Ak-XV/S1/VIII/2012 tanggal 10
-                    Agustus 2012 menetapkan bahwa PSPD di&nbsp; FK UHO dengan akreditasi C yang berlaku sampai 10 Agustus
-                    2017. Kemajuan FK UHO sangat pesat terbukti dengan penilaian akreditasi kedua program studi di FK UHO
-                    pada bulan Juli 2017 meningkat menjadi akreditasi B sesuai penilaian LamPTKes.</p>
+                  <p style="text-align:justify">
+                    UI GreenMetric merupakan inovasi UI yang telah dikenal luas di dunia internasional sebagai
+                    pemeringkatan perguruan tinggi pertama di dunia berbasis komitmen tinggi dalam pengelolaan lingkungan
+                    hidup kampus. Kini, UI GreenMetric of World Universities semakin mendunia dan semakin banyak diikuti
+                    oleh perguruan tinggi di berbagai negara. Pada 2020, jumlah peserta mencapai 912 universitas dari 84
+                    negara di dunia, bertambah dari sebelumnya (2019) sebanyak 780 Perguruan Tinggi dari 85 negara.
+                    Beberapa negara yang baru bergabung di tahun 2020 adalah Kuwait, Lithuania, dan Belarusia. Di
+                    Indonesia, terdapat 88 Perguruan Tinggi yang telah berpartisipasi dalam UI GreenMetric. Penilaian UI
+                    GreenMetric 2020 dilandasi atas tiga pilar, yakni Lingkungan hidup, Ekonomi, dan sosial dengan bobot
+                    indikator penilaian yang terdiri atas Keadaan dan Infrastruktur Kampus (15%), Energi dan Perubahan
+                    Iklim (21%), Pengelolaan Sampah (18%), Penggunaan Air (10%), Transportasi (18%), serta Pendidikan dan
+                    Riset (18%).
+                  </p>
                 </div>
               </div>
 
@@ -102,7 +92,7 @@
 
           <div class="isi mt-3">
 
-            <div class="row position-relative">
+            <div class="row card-container">
               @if ($data->count() == 0)
                 <h5 class="text-center text-muted">
                   {{ request('search') ? 'Judul berita tidak ditemukan' : 'Belum ada berita' }}
@@ -163,43 +153,46 @@
                   </div>
                 </div>
 
-                @if ($index + 1 == $data->count())
-                  <div class="row">
-                    <div class="col">
-                      {{ $data->onEachSide(0)->withQueryString()->links() }}
-                    </div>
-                  </div>
-                @endif
-
                 @if ($index < 1)
-                  <div class="col-md-4 order-1 order-md-0 card-berita">
-                    <div class="shadow p-3 mb-5 bg-body rounded-3">
-                      <div class="card border border-white" style="width: 100%;">
-                        <div class="card-body">
-                          <h5 class="card-title">Artikel Terbaru</h5>
-                          <hr>
-                        </div>
-                        <div class="card-body">
+                  @if ($data->count() <= 1)
+                    <div class="col-md-4 order-1 order-md-0">
+                    @else
+                      <div class="col-md-4 order-1 order-md-0 card-berita">
+                  @endif
+                  <div class="shadow p-3 mb-5 bg-body rounded-3">
+                    <div class="card border border-white" style="width: 100%;">
+                      <div class="card-body">
+                        <h5 class="card-title">Artikel Terbaru</h5>
+                        <hr>
+                      </div>
+                      <div class="card-body">
 
-                          @include('home.berita.components.card-latest', ['allBerita' => $allBerita])
-
-                        </div>
+                        @include('home.berita.components.card-latest', ['allBerita' => $allBerita])
 
                       </div>
                     </div>
                   </div>
-                @endif
-              @endforeach
             </div>
+            @endif
 
+            @if ($index + 1 == $data->count())
+              <div class="row">
+                <div class="col">
+                  {{ $data->onEachSide(0)->withQueryString()->links() }}
+                </div>
+              </div>
+            @endif
+            @endforeach
           </div>
 
-          <hr class="mx-auto my-5" style="height: 3px">
-          @include('home.components.jagad-uho')
-
         </div>
+
+        <hr class="mx-auto my-5" style="height: 3px">
+        @include('home.components.jagad-uho')
+
       </div>
     </div>
+  </div>
   </div>
   <!-- Service End -->
 @endsection
