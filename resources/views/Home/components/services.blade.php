@@ -1,7 +1,7 @@
 <div class="container-xxl">
   <div class="container">
     <div class="row g-4 justify-content-center">
-      <div class="col-lg-2 col-sm-2 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-lg-2 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <div class="text-primary notranslate" style="font-size: 75px !important">
@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2 col-sm-2 wow fadeInUp" data-wow-delay="0.3s">
+      <div class="col-lg-2 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <div class="text-primary notranslate" style="font-size: 75px !important">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2 col-sm-2 wow fadeInUp" data-wow-delay="0.5s">
+      <div class="col-lg-2 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <div class="text-primary notranslate" style="font-size: 75px !important">
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2 col-sm-2 wow fadeInUp" data-wow-delay="0.5s">
+      <div class="col-lg-2 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <div class="text-primary notranslate" style="font-size: 75px !important">
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2 col-sm-2 wow fadeInUp" data-wow-delay="0.7s">
+      <div class="col-lg-2 col-sm-12 wow fadeInUp" data-wow-delay="0.7s">
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <div class="text-primary notranslate" style="font-size: 75px !important">
