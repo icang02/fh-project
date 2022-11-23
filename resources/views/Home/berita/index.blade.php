@@ -55,43 +55,43 @@
                     <img style="border-radius:39px" src="{{ asset("storage/$fotoDekan->foto") }}" height="400">
                   @endif
                 </div> --}}
-                <div class="col-lg-12 mt-lg-0 mt-3">
-                    UI GreenMetric merupakan inovasi UI yang telah dikenal luas di dunia internasional sebagai
-                    pemeringkatan perguruan tinggi pertama di dunia berbasis komitmen tinggi dalam pengelolaan lingkungan
-                    hidup kampus. Kini, UI GreenMetric of World Universities semakin mendunia dan semakin banyak diikuti
-                    oleh perguruan tinggi di berbagai negara. Pada 2020, jumlah peserta mencapai 912 universitas dari 84
-                    negara di dunia, bertambah dari sebelumnya (2019) sebanyak 780 Perguruan Tinggi dari 85 negara.
-                    Beberapa negara yang baru bergabung di tahun 2020 adalah Kuwait, Lithuania, dan Belarusia. Di
-                    Indonesia, terdapat 88 Perguruan Tinggi yang telah berpartisipasi dalam UI GreenMetric. Penilaian UI
-                    GreenMetric 2020 dilandasi atas tiga pilar, yakni Lingkungan hidup, Ekonomi, dan sosial dengan bobot
-                    indikator penilaian yang terdiri atas Keadaan dan Infrastruktur Kampus (15%), Energi dan Perubahan
-                    Iklim (21%), Pengelolaan Sampah (18%), Penggunaan Air (10%), Transportasi (18%), serta Pendidikan dan
-                    Riset (18%).
+                <div class="col-lg-12 mt-lg-0 mt-3 mb-2" style="text-align: justify">
+                  UI GreenMetric merupakan inovasi UI yang telah dikenal luas di dunia internasional sebagai
+                  pemeringkatan perguruan tinggi pertama di dunia berbasis komitmen tinggi dalam pengelolaan lingkungan
+                  hidup kampus. Kini, UI GreenMetric of World Universities semakin mendunia dan semakin banyak diikuti
+                  oleh perguruan tinggi di berbagai negara. Pada 2020, jumlah peserta mencapai 912 universitas dari 84
+                  negara di dunia, bertambah dari sebelumnya (2019) sebanyak 780 Perguruan Tinggi dari 85 negara.
+                  Beberapa negara yang baru bergabung di tahun 2020 adalah Kuwait, Lithuania, dan Belarusia. Di
+                  Indonesia, terdapat 88 Perguruan Tinggi yang telah berpartisipasi dalam UI GreenMetric. Penilaian UI
+                  GreenMetric 2020 dilandasi atas tiga pilar, yakni Lingkungan hidup, Ekonomi, dan sosial dengan bobot
+                  indikator penilaian yang terdiri atas Keadaan dan Infrastruktur Kampus (15%), Energi dan Perubahan
+                  Iklim (21%), Pengelolaan Sampah (18%), Penggunaan Air (10%), Transportasi (18%), serta Pendidikan dan
+                  Riset (18%).
                   </p>
                 </div>
-                <div class="col col-lg-4 col-sm-6 mb-3">
+                <div class="col col-lg-4 col-sm-6 col-12 mb-3">
                   <img width="100%" src="{{ asset('home-assets/img/green/green1.jpg') }}" alt="">
                 </div>
-                <div class="col col-lg-4 col-sm-6 mb-3">
+                <div class="col col-lg-4 col-sm-6 col-12 mb-3">
                   <img width="100%" src="{{ asset('home-assets/img/green/green2.jpg') }}" alt="">
                 </div>
-                <div class="col col-lg-4 col-sm-6 mb-3">
+                <div class="col col-lg-4 col-sm-6 col-12 mb-3">
                   <img width="100%" src="{{ asset('home-assets/img/green/green3.jpg') }}" alt="">
                 </div>
-                <div class="col col-lg-4 col-sm-6 mb-3">
+                <div class="col col-lg-4 col-sm-6 col-12 mb-3">
                   <img width="100%" src="{{ asset('home-assets/img/green/green4.jpg') }}" alt="">
                 </div>
-                <div class="col col-lg-4 col-sm-6 mb-3">
+                <div class="col col-lg-4 col-sm-6 col-12 mb-3">
                   <img width="100%" src="{{ asset('home-assets/img/green/green5.jpg') }}" alt="">
                 </div>
-                <div class="col col-lg-4 col-sm-6 mb-3">
+                <div class="col col-lg-4 col-sm-6 col-12 mb-3">
                   <img width="100%" src="{{ asset('home-assets/img/green/green6.jpg') }}" alt="">
                 </div>
               </div>
 
               <div class="row mt-5" style="margin-bottom: -20px">
                 <div class="col-lg 8">
-                  <h2 >Informasi Greenmetric
+                  <h2>Informasi Greenmetric
                     Terbaru
                   </h2>
                   <div class="d-flex justify-content-between mb-3">
