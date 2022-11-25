@@ -45,9 +45,12 @@
                           name="kategori">
                           <option value="">Pilih Kategori Berita</option>
                           @foreach ($semuaKategori as $kategori)
-                            <option value="{{ $kategori->id }}" @if ($kategori->id == !isset($data) ? '' : $data->kategori_berita_id) selected @endif
+                            <option value="{{ $kategori->id }}"
+                              @if (isset($data)) @if ($kategori->id == $data->kategori_berita_id) selected @endif
+                              @endif
                               @if ($kategori->id == old('kategori')) selected @endif>
-                              {{ $kategori->nama }}</option>
+                              {{ $kategori->nama }}
+                            </option>
                           @endforeach
                         </select>
                         @error('kategori')
@@ -92,7 +95,8 @@
                       <div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         {{-- <button id="reset" type="reset" class="btn btn-danger text-light">Reset</button> --}}
-                        <a href="{{ url('/dashboard/dosen/list-dosen') }}" class="btn btn-danger text-light">Kembali</a>
+                        <a href="{{ url('/dashboard/berita/list-berita') }}"
+                          class="btn btn-danger text-light">Kembali</a>
                       </div>
                     </form>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AlumniController extends Controller
 {
@@ -31,7 +32,8 @@ class AlumniController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        $nama =  Hash::make($request->nama);
+        dd($nama);
         $rules = [
             'nama' => 'required',
             'jenis_kelamin' => 'required',
